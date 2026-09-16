@@ -12,6 +12,7 @@ permissions:
 jobs:
   update-dataset:
     runs-on: ubuntu-latest
+    timeout-minutes: 360
 
     steps:
       - name: Checkout repository
@@ -34,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json moods/ genres/
+          git add data.json moods/ genres/ full_dataset.json
           if git diff --staged --quiet; then
             echo "No changes in dataset to commit."
           else

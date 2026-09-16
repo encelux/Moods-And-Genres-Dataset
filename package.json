@@ -7,6 +7,8 @@
   "private": true,
   "scripts": {
     "scrape": "bun run src/scraper.ts",
+    "scrape:categories": "bun run src/scraper.ts --categories-only",
+    "scrape:tracks": "bun run src/scraper.ts --playlists-only",
     "start": "bun run index.ts"
   },
   "devDependencies": {

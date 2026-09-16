@@ -1,9 +1,11 @@
-import { mkdirSync } from "node:fs";
+import { mkdirSync, readFileSync, readdirSync } from "node:fs";
 import type {
   DatasetIndex,
   CategoryDetails,
   PlaylistItem,
   CategoryItem,
+  TrackItem,
+  FullDataset,
 } from "./types";
 
 export * from "./types";
@@ -36,6 +38,28 @@ export function extractThumbnailId(url: string | undefined): string {
   const ytMatch = url.match(/i\.ytimg\.com\/vi\/([^/?]+)/);
   if (ytMatch) return ytMatch[1];
   return url.split("?")[0];
+}
+
+/**
+ * Converts a duration string (e.g. "4:45" or "1:02:15") into total seconds.
+ */
+export function parseDuration(durationStr: string): number {
+  if (!durationStr) return 0;
+  const parts = durationStr
+    .trim()
+    .split(":")
+    .map((p) => parseInt(p, 10));
+  if (parts.some(isNaN)) return 0;
+  if (parts.length === 3) {
+    return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  }
+  if (parts.length === 2) {
+    return parts[0] * 60 + parts[1];
+  }
+  if (parts.length === 1) {
+    return parts[0];
+  }
+  return 0;
 }
 
 /**
@@ -327,87 +351,491 @@ export function parseCategoryPayload(data: any): CategoryDetails {
 }
 
 /**
- * Runs the full scrape:
- * 1. Fetches index of moods and genres, saving { moods: { [slug]: id }, genres: { [slug]: id } } to data.json.
- * 2. Fetches and saves category details to ./moods/<slug>.json and ./genres/<slug>.json.
+ * Extracts track fields { id, title, isSong, duration, durationStr, thumbnailId, author, authorId }
+ * from a musicResponsiveListItemRenderer.
  */
-export async function scrapeAll(): Promise<void> {
-  console.log("Fetching moods and genres page...");
-  const html = await fetchMoodsAndGenresHtml();
-  const { apiKey, clientVersion } = extractInnertubeConfig(html);
-  const browseData = extractBrowseData(html);
-  const { moods, genres } = extractCategories(browseData);
+export function extractTrackItem(renderer: any): TrackItem | null {
+  const r = renderer?.musicResponsiveListItemRenderer;
+  if (!r) return null;
 
-  console.log(`Discovered ${moods.length} moods and ${genres.length} genres.`);
+  const videoId =
+    r.playlistItemData?.videoId ||
+    r.flexColumns?.[0]?.musicResponsiveListItemFlexColumnRenderer?.text
+      ?.runs?.[0]?.navigationEndpoint?.watchEndpoint?.videoId ||
+    r.navigationEndpoint?.watchEndpoint?.videoId;
 
-  // 1. Build and save index to data.json
-  const datasetIndex: DatasetIndex = {
+  if (!videoId) return null;
+
+  const title =
+    r.flexColumns?.[0]?.musicResponsiveListItemFlexColumnRenderer?.text?.runs?.[0]?.text?.trim() ||
+    "";
+
+  // Extract artist / author runs
+  const col1Runs: any[] =
+    r.flexColumns?.[1]?.musicResponsiveListItemFlexColumnRenderer?.text?.runs ||
+    [];
+
+  const artistRuns = col1Runs.filter(
+    (x: any) =>
+      x.navigationEndpoint?.browseEndpoint?.browseId?.startsWith("UC") ||
+      x.navigationEndpoint?.browseEndpoint
+        ?.browseEndpointContextSupportedConfigs
+        ?.browseEndpointContextMusicConfig?.pageType ===
+        "MUSIC_PAGE_TYPE_ARTIST",
+  );
+
+  const author =
+    artistRuns.length > 0
+      ? artistRuns.map((x: any) => x.text).join(", ")
+      : col1Runs[0]?.text?.trim() || "";
+
+  const authorId =
+    artistRuns[0]?.navigationEndpoint?.browseEndpoint?.browseId || null;
+
+  // Duration
+  const durationStr =
+    r.fixedColumns?.[0]?.musicResponsiveListItemFixedColumnRenderer?.text?.runs?.[0]?.text?.trim() ||
+    "";
+  const duration = parseDuration(durationStr);
+
+  // Thumbnail
+  const thumbs =
+    r.thumbnail?.musicThumbnailRenderer?.thumbnail?.thumbnails ||
+    r.thumbnailRenderer?.musicThumbnailRenderer?.thumbnail?.thumbnails;
+  const thumbUrl = thumbs?.[thumbs.length - 1]?.url || thumbs?.[0]?.url;
+  const thumbnailId = extractThumbnailId(thumbUrl) || videoId;
+
+  // Is Song boolean
+  const watchCfg =
+    r.flexColumns?.[0]?.musicResponsiveListItemFlexColumnRenderer?.text
+      ?.runs?.[0]?.navigationEndpoint?.watchEndpoint
+      ?.watchEndpointMusicSupportedConfigs?.watchEndpointMusicConfig;
+  const musicVideoType = watchCfg?.musicVideoType;
+  const isSong =
+    musicVideoType === "MUSIC_VIDEO_TYPE_ATV" ||
+    musicVideoType === "MUSIC_VIDEO_TYPE_OMV" ||
+    !musicVideoType?.includes("UGC");
+
+  return {
+    id: videoId,
+    title,
+    isSong,
+    duration,
+    durationStr,
+    thumbnailId,
+    author,
+    authorId,
+  };
+}
+
+/**
+ * Fetches tracks for a playlist, album, or mix using the Innertube Browse API.
+ */
+export async function fetchPlaylistTracks(
+  apiKey: string,
+  clientVersion: string,
+  playlistId: string,
+): Promise<TrackItem[]> {
+  const browseId = playlistId.startsWith("VL") ? playlistId : `VL${playlistId}`;
+  const browseUrl = `https://music.youtube.com/youtubei/v1/browse?key=${apiKey}&prettyPrint=false`;
+
+  const response = await fetch(browseUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "User-Agent": USER_AGENT,
+      Origin: "https://music.youtube.com",
+      Referer: "https://music.youtube.com/",
+    },
+    body: JSON.stringify({
+      context: {
+        client: {
+          clientName: "WEB_REMIX",
+          clientVersion,
+          hl: "en",
+          gl: "US",
+        },
+      },
+      browseId,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status} ${response.statusText}`);
+  }
+
+  const json = await response.json();
+  const shelf =
+    json?.contents?.twoColumnBrowseResultsRenderer?.secondaryContents
+      ?.sectionListRenderer?.contents?.[0]?.musicPlaylistShelfRenderer ||
+    json?.contents?.twoColumnBrowseResultsRenderer?.secondaryContents
+      ?.sectionListRenderer?.contents?.[0]?.musicShelfRenderer ||
+    json?.contents?.singleColumnBrowseResultsRenderer?.tabs?.[0]?.tabRenderer
+      ?.content?.sectionListRenderer?.contents?.[0]
+      ?.musicPlaylistShelfRenderer ||
+    json?.contents?.singleColumnBrowseResultsRenderer?.tabs?.[0]?.tabRenderer
+      ?.content?.sectionListRenderer?.contents?.[0]?.musicShelfRenderer;
+
+  const rawContents = shelf?.contents || [];
+  const tracks: TrackItem[] = [];
+
+  for (const item of rawContents) {
+    const track = extractTrackItem(item);
+    if (track) {
+      tracks.push(track);
+    }
+  }
+
+  return tracks;
+}
+
+/**
+ * Fetches playlist tracks with automatic retries on failure.
+ */
+export async function fetchPlaylistTracksWithRetry(
+  apiKey: string,
+  clientVersion: string,
+  playlistId: string,
+  retries = 2,
+): Promise<TrackItem[]> {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      return await fetchPlaylistTracks(apiKey, clientVersion, playlistId);
+    } catch (err: any) {
+      if (attempt === retries) {
+        console.warn(
+          `  [Warn] Failed to fetch playlist ${playlistId}: ${err.message}`,
+        );
+        return [];
+      }
+      await Bun.sleep(attempt * 800);
+    }
+  }
+  return [];
+}
+
+/**
+ * Builds and saves full_dataset.json containing the entire hierarchy:
+ * moods & genres -> category sections -> playlists -> tracks.
+ */
+export async function buildFullDataset(
+  apiKey: string,
+  clientVersion: string,
+  options: {
+    concurrency?: number;
+    delayBetweenBatchesMs?: number;
+    saveEveryN?: number;
+    limitPlaylists?: number;
+  } = {},
+): Promise<FullDataset> {
+  const concurrency = options.concurrency ?? 6;
+  const delayMs = options.delayBetweenBatchesMs ?? 100;
+  const saveEveryN = options.saveEveryN ?? 50;
+
+  // In-memory cache of playlistId -> TrackItem[]
+  const playlistCache = new Map<string, TrackItem[]>();
+
+  // 1. If full_dataset.json already exists, load existing tracks to resume / cache
+  const fullDatasetFile = Bun.file("full_dataset.json");
+  if (await fullDatasetFile.exists()) {
+    try {
+      const existing: FullDataset = await fullDatasetFile.json();
+      for (const group of ["moods", "genres"] as const) {
+        const categories = existing[group] || {};
+        for (const catKey of Object.keys(categories)) {
+          const sections = categories[catKey] || {};
+          for (const secKey of Object.keys(sections)) {
+            for (const item of sections[secKey] || []) {
+              if (
+                item.id &&
+                Array.isArray(item.tracks) &&
+                item.tracks.length > 0
+              ) {
+                playlistCache.set(item.id, item.tracks);
+              }
+            }
+          }
+        }
+      }
+      console.log(
+        `Loaded ${playlistCache.size} existing playlists from full_dataset.json cache.`,
+      );
+    } catch {
+      console.warn(
+        "Could not parse existing full_dataset.json, starting fresh cache.",
+      );
+    }
+  }
+
+  // 2. Read all mood and genre JSON files
+  const moodsDir = "moods";
+  const genresDir = "genres";
+
+  const moodFiles = readdirSync(moodsDir).filter((f) => f.endsWith(".json"));
+  const genreFiles = readdirSync(genresDir).filter((f) => f.endsWith(".json"));
+
+  const fullDataset: FullDataset = {
     moods: {},
     genres: {},
   };
 
-  for (const m of moods) {
-    datasetIndex.moods[m.slug] = m.id;
-  }
-  for (const g of genres) {
-    datasetIndex.genres[g.slug] = g.id;
-  }
+  // Collect all unique playlist IDs that need fetching
+  const uniquePlaylistIds = new Set<string>();
 
-  await Bun.write("data.json", JSON.stringify(datasetIndex, null, 2) + "\n");
-  console.log("Saved data.json successfully!");
-
-  // 2. Ensure directories exist
-  mkdirSync("moods", { recursive: true });
-  mkdirSync("genres", { recursive: true });
-
-  // 3. Scrape each mood
-  console.log("\n--- Scraping Moods ---");
-  for (let i = 0; i < moods.length; i++) {
-    const mood = moods[i];
-    const outPath = `moods/${mood.slug}.json`;
-    console.log(
-      `[${i + 1}/${moods.length}] Scraping mood "${mood.name}" (${mood.slug})...`,
+  for (const file of moodFiles) {
+    const slug = file.replace(/\.json$/, "");
+    const content: CategoryDetails = JSON.parse(
+      readFileSync(`${moodsDir}/${file}`, "utf-8"),
     );
-    try {
-      const catData = await fetchCategoryData(apiKey, clientVersion, mood.id);
-      const parsed = parseCategoryPayload(catData);
-      await Bun.write(outPath, JSON.stringify(parsed, null, 2) + "\n");
-      console.log(
-        `  -> Saved ${outPath} (${Object.keys(parsed).length} sections)`,
-      );
-    } catch (err: any) {
-      console.error(`  -> Failed to scrape mood ${mood.name}:`, err.message);
+    fullDataset.moods[slug] = content;
+    for (const section of Object.values(content)) {
+      for (const item of section) {
+        if (
+          item.id &&
+          (item.id.startsWith("RDCLAK") ||
+            item.id.startsWith("PL") ||
+            item.id.startsWith("OLAK") ||
+            item.id.startsWith("MPREb") ||
+            item.id.length > 15)
+        ) {
+          uniquePlaylistIds.add(item.id);
+        }
+      }
     }
-    await Bun.sleep(150);
   }
 
-  // 4. Scrape each genre
-  console.log("\n--- Scraping Genres ---");
-  for (let i = 0; i < genres.length; i++) {
-    const genre = genres[i];
-    const outPath = `genres/${genre.slug}.json`;
-    console.log(
-      `[${i + 1}/${genres.length}] Scraping genre "${genre.name}" (${genre.slug})...`,
+  for (const file of genreFiles) {
+    const slug = file.replace(/\.json$/, "");
+    const content: CategoryDetails = JSON.parse(
+      readFileSync(`${genresDir}/${file}`, "utf-8"),
     );
-    try {
-      const catData = await fetchCategoryData(apiKey, clientVersion, genre.id);
-      const parsed = parseCategoryPayload(catData);
-      await Bun.write(outPath, JSON.stringify(parsed, null, 2) + "\n");
-      console.log(
-        `  -> Saved ${outPath} (${Object.keys(parsed).length} sections)`,
-      );
-    } catch (err: any) {
-      console.error(`  -> Failed to scrape genre ${genre.name}:`, err.message);
+    fullDataset.genres[slug] = content;
+    for (const section of Object.values(content)) {
+      for (const item of section) {
+        if (
+          item.id &&
+          (item.id.startsWith("RDCLAK") ||
+            item.id.startsWith("PL") ||
+            item.id.startsWith("OLAK") ||
+            item.id.startsWith("MPREb") ||
+            item.id.length > 15)
+        ) {
+          uniquePlaylistIds.add(item.id);
+        }
+      }
     }
-    await Bun.sleep(150);
   }
 
-  console.log("\nAll moods and genres have been scraped successfully!");
+  const allIds = Array.from(uniquePlaylistIds);
+  let toFetch = allIds.filter((id) => !playlistCache.has(id));
+
+  if (options.limitPlaylists && options.limitPlaylists > 0) {
+    toFetch = toFetch.slice(0, options.limitPlaylists);
+  }
+
+  console.log(
+    `Found ${allIds.length} unique playlists across all moods and genres.`,
+  );
+  console.log(
+    `Already cached: ${playlistCache.size} | To fetch: ${toFetch.length}`,
+  );
+
+  // Helper function to attach cached tracks and write dataset
+  const saveCurrentProgress = async () => {
+    for (const group of ["moods", "genres"] as const) {
+      for (const catKey of Object.keys(fullDataset[group])) {
+        for (const secKey of Object.keys(fullDataset[group][catKey])) {
+          for (const item of fullDataset[group][catKey][secKey]) {
+            if (playlistCache.has(item.id)) {
+              item.tracks = playlistCache.get(item.id);
+            } else if (
+              !item.id.startsWith("RDCLAK") &&
+              !item.id.startsWith("PL") &&
+              !item.id.startsWith("OLAK") &&
+              item.id.length === 11
+            ) {
+              // Single track
+              item.tracks = [
+                {
+                  id: item.id,
+                  title: item.name,
+                  isSong: true,
+                  duration: 0,
+                  durationStr: "",
+                  thumbnailId: item.thumbnailId,
+                  author: "",
+                  authorId: null,
+                },
+              ];
+            } else if (!item.tracks) {
+              item.tracks = [];
+            }
+          }
+        }
+      }
+    }
+    await Bun.write(
+      "full_dataset.json",
+      JSON.stringify(fullDataset, null, 2) + "\n",
+    );
+  };
+
+  // 3. Fetch playlists in concurrent batches
+  let fetchedCount = 0;
+  for (let i = 0; i < toFetch.length; i += concurrency) {
+    const chunk = toFetch.slice(i, i + concurrency);
+    await Promise.all(
+      chunk.map(async (playlistId) => {
+        const tracks = await fetchPlaylistTracksWithRetry(
+          apiKey,
+          clientVersion,
+          playlistId,
+        );
+        playlistCache.set(playlistId, tracks);
+        fetchedCount++;
+      }),
+    );
+
+    if (delayMs > 0) {
+      await Bun.sleep(delayMs);
+    }
+
+    const currentTotal = playlistCache.size;
+    const percent = ((currentTotal / allIds.length) * 100).toFixed(1);
+    console.log(
+      `[Playlists Progress] ${currentTotal}/${allIds.length} (${percent}%) - Batch ${Math.floor(i / concurrency) + 1}/${Math.ceil(toFetch.length / concurrency)}`,
+    );
+
+    // Save periodically
+    if (fetchedCount > 0 && fetchedCount % saveEveryN === 0) {
+      await saveCurrentProgress();
+      console.log(`  -> Periodic progress saved to full_dataset.json`);
+    }
+  }
+
+  // Final save
+  await saveCurrentProgress();
+  console.log(`\nSuccessfully built and saved full_dataset.json!`);
+  return fullDataset;
+}
+
+/**
+ * Runs the full scrape:
+ * 1. Fetches index of moods and genres, saving to data.json.
+ * 2. Fetches and saves category details to ./moods/<slug>.json and ./genres/<slug>.json.
+ * 3. Fetches playlist tracks and builds nested full_dataset.json.
+ */
+export async function scrapeAll(
+  options: {
+    categoriesOnly?: boolean;
+    playlistsOnly?: boolean;
+    limitPlaylists?: number;
+  } = {},
+): Promise<void> {
+  console.log("Fetching moods and genres page...");
+  const html = await fetchMoodsAndGenresHtml();
+  const { apiKey, clientVersion } = extractInnertubeConfig(html);
+
+  if (!options.playlistsOnly) {
+    const browseData = extractBrowseData(html);
+    const { moods, genres } = extractCategories(browseData);
+
+    console.log(
+      `Discovered ${moods.length} moods and ${genres.length} genres.`,
+    );
+
+    // 1. Build and save index to data.json
+    const datasetIndex: DatasetIndex = {
+      moods: {},
+      genres: {},
+    };
+
+    for (const m of moods) {
+      datasetIndex.moods[m.slug] = m.id;
+    }
+    for (const g of genres) {
+      datasetIndex.genres[g.slug] = g.id;
+    }
+
+    await Bun.write("data.json", JSON.stringify(datasetIndex, null, 2) + "\n");
+    console.log("Saved data.json successfully!");
+
+    // 2. Ensure directories exist
+    mkdirSync("moods", { recursive: true });
+    mkdirSync("genres", { recursive: true });
+
+    // 3. Scrape each mood
+    console.log("\n--- Scraping Moods ---");
+    for (let i = 0; i < moods.length; i++) {
+      const mood = moods[i];
+      const outPath = `moods/${mood.slug}.json`;
+      console.log(
+        `[${i + 1}/${moods.length}] Scraping mood "${mood.name}" (${mood.slug})...`,
+      );
+      try {
+        const catData = await fetchCategoryData(apiKey, clientVersion, mood.id);
+        const parsed = parseCategoryPayload(catData);
+        await Bun.write(outPath, JSON.stringify(parsed, null, 2) + "\n");
+        console.log(
+          `  -> Saved ${outPath} (${Object.keys(parsed).length} sections)`,
+        );
+      } catch (err: any) {
+        console.error(`  -> Failed to scrape mood ${mood.name}:`, err.message);
+      }
+      await Bun.sleep(150);
+    }
+
+    // 4. Scrape each genre
+    console.log("\n--- Scraping Genres ---");
+    for (let i = 0; i < genres.length; i++) {
+      const genre = genres[i];
+      const outPath = `genres/${genre.slug}.json`;
+      console.log(
+        `[${i + 1}/${genres.length}] Scraping genre "${genre.name}" (${genre.slug})...`,
+      );
+      try {
+        const catData = await fetchCategoryData(
+          apiKey,
+          clientVersion,
+          genre.id,
+        );
+        const parsed = parseCategoryPayload(catData);
+        await Bun.write(outPath, JSON.stringify(parsed, null, 2) + "\n");
+        console.log(
+          `  -> Saved ${outPath} (${Object.keys(parsed).length} sections)`,
+        );
+      } catch (err: any) {
+        console.error(
+          `  -> Failed to scrape genre ${genre.name}:`,
+          err.message,
+        );
+      }
+      await Bun.sleep(150);
+    }
+  }
+
+  if (!options.categoriesOnly) {
+    console.log("\n--- Building Full Dataset with Playlist Tracks ---");
+    await buildFullDataset(apiKey, clientVersion, {
+      limitPlaylists: options.limitPlaylists,
+    });
+  }
+
+  console.log("\nAll scraping operations completed successfully!");
 }
 
 if (import.meta.main) {
+  const args = process.argv.slice(2);
+  const categoriesOnly = args.includes("--categories-only");
+  const playlistsOnly = args.includes("--playlists-only");
+
+  const limitArg = args.find((a) => a.startsWith("--limit="));
+  const limitPlaylists = limitArg
+    ? parseInt(limitArg.split("=")[1], 10)
+    : undefined;
+
   try {
-    await scrapeAll();
+    await scrapeAll({ categoriesOnly, playlistsOnly, limitPlaylists });
   } catch (error) {
     console.error("Fatal scraping error:", error);
     process.exit(1);
