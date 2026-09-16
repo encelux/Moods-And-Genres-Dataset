@@ -1,0 +1,618 @@
+{
+  "Spotlight": [
+    {
+      "id": "RDCLAK5uy_nlKphX00YtBNjlGZcmPifGNAPXUSjezNM",
+      "name": "Baarish aur Chill",
+      "thumbnailId": "G0ogc_lEnIhijraX3tlhlWoxMhZQBLhcR1N0cJ09kSdbi62iD4nzO6yhHF4B6BC6v-4BLzSMg-YP7-A"
+    },
+    {
+      "id": "RDCLAK5uy_lBa7h-v-su4TAsDNvyelrswt9YYYU7x4g",
+      "name": "Retro Baarish",
+      "thumbnailId": "etmiNn6sO6ZuJyt2YTkL86gjkH11aoRQMfRcFwT0aV9b7kBR176W6elSSZ76nJUL_eeaPid6kYvsN9o"
+    }
+  ],
+  "Featured playlists": [
+    {
+      "id": "RDCLAK5uy_lycab9oGCf-Wrf032tl6Lxn2W68QjdXls",
+      "name": "Chai, Baarish aur 90s",
+      "thumbnailId": "oMgTqRJDhK_gSTTGpWp4EUGxAO2DK43crZTLLHJSWk6g9K9yDFj__cB6ByWuBJWyuVEd2f-SvM8LP60"
+    },
+    {
+      "id": "RDCLAK5uy_n41V9iqmjro6caBDuDD1E4eWs5yTb5_OY",
+      "name": "Bollywood Lo-Fi",
+      "thumbnailId": "MAUu7Aq7JEEvHZ8mWYIVAtBV-ktRJTvvtgq6yoZoooxqPRuoWChYKk66JLbJgeqdSlzcIhOF0_gPntU"
+    },
+    {
+      "id": "RDCLAK5uy_lPzT2bIPNJ_6II2vlgcE_-Mw1fMTfPheA",
+      "name": "Romancing the Rains",
+      "thumbnailId": "a_YFxCSvWSb_Mb50jHZXHKx65sryMZRNfJObJUDhiyk5KmNY2q4Enq7EK9toBygGk1qo6iZAccSPIJgV"
+    },
+    {
+      "id": "RDCLAK5uy_nn8QzlS0fjfF5sTNSiwWc0f54Erdcr4vw",
+      "name": "Sukoon Ke Pal",
+      "thumbnailId": "hZq5NUknTDB-FcKGC5xPgRDyH3mHvZBmex7SBZXekY7TYDNKfRcW6KGeVfppvj51rhAwVZ0LUXhy8xyC"
+    },
+    {
+      "id": "RDCLAK5uy_lbfDqlFOiRJekoTwNgiES65gcham4ZelA",
+      "name": "Make Out Jams: Bollywood",
+      "thumbnailId": "fxU9cLDorki-iYoGPgCmn3RQ5gGqZ4W05Wle5TjAVro5L_2X967ITUoRHALlbpmaq-Vh5sBDZnPqXg"
+    },
+    {
+      "id": "RDCLAK5uy_lr9crIng62P8YJNuQBOnaEdxCcs8Wwlm0",
+      "name": "Indie Baarish",
+      "thumbnailId": "e0Rci0R0uySpxmx8-FPuQ_c5FCUiRs4RVWI0ituMVCMa2LIb87WUbpptQSh7X3wZZjO7xqwtdxvSrQ"
+    },
+    {
+      "id": "RDCLAK5uy_n6jK9GV8FBmdPDSDCmBlo6PA1QNklTAYM",
+      "name": "Uncut Indian Indie",
+      "thumbnailId": "ABdx1q-AEJspO5ONRVihbOSKUki6LhGoGMkpJ69ChzAAQonBD7_1pOyrJfEPZjhdH6eI77ty9ZP73hFH"
+    },
+    {
+      "id": "RDCLAK5uy_neKTBc_ZE3NpLt3oz_Hu9Ay1jjY5ydJrc",
+      "name": "Laid Back Indian Indie",
+      "thumbnailId": "z9D4wsUqTy0Qvbz71_kDNHVor-VJchsiaA8SYehP9QLT29LwQlrFbhqEM8vlufocn8cnklN6du9RWA"
+    },
+    {
+      "id": "RDCLAK5uy_n7HLenqdVfbaa7VFWPivc6G5cN3VvMsXE",
+      "name": "Singing in the Rain",
+      "thumbnailId": "ByoQH5g8GFzFI2J4192bm2Y5__u9tYBwM2ltGl7HH2P72VtFthM4T9gCe2gJyh6ckPT_pzu-khXkl3T4"
+    },
+    {
+      "id": "RDCLAK5uy_n-Mr_1ex_oAwKYFwgzcyYt1xFLVzVq2O8",
+      "name": "Tollywood Rain Songs",
+      "thumbnailId": "lddAUzCF4uLQkSQY7TjgzLSSe_ZkKsaIPVEPvpZtBtMhgnCv1hbGRUzeyzZ9IAfc0drFvYXukyhlRJEM"
+    },
+    {
+      "id": "RDCLAK5uy_mobUQoWWE7bCp6QlBYKVF3TPITZUhvTM8",
+      "name": "Tollywood Romance",
+      "thumbnailId": "XLvhZOWoRok6HVDCgCn2mm-pSm8Nf0HHBCKfhTfnkvmKOOl-VCRswkjCDhTo3Dvfq1IjVHHtCuiME0g"
+    },
+    {
+      "id": "RDCLAK5uy_mBzss6KO6IYWRAhU1Bg3kAjezXnhepDpc",
+      "name": "Kannada Melodies",
+      "thumbnailId": "K7iFh4GaYG2woDU1GptXJUQntvSJlJZoDfiXi6h8-QJ7Jmy9X-sAM3BWNZHliT5CfaZed0BwGpJiaTR3"
+    },
+    {
+      "id": "RDCLAK5uy_mI3ipvqXFHVvVcHahfwU3sXR_wyNac13g",
+      "name": "Marathi Romance",
+      "thumbnailId": "v6weKii7k4fgiCnBILDyI7gT2VhxA4DrkANxa2o44EOl2_swRk_QYwO2fxucQxQl5l4Cxk0WNSJJvyw"
+    },
+    {
+      "id": "RDCLAK5uy_mx40ZxMbLSLBs_b6gxkiZ4_RLGbjxCf6A",
+      "name": "Indie Punjabi",
+      "thumbnailId": "a2KQYvqQixVibbLTaW3l3CHg1xvN9M85fIj-RZZtRNjs48ihCeRihxU5uVYE2DB9sglBCQXrFrTkrEo"
+    },
+    {
+      "id": "RDCLAK5uy_mfF-aaay-hgq572V-CliiCdaoy-jWlrd0",
+      "name": "Punjabi Melodies",
+      "thumbnailId": "94mHnSxUb1ahi-CUIrWYMjTvrfPcMdGdWeWgk4c2EZ09e7lMM7D4SQzDp7o-SG7ETNucEz6MQrjjvzQ"
+    },
+    {
+      "id": "RDCLAK5uy_l12yumHi3tfuiMcL7dBEcZ82_3yBCjwuQ",
+      "name": "Windows Down Punjabi",
+      "thumbnailId": "8vaiNClHFQ5KWbwCtxbNH1Ef5QNLM55XNA5zIwVAyVoXP2PnMzUF-aq_ybrISlh97MALnURWAYqrwA"
+    }
+  ],
+  "Community playlists": [
+    {
+      "id": "PLxkJPGv3j2CUmKB1n_hdQ4ycWRFEaSOwU",
+      "name": "Lofi Mix",
+      "thumbnailId": "ixnuynClkGhAVrITTpeXtDxxwgBOp-MPtr-rixmqhK0nO7NOExrzRvp0FrEsHZsQCeim5-pYa5M"
+    },
+    {
+      "id": "PLSLrpDMNqFQHlKHt7wA4P9GkNXVyEjT52",
+      "name": "lofi bollywood",
+      "thumbnailId": "UaQ-DLCeuOHM0Kk-_vwobTwDGtBz4BhVgwcOImTaKxM6aB2-j-Sfk5semulNYjKd_bJSJBeIkOyc"
+    },
+    {
+      "id": "PLl1ku0t3j46zWhwkaU6_A5SE4NZ1SVdWG",
+      "name": "hindi lofi",
+      "thumbnailId": "I89-d0qDqGl_l3Z9jRDeNQrRrvlB4fFmC2kNGGKhD3ZBEkcSc06fCqH6RvZZMBI3-l7-XJFlEyhY"
+    },
+    {
+      "id": "PL8SyInlPVN-OjPizm9dO2MAgN6Xg3P9mL",
+      "name": "Lofi Vibe Hindi",
+      "thumbnailId": "J-KfSe0oKKvEhddNp_pbMCAMyr5dA6051_kHE9a5Yca5EEWHzwlFhxbcT5lZKqZNaCwFbFQCaDWs"
+    },
+    {
+      "id": "PLtVr6WezCgm6dcwBzR94-l2Yh3Uw9eekw",
+      "name": "Lofi",
+      "thumbnailId": "d77iG1wSQkZCvWgy2z79hwUzN1lgVDWTCxA-bssVhDnV20r4AphP1utmH2egm79mOuyMVqwsFA"
+    },
+    {
+      "id": "PL32fgrD4k8UwzuF8p-y9xPA3_W_23dqC3",
+      "name": "special",
+      "thumbnailId": "uQl7jL14NWx87o5rcQKg6s1U98xi-Iv54qqiL9OhshHCu8SBMn9qPFmp3d6geG6ywTUtCwd9Ng"
+    },
+    {
+      "id": "PLYZ4vHNrlX_JvbSAh1I4Sl8Mo0C-14VcU",
+      "name": "Hindi Slow",
+      "thumbnailId": "n53xiJyjjwZS8dHebvsJFyL8CSUJOi_kfT7CjzFAJ_Xw3xMjSn7MSEohQItJZqdLhSpgQaJ1CE4"
+    },
+    {
+      "id": "PLNJcMuVmuTloIlb3S8Z7agNvbBQJ4nBXT",
+      "name": "stay quiet love birds",
+      "thumbnailId": "ETJ2h8ZKvFKijNfnPT8HobTwL4fnBib1zHAB9NCROOtmRF5UasFdA-v3BgBl7ioCZCYM4sx0TzE"
+    },
+    {
+      "id": "PLsxgJ-UwkNG2IrKBBHrusLgh-7-45mYjM",
+      "name": "College Days",
+      "thumbnailId": "zDKZNvCmxI_gsRl5s3UjwyeLKdobreC_GkCdhlGQlV2pS1VrLeWBxkJz5rX0758kJyGEyNdj98k"
+    },
+    {
+      "id": "PLCtRse7cYYb6-7yHiaWwZJ6urke81CFxw",
+      "name": "indie",
+      "thumbnailId": "rsgpDIaS0eqFhMzFLZs2CnuuG8bLf5awD_CzzqVvEy9W6jh0lfkGTUBfRtVYqPHHkk5xKm8My2c"
+    },
+    {
+      "id": "PLARqE6ey6bfecl0WxwPtqjo1-ZyEU496y",
+      "name": "something",
+      "thumbnailId": "8EEfOgg3KebFz-aFf5JU5TYkSKWrNAux_K2pgiRmBXRplQ4o6hEiZzZn6w9XPQKLbFJZCjOdEp8"
+    },
+    {
+      "id": "PLOAG-I6eaW9ex3UMIpKUHpIZn-sA4dX3W",
+      "name": "Romance",
+      "thumbnailId": "J5QUJmE0RHsetV7v5pLsFDfjfwi4R0KmlylTRHoxtNAhgzw8o8x1GmEAUEfNDpvsXfMVbBY6TuY"
+    },
+    {
+      "id": "PLmzXO6GP0uuQPJ7CBeiMHnZq8_PJo46ln",
+      "name": "Kannada Drive Playlist",
+      "thumbnailId": "u8TTxsjvOqtvC5IKoc6F4ouIXKDdTy6DtNsQbaNYxr2UHVqMEUmgsliRzwYI1QX8lKmwT1XKi6U"
+    },
+    {
+      "id": "PLHlNsWx9SgPq7P7K3cfJvnaU8UzkpWkIQ",
+      "name": "Punjabi love",
+      "thumbnailId": "BbqSX56la2RfjeL_MtmwDXtD049hH3rMSTLu5XfgbUKTicDI6gtcoEaqbE9HrASGH3CFuBUOuYkI"
+    },
+    {
+      "id": "PLZtXfX2xSgA4tqDfX5CGFbKlI_C-zcmOg",
+      "name": "Rock 2000's",
+      "thumbnailId": "3990t-Q3edDoYLvwETT2yYsJcpRlPj8arb5EQukSMHUNm8i6Cxm_UalJCG6mEIARAkBOmKeRSp0"
+    },
+    {
+      "id": "PLdpJjVlksaybgYbaEXnNJBnSLxJLBxnEf",
+      "name": "Telugu Songs",
+      "thumbnailId": "w_juXAiyVYiCQW9cNLWIY3VbwmdR7pDsdG2wbJYz5lMRdRGWFfgcH60nxN_yJVvNptYQRkJPhVU"
+    },
+    {
+      "id": "PLsLllU0EReyvMNEYhqZR2OJrPwqJxoYi_",
+      "name": "90 Telugu",
+      "thumbnailId": "9zuXUjYgwWss2dnZ2ib5MwyvvAUpxNNhq6tfcWp4K4_sps-so856PvamQ6C5axM6EnLkZsrGwjR5"
+    },
+    {
+      "id": "PL3dOzkgbklOsO2w2Vwu_yAvi6DBHudgF2",
+      "name": "Punjabi light",
+      "thumbnailId": "o9HkAZGcTC1n1wyUPNfK7Cpi9IbRk5nXHYhffnkzjlkXW1PTWznc3jBp0eKJdLZ9mLYWq-AQO1GU"
+    },
+    {
+      "id": "PLZCx4b1LUMb7-yojmnHcA7KIjJ6p2sFvu",
+      "name": "मराठी सॉन्ग्स 🔥♥️",
+      "thumbnailId": "Gbf3p4se77h6Pq-bRhMHSE9ACfzpxUpUj-6M1h-Wuh0mH6sptl8uA-7MpRe8x5tZCeetqShNGsU"
+    },
+    {
+      "id": "PLK6zRO8CvjPmq3cg_FwBkcr4oEOPZK1hS",
+      "name": "Punjabi 23",
+      "thumbnailId": "lCyMP_vDPPJfYTlbyXwVKbCM4G2lOvxypLhIcrmCbJJrmaP8epCLPesu7zBUUEJCmr8puKFMMJ8"
+    },
+    {
+      "id": "PLZGuxlxS73zpkRuytCx7XcmzgMMxeoZib",
+      "name": "Lofi",
+      "thumbnailId": "4n1803fWKHNyOPmpJD8nYDJl1O47q4baf9RpX7S1C7Fp7WFz1ChFXkWVuF7nZ4z1oSFwHxhGLWA"
+    },
+    {
+      "id": "PL3Qjp-i2bKcj5hrCgEMEatLIyF5pzgw8V",
+      "name": "Hindi",
+      "thumbnailId": "ptDM0xyyUYp56pWdWEWV5rJ6E9syA1eFa0nMPsYqsfCcSe4o1qWjokqxCOB7Hl003N09sxo9u63Z"
+    },
+    {
+      "id": "PLwgLQT8FKPpBJUxZcwABk2f8jKSKjbgw6",
+      "name": "before sleep Hindi",
+      "thumbnailId": "n_sGo6imFMo3s0BKTBcM2cqUY9wrgltGYAX13SYV3XrH0QgvuRuUkCSgENMdWNGpoPhLCRqpHHA"
+    },
+    {
+      "id": "PL4KFaywJ6liTRr8y7R1mJa5yqjge5ctUj",
+      "name": "Indie Hindi",
+      "thumbnailId": "sXsMVzPOp-ui8zAEuKt8G-huPGHfGend0zxMyfji7fVBk30RfQ5b4G8sRyQIZG-K2TkjdiaLMg"
+    },
+    {
+      "id": "PL-zEnCyB_VCmYvWzPmXFjpd0ZYjQd5m4A",
+      "name": "Hindi Fav song",
+      "thumbnailId": "w7uWweGDTY6ANc9gK70lhbmXPjlV6jig-_sf2ABaY7Ei0wozU4lJv--F2wcuf40r5Z7mLFWweCc"
+    },
+    {
+      "id": "PLXhil__S369K2YVf3cX9vMlhy1K1ZN4bD",
+      "name": "Soothing",
+      "thumbnailId": "0JdvYdZXovgULeRGErzj_G4ZLc6kI1LYBM8bI4EQyWfyICYxPk6tO9E2-TpgNq78sLWx4RyIFNTY"
+    },
+    {
+      "id": "PLu-UYWlITwksEJOx82RgmlrKiFbveIT3s",
+      "name": "Bollywood",
+      "thumbnailId": "J3LuujFkSzf0a1AkRC31VmnmfEBFwjULPYj4PUTzV6taBn5O_DpUUrsTZm6hn9tKg3yePkrC_bHp"
+    },
+    {
+      "id": "PLe0ayhyOvzQ0ARPM6jEu_wWXsTnewVX5T",
+      "name": "90s",
+      "thumbnailId": "7UucrQyHQvZB2csB2txACASo52P8zDIusAQbU9dxiu16rX6odkDwoayVLl3E6Aad3SCIZzbKEu0"
+    },
+    {
+      "id": "PLJjMdNIFuQRiwG9pK_tjwZGs5aA881qgU",
+      "name": "All time best",
+      "thumbnailId": "Hk3lRtU-eu8yS0oxmlICPAtK2WyWH-aErShFfx_kt2hCbwg23etsooybTpJoiB4QQja1lhtw2RhK"
+    },
+    {
+      "id": "PLlKVU2BPsHQnC4bcAqQ1dfAtpjedj8gHS",
+      "name": "T20 songs",
+      "thumbnailId": "D4zmtXQUdGLiP504DIZRNM2uO5yhp6A7GqWPkmy7ItZA3oimXff0tOribqdt7L7k9dLyGsnsF9ih"
+    },
+    {
+      "id": "PLvc6Fv55UkJvwppm_0gBPGl_pEEf4rJ88",
+      "name": "Punjabi",
+      "thumbnailId": "v9u1xTvaHysR2V6McKwS3rskoY4e4OK4R5qpMrULNN1XMbi5CMseavSzuKGnBOEztAdiEpdMmA"
+    },
+    {
+      "id": "PL1EODNWkHrc8xIc-u3cvMIXGkAJSnjSUS",
+      "name": "Telugu chill",
+      "thumbnailId": "https://i.ytimg.com/pl_c/PL1EODNWkHrc8xIc-u3cvMIXGkAJSnjSUS/generated_thumbnail.jpg"
+    },
+    {
+      "id": "PLHtvfff66P9etfRMgRHodJpp2ceQrt1iQ",
+      "name": "50 principales rock",
+      "thumbnailId": "_c1LnqHThm82rRA6RvWoR9Lg_OzPcKfhBzyDwOI7oOC2yRb4zGBZiQkvlEFljzWJl20QmleYzA"
+    },
+    {
+      "id": "PL7__8xfGUl8OuX3h8W6PsQ3j24lYM9EkL",
+      "name": "Melody",
+      "thumbnailId": "At-KEEQ1ntGCtJtUo_VzVZFGRgS3YwXur850CzBevsXrAsybX9Mg3SzxWxFFzJlIo1AH38eJJVs"
+    },
+    {
+      "id": "PLV2l-LblTH7aa9d1tte5DdSF0tk4ATeOF",
+      "name": "Kannada Fav",
+      "thumbnailId": "Q1YwEEnzWyWSF4q2pdUrEAEB0Ad0HC4ZtUPTgEJvR9q9yWICG_wCEACY65_nrG2oUxcl2tRZTDA"
+    },
+    {
+      "id": "PLG2bXvNTCkJn6j0m1lgZSIuJ_bYtPKjEP",
+      "name": "Feel | Hindi",
+      "thumbnailId": "pnMzQcGozp7QZaOFb_Y9KOUc0AcZFxNaxiLuenBJgoZwu6QsTiE6HD9ofaUN_HCvsxpJxkp0SAc"
+    },
+    {
+      "id": "PLfvKeBhcNJz1Qs1rxp_MkjGSXYGPdc8hz",
+      "name": "Marathi Romantic Songs",
+      "thumbnailId": "TzfsxtrnhxL5t1mlN6zeE2u8UX-512UZun2TdMMFVv9yUSyGoPY47hX8Z_N7yKW7t-qcGUw7Y5A"
+    },
+    {
+      "id": "PLsXQHr_B7sD5O6Ug-tt1Ioqyr4NG1i0xs",
+      "name": "Mera wala playlist",
+      "thumbnailId": "LxkNQ7uXqbRaeWikofNk4KuUy4OgHjO_lbxqszGHaoi3vGsMc3FZqgWG7TIsBtaxRnz_u-WVo6oj"
+    },
+    {
+      "id": "PLZIiMwkaRI5n3FZiml6L1yej30CwFNvYG",
+      "name": "Underrated Indie songs",
+      "thumbnailId": "gtQbPrIWarIAEWsX_95_NHiyuoNZqc-U_e7vO_isy9HHuTh48-EVg8XMBIJc99rLahT8No4Rq0zx"
+    },
+    {
+      "id": "PL0wf24UJ42c8GYk653SfGLKYrntL2MIgF",
+      "name": "soft hindi",
+      "thumbnailId": "gtG-wAWCN7NKh6C220hu6DBVXgOqeiV1WbqGFMU7T70TTORgmnEOvA5q2VMjHCsIlKWkjJBHVw"
+    },
+    {
+      "id": "PLU5ZM_pvjOFyYPSunmx2WyRdxnwyZtuJV",
+      "name": "Lofi",
+      "thumbnailId": "xrBo80tqig_Z9PJaun0WBx6aS47fjweoauc4NWcjPSXuZFeGHKZD6YiFVV3tHJx_cfYYQVCuyVU"
+    },
+    {
+      "id": "PLbvKo5Nnc9J6gZmjLt6tQS03JELqsWXCE",
+      "name": "Hindi",
+      "thumbnailId": "6D6hWTlqn7cYd9041rIaogCGUBZ5ykWy6BXU7MSy86ofOtYV-ZHnSDfzpLcI2IUMrI07eqVlhf4"
+    },
+    {
+      "id": "PLLkqLxBzLzR2p1QQDPoEUidp2P3P_M0JG",
+      "name": "Punjabi",
+      "thumbnailId": "zHjSZAPF2HinwohIaXpL-NowsZ5Aj-0a3Izu4LS7HuLy9weq-1qKkYv-9eQj3deoMaUgOm_TMq4"
+    },
+    {
+      "id": "PLu5Fj1QBNkotfrpNaefi7MiL6ADTvpTW9",
+      "name": "sad songs",
+      "thumbnailId": "YVe902VmCfbnt3zcem8fg3iTeyknEWNodes4z1dlxZSQmvDkJHQc0T_2W19_P6YDLd2hjHu3qYk"
+    },
+    {
+      "id": "PL8zQz_PA5E9dYJP1798xDAcaq3aYK2_fX",
+      "name": "melody bollywood",
+      "thumbnailId": "FojGJzes_NoKz-ruA__6bgrN2_h6Ql1OCoItD4LrvA-S83twXlCxK_OzAyD6dQPzeMllcm5Yt3M"
+    },
+    {
+      "id": "PLSBC3onkqpUZ5Bpl4gmefcGAUm_WCspBu",
+      "name": "Nostalgia",
+      "thumbnailId": "r62humHbuiF4eRLnF1y9QJ1FCEkdQi_SJyQm97TBspu38Xp5s-E-kEGjpzqAF3ohHPE07kVSTbs"
+    },
+    {
+      "id": "PLakldXl1DpWWCxMAnfrA54hLK3d2OeFhJ",
+      "name": "Indie Hindi",
+      "thumbnailId": "fCtBuBlqpsU26g3qnhLfLDAiiTDU0AafWLRA-ZNNiqamuTcQo_1zaO0eQp_QBeAxzenWL4bLWA"
+    },
+    {
+      "id": "PLxcYe0fsveMN4i5DaT9bKLwO7wu_E7QVI",
+      "name": "when you left your personal diary in Mumbai",
+      "thumbnailId": "i0hGEjUfpk-Au0KnDvDLUpxgghCeUgkyEy2sI8mD84HJaWwK_S2TuX4-D8PYWBB2UlTZElxQHw"
+    },
+    {
+      "id": "PLwFhPgt0V_frt0ERORdnokC99ryXi7pQ0",
+      "name": "90s Bollywood favs",
+      "thumbnailId": "eswWXj8ILlogT2LN59JlCPd6O5zzN0fVPJltRacncbcoKJeekS76LANEw93wGnmGUCRhgUlDV5kl"
+    },
+    {
+      "id": "PLZSTuhDUKwLOkZ_NXh1DrRKub2mEeSXyc",
+      "name": "Low Tempo",
+      "thumbnailId": "HfEF9v404GDCCaUNeUbfq7yvCPuhAAoDaXC5qmzqWdIL6-soNcpeS2fo6sRv1ap9dYtceKsJLNfP"
+    },
+    {
+      "id": "PLjXqOdcs8ZZ86typ6spE9moMNg6WgwjXb",
+      "name": "best of Hindi",
+      "thumbnailId": "BYbLx5qgjCuNv_DCDw2vi9AgWQ1wethG6ZL5rTh3iQSQ4EFssyT3aATgLWASWprP7ui-Pyz_iQ"
+    },
+    {
+      "id": "PLlDIdaNX0wmvmBjvIvYIeXoS13SLR0RrG",
+      "name": "Madhu",
+      "thumbnailId": "HlBxdoKrzu3S3ZN9ufU8N4HarK9LseSkfXg1wruvdqNQJEBtFnvKvoAGyhp3U8kUW0flyPa3ig"
+    },
+    {
+      "id": "PLson4Fkd2uiUWH2a4K8RaRQnwP0FN3uJA",
+      "name": "mucho Corazón",
+      "thumbnailId": "LdURgXNcFUFC1Euv7EZme9Zh5vxxteWInzVAUWfOQxAG6IxubKNHlmRHrOeUpfsxXF5UlrYZPG8"
+    },
+    {
+      "id": "PLUtQiuN0ociXDLlTImDu83oUwS8raLUb6",
+      "name": "Travel themes",
+      "thumbnailId": "-5WuYF3TjCMPSpgbk1YoDcCCQT-3f6L1zzODsTOB3w94DPg4m1Nc_2Yaw3AzRXL6JL35aMza15o"
+    },
+    {
+      "id": "PLNVneE1-LDSXI-uSDl-iAsJs0HVgF8VC9",
+      "name": "Feel good",
+      "thumbnailId": "3sZ0bWv3rzzK5bpDpEb6_AyJiouSoFuZRIkPM3kGVUZC4vWwmNXrCxA_QObebx1UfVENT3jDTVk"
+    },
+    {
+      "id": "PLzwcGgomQ4MCo7wV7J9qdewtg-wkLphEH",
+      "name": "Punjabi favorite",
+      "thumbnailId": "2MHwpjm11beft90L_wqmWI3TMbS6WJfL8xEjHWWnhNa7Pohl7iO9n13Mi4YPq4G3Yqs7MjxIZfM"
+    },
+    {
+      "id": "PLH04C1dtKcS1u9aCIrBAR1mus_vL0ID-8",
+      "name": "Marathi Songs",
+      "thumbnailId": "fSORGeLoLICr7HckpYHeYG7OHzoEH1_0A7rthbERRKepsk4gib1HsIdbByPZ8JbDLhjuyX52pY4"
+    },
+    {
+      "id": "PL3DAX1X_E0A6dwN7pIIl68KDBeWHnYlUe",
+      "name": "Kannada romance",
+      "thumbnailId": "ZFfHlRFpsTX4n1D7xAw5gR_9-gNOs5pgtN5HyWJsuLHUYTrGhZtmT1LxDzD25Qo7zFQU1Jvdwos5"
+    },
+    {
+      "id": "PLz5UpfXm92mhmd1OU1_yWcAy49FKWp9hG",
+      "name": "Smooth Indies",
+      "thumbnailId": "https://i.ytimg.com/pl_c/PLz5UpfXm92mhmd1OU1_yWcAy49FKWp9hG/studio_square_thumbnail.jpg"
+    },
+    {
+      "id": "PLgFjKhRi1AKPZfjfkb4nbDXja5X6WBbJ6",
+      "name": "Soft Hindi",
+      "thumbnailId": "SrqLZzFxRAuZME9daj74YYjfEbEevvl6AYwaOWCGifDwVXCL9VggoCrliHHl0VXnVu9H0W4k-wI"
+    },
+    {
+      "id": "PLDcT0GUfQVc45-o7q-JdHCYlFQW14NI_f",
+      "name": "Indie Hindi",
+      "thumbnailId": "SVYgTeMT1nPfFaM_NdvGt0TnswjZtH81MOueew70ieS1skhn634GnszY8NTBe_uwOYL6tP7ROQ"
+    },
+    {
+      "id": "PLbtPWzjaFZ9h96Isy8QF9EOssOSMFIRJi",
+      "name": "Punjabi",
+      "thumbnailId": "Es_AN3jpPJK0Zsqwbcc_Caz8z1QzidKPbLMIKiWfCrTuknIwwRkrZMARXs-GB-oUaq9kfNlgpPDS"
+    },
+    {
+      "id": "PLZuh_ZArdZb0UriuLg9TJtLNrOmzeCBXZ",
+      "name": "Hindi 90s",
+      "thumbnailId": "233gscv-PJJ6aXRS4aHGOUP5K70OasGjVcS0wmm1dEsN3Glt_crXViYLryfNQiHkwyggyyHjKmV_"
+    },
+    {
+      "id": "PLxlqAYVTkicpZ2fcwNbBFmvdrOeleSwCr",
+      "name": "90s Songs",
+      "thumbnailId": "onGDxq6K_72iols9-xgekV57KyU6pOi8idvl-gI21usblJXyVJExo5Rt8MEcHDLRhSHYAiRgH5Q"
+    },
+    {
+      "id": "PLXxFN8eOT9A5wcGEzLTPdYy5MyXmLHYc6",
+      "name": "Best hindi",
+      "thumbnailId": "kVNSlj6AQliFajR9sLHd5PP2aFBfFRo-3xwuAhTNwYiK96kFd_4oAEk8U3zrPZaoivqb_lzxFCI"
+    },
+    {
+      "id": "PLERd1tkN0SDdFsrKwm7IzSScgCusbxzf5",
+      "name": "90's playlist",
+      "thumbnailId": "WgVnmNSWtiiP_PnMP6rr2h4K55z8_SYvL1JxTBdH9CfozOrsGA-DCZl-DmI48r4dkSaKFGOUpIPq"
+    },
+    {
+      "id": "PLgdNwiDQxBxe_SSK_JyGXpa6Bee96ISR7",
+      "name": "Hindi 80s | 90s",
+      "thumbnailId": "Lw-xiBP4mHRqVXf_k0MI2J5-RWFnSQguTsIAQgU0tK8n3srhfsN3_upWuDbcuZUDgMbq6fNVir0"
+    },
+    {
+      "id": "PLGM-kX9vyCYtA8KoSUB3OwWzfNLifhb4n",
+      "name": "Hindi Nostalgic",
+      "thumbnailId": "7HTFlam-Z_oShb21F82bb0KRNOCQ_C-dAEcoZQlbAxwmZVlJ5I4tofUYKzfRU52UTGTL4sSTs109"
+    },
+    {
+      "id": "PL-le1WbHk8-IgPbk_xeFflDiW5N6bA5JI",
+      "name": "Malayalam",
+      "thumbnailId": "kCOR-GjH2i9GPrx_iedsCeZpB0hILGNwnT2lnLaxXtI-aSelOYJSPjorVF_9B-Dy_tnL9UryV-Y"
+    },
+    {
+      "id": "PLp6aIQL3JCSDOnx4H5KlZQ1AztvyqPTHM",
+      "name": "90's songs",
+      "thumbnailId": "voFIauq754UaEJa31ogXAWnJ0KHkusfVvN66Rxzk_dqgFeB1NE-tBPRueLuXHOkOuwlM5S5BjIiV"
+    },
+    {
+      "id": "PLy0HY3sOpPUJGlndVZ0EMg1UedGPbGsSv",
+      "name": "Mind uplifting tracks",
+      "thumbnailId": "bMcpxed81iQIADeqvI_IxExQ3aLhBtqJDd8K8QIQsKZ3Rhv7eKUetKkVfl24DL7FfI-dbUjIyZTI"
+    },
+    {
+      "id": "PL7MrnFS9SA5WhmPKFUrGUzwRN8i2uJw1t",
+      "name": "Hindi",
+      "thumbnailId": "2TgieCeGIJJqopdfE53M14vGT3Kz7tWKTlRmS8sJz05RJRo5H23Srm3pNegkUEr2uILdVUdl3Io"
+    },
+    {
+      "id": "PL5Q5wPK1UKZp2hkcu99QPMV6jlOYVIegK",
+      "name": "Telugu",
+      "thumbnailId": "Pws-VnPCJYXnMLGOwIxz-OCPgI9dJryGdsrgmFsKZVSu5VuHKlQb2DFezxNlGLjogEyurUowh7w"
+    },
+    {
+      "id": "PLPV0Z_SXWw7nN5fOX3Vn23VzpQoPD29dM",
+      "name": "Rock",
+      "thumbnailId": "https://i.ytimg.com/pl_c/PLPV0Z_SXWw7nN5fOX3Vn23VzpQoPD29dM/generated_thumbnail.jpg"
+    },
+    {
+      "id": "PLSdLohdyV7nSbqJOYRevBLYQWN4zg-bDl",
+      "name": "My Punjabi",
+      "thumbnailId": "q2bb3L31hWDDBI73cDYHhadWpeZLJrHE9fCvEvbh_FUuY5HzaUcdzxFrseeZjnJeeMytygE69w"
+    },
+    {
+      "id": "PLq3eImyefG8tHaVrgVs9gz6YW-IHcXk-8",
+      "name": "Love and Romantic songs",
+      "thumbnailId": "vt9ljXS6aUu6yupwSyv7e3t1WiM8rtDDEJHxXoZgO-8x7bymwgRe-4Sagi_byZLj5rmta2kwFGYk"
+    },
+    {
+      "id": "PLauyUIlTOZ37f_jkRp4F3KL_KxVpT5zKY",
+      "name": "Kannada",
+      "thumbnailId": "pLY8u0ULKQHuCluHa2x1a76SeWumkQpIPn7pGY3DbXTwvUm0-BKA9-jQx9cp95QxOEABfHp_Jn4"
+    },
+    {
+      "id": "PLRRVMLVHVx_RywlWyYv_lhHKqodHlZCVB",
+      "name": "punjabi love",
+      "thumbnailId": "PpSt4oKJLyt2LOWec16DjYNnjo-FrKdrtyUFOIUKS5t3Rrm8TNU7bMqfbquz9BaI9lSdORBiPL0S"
+    },
+    {
+      "id": "PLh2y-P1laSUwv_pDpdIBq5pTkQflP17Lc",
+      "name": "Marathi 2022",
+      "thumbnailId": "OP1CAdSZwlQsThtfSolXZzexhR1YRVxaDbLnIHNwP-u-hQ3_zyqwXhXAbrRJuc4BKVjUmtoAwVM"
+    },
+    {
+      "id": "PLhnY6obgZPORruxIGOBMKwluUGsrRFcSF",
+      "name": "drive with k",
+      "thumbnailId": "_hcJ66xQotjI-T6STq045rFp8P9Yy-1dlA0KYFHqZZd7HWwkeqr8tQuB_9Ec144X7wYOEkSO58E"
+    },
+    {
+      "id": "PLtUoqU5RO-fS81FNS0_Gxjc_8cusdpyv5",
+      "name": "Travel",
+      "thumbnailId": "M3UswzsCD_vC87NafqGOxMCc4sa8d4qL0VfJFxGa9BmrFGTLRnlYbiTxdq1PG_9l0AUsJ_iMMLNm"
+    },
+    {
+      "id": "PLFqpagD80Z7PCvG5mgEWK2_JUrAhPWOdv",
+      "name": "feeling good indie music",
+      "thumbnailId": "7xKMDFM6u__kRFw8Bmb0d6IH9nd9Kuaye6PSHmX7Mg5A2zZQgCx-zlwBbjLjGkO77RL3T0Ym1F0"
+    },
+    {
+      "id": "PLDVdyQvAGKhHceA_-gjOUnACjLsKGYRqb",
+      "name": "Love Bolly",
+      "thumbnailId": "4LufJcYGw8i1h4jvQyukaNfszAKvoWUC461Aa24vKI14OTXCVhRnG-cgIdIeOYb6H5l4h_j0u_4"
+    },
+    {
+      "id": "PL0_426IT8VaOoMSLgl0ITNxAkGZlZOegz",
+      "name": "Hindi",
+      "thumbnailId": "DS1Q0kVCIbK-ym58G5UlXkPadpxzHkdQH13_GAcnf5urxQAHcUPh6SaQl4ti4VX7bbWLcth3d-Y"
+    },
+    {
+      "id": "PLqobVpvELjjNFLgrfGQ6jipkK1k70Gv3K",
+      "name": "Indian songs",
+      "thumbnailId": "aXQX3Df-vkBGaefcbisCQyPSIlFIXOzgmaQJmH8iSJqGXXcgeI3N92nwri6UnVwPV5rL1gWy1kg"
+    },
+    {
+      "id": "PLKGwbjlZ2x40TiUzxt6qlyAgOk7mfBlCd",
+      "name": "vocal songs",
+      "thumbnailId": "N4m5E8ryWe9KD7vtt4yOlrAd3u8SLKdmZja5B9_WSMztJiy5cCsbpC3JqolkW4S2sqvXLiWKqVod"
+    },
+    {
+      "id": "PLPlgi1XFgWKzBnBVdXHLZtEq95hF9uOWA",
+      "name": "Bolly",
+      "thumbnailId": "QY-62PEHhvYXBwt67mWu_YxBvz9csS4gS_WNmAoPsBwdkxYQHPMV5fanrnhy3aw7DrPU3WjBiA"
+    },
+    {
+      "id": "PL7VfIz4QgJJu78gQetANDSA_kPMxo10Hd",
+      "name": "new songs",
+      "thumbnailId": "FWr0IIYNJ_FcNyaBerIcd7_GVdHdCUVVGJtZOfPd8fy_Y0cSvIogy2PM9Rv1dNncHQ8teUAYeHo"
+    },
+    {
+      "id": "PL-R9gHuyBS0oJr7w0s_KyD6olbKAG5iml",
+      "name": "Vijay",
+      "thumbnailId": "0hm-QdHIAyiSz7ZKaC0L4eU-NMcd4fx3mtvbRcKvMmpg7GGb6l82CQmuZe--6aJrNQehzYSG-24"
+    },
+    {
+      "id": "PLXYOnk58op04c1H2rXqU_jDz3X6MpoOXP",
+      "name": "rock español alternativo",
+      "thumbnailId": "AFmT5VPM6NCtrFe9RgOOisHp8ghz9P-wexWGjvlMKNXQ60bR-yMHa4fFBzal1ecVYlJt-8WV1iI"
+    },
+    {
+      "id": "PL32Jq1Qs9Is1RwqnWRS-5BlpMyBEBAyiY",
+      "name": "Español rock",
+      "thumbnailId": "EBDAag9OkGI0AYoQb_6c1V5LKME6JVAONL7YxNAXpHDAUKIsAlcP41HE1Ng7kQjDBAqVU5Ebz0o"
+    },
+    {
+      "id": "PLRSlo-_tD49ydZ2Eq7BqJPZmeolbnos4L",
+      "name": "My Favourite Songs",
+      "thumbnailId": "YN77eYCzDLS5LV2fd0Jr9ivfxrUZDJ3jo7vql4mt7km9c8nL4P2uUwkBu4hTYUo3BGsFHj28Rg"
+    },
+    {
+      "id": "PLHHPw7bNJiGAha7ZquON236W0VfnZ2UXh",
+      "name": "melodies of music",
+      "thumbnailId": "DSGkKIn22RirRp4lAlv0Cq4yksobFRcwxd6XC9mYFehoSnB9w415nSCTwsmwILeA00hgqdPu2t1O"
+    },
+    {
+      "id": "PLIrgqQFYr1j_uifFm5iHndrk5wsYtKddk",
+      "name": "Slow Hindi",
+      "thumbnailId": "mPAGkQr6Y1HUdfStfgx1oaVf7ajJnbhL3Pt84c6cS_K21g_RG33s0ncSMmydwUpj95qSu-j_yA"
+    },
+    {
+      "id": "PLliRcQWdfpw1bY7pcw1UVF5MlAJwyT7_w",
+      "name": "Melody",
+      "thumbnailId": "FMZVDsbS4kuermV75UCBBLz535gAqoJHSYExDjfdgF55Ov3PUoiQOZKRIjZoyV4XNu2v7knW6A"
+    },
+    {
+      "id": "PL2ht38Pwi_1s5SvDJfHJ3J1oRZXEsWc3U",
+      "name": "Emocional",
+      "thumbnailId": "FUChl9xXU6E0BjPsRy97lSfkBB4OV2kNL8ay1rtaq2-JhnXGB6cpweR6xuBb2QTxguDIV7GYfCs"
+    },
+    {
+      "id": "PLgDXqCkIpCckY4BU06HOoo7f4oz6-CBiz",
+      "name": "Earphone mix",
+      "thumbnailId": "Ki9_hbA__rlO19HBVvhCbMUnR9RIVTJnfHUtRUAIPLc8CrENieWOVPU-HI5cTbJ6XQXZIQV8Ew"
+    },
+    {
+      "id": "PLyv70_-K7cMNKC1ylU0pNm3juhXgjmk2K",
+      "name": "Marathi Love songs",
+      "thumbnailId": "dCeCtps2DL5bK4qKwpLTHq1CuCeD5H9Oeo5W_Q2MCbPVefxHh2CUXA3rNRFoDtGpFGQ1Xjo1asM"
+    },
+    {
+      "id": "PLGmzorWeTGs6ddlnteVVAk_Aej-_r7dBa",
+      "name": "Punjabi love",
+      "thumbnailId": "614rVrW6HUnK31HBC942NPmxeyn2i89Ut5W0Cm4WImBAYT--211-iacfkBTXHnF6HNWqbbdAiqo"
+    },
+    {
+      "id": "PLStPvxNj3wsUVb1PvhmUXOX8QXCxo200N",
+      "name": "Kannada Romance songs",
+      "thumbnailId": "gUTlGXPMZIKmuJa9_y_I2bk1Z8igKBDEyNfP9wFqFYSN0jLcdyHJT7euWNPCrOHqTEm2Q3UsnhY"
+    },
+    {
+      "id": "PLCDFHQQqbIk-Q7drVvcyqzKFWgSLyWGLM",
+      "name": "Telugu Melodious songs",
+      "thumbnailId": "4VhE_LMbnGyPWyb_D39WHB7XiN52x2v55EStpChN-nPXmz-MG9QXZyVjArgWdxnG7LIOYFKTBw"
+    },
+    {
+      "id": "PLUMI1mLVHCQCzLX0Xtr3bYvrRlL32ia67",
+      "name": "Español",
+      "thumbnailId": "KqI1cwNk0F1WlKs1vCwpntXPFPfSqxzbFDqv8blzRbdqIoQpmuv132CWLY-40VOI0OuORXJvuiA"
+    },
+    {
+      "id": "PLOYhsgGoLLkXg8DrHYRgi4acwfEwtU2Br",
+      "name": "retro telugu",
+      "thumbnailId": "q53lmmkhNvTrvP1PbZuVjkmdsj73tZRk4AbkyQkBdcJ3xM4RKwesxjO6VHUqlIF1CoI73dUNoKo"
+    },
+    {
+      "id": "PL7HyL0U1QxwCS22cnlFJTfFpVMs4RTFt-",
+      "name": "Feel good",
+      "thumbnailId": "dlLallqj5yasGD0ebI3ZY46xNh7lLcZrwXiH9rpIMSgd0YRH2_nAHJLqt7xNJFu-Zc2rHeXLkdM"
+    }
+  ]
+}

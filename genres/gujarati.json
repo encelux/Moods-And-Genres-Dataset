@@ -1,0 +1,697 @@
+{
+  "Songs": [
+    {
+      "id": "dG3a81ZE-x8",
+      "name": "Manorath Jeev (From \"Laalo\")",
+      "thumbnailId": "MlOe5fnYeBLb12zb8XEBozl6a2fQCu6sn8ksWLY50-B_6pNHXt2ybCeF4sO1_tdYPB1jYk5nrlO8snqd"
+    },
+    {
+      "id": "13QEPys50Y4",
+      "name": "Mann Mohan",
+      "thumbnailId": "gB2bTkowVUEeY9rGbz6RdcL5g3wUnkiBBhsOXXZY3HNstmu59gHE94Ql8LzONiwaPFQZC467u1GEzZ54"
+    },
+    {
+      "id": "hzd60tEAadk",
+      "name": "Gori Radha Ne Kado Kaan",
+      "thumbnailId": "ij9C31affAGGdvEORSa-WAsyl3W00uXIUCn2KKoW4gjLso_0jzzMo0cja9J9ICeKIyziCD3pDCwbjJ-T"
+    },
+    {
+      "id": "73qVLY_ykTc",
+      "name": "Gori Tame Manda Lidha Mohi Raj",
+      "thumbnailId": "bv71pTx3pVIT2L4aTypVGGbQ4SvPqGQ9Ag7gTGxmWXf_Ml72jw6se2W3zc1x93E9MBsJrCbmwE2W5_Bf2A"
+    },
+    {
+      "id": "p8KmNiOXIKM",
+      "name": "Vhalam Aavo Ne",
+      "thumbnailId": "QLoiGFk90ESslQsfeYxki8ZJCseiTf_uqDLBaAqFG1WaLCAIgVtEPD91dFKeu29NgvSaW8XooNQP79hs"
+    },
+    {
+      "id": "WRgfRWcHAaQ",
+      "name": "Mane Malje (From \"Fakt Purusho Maate\")",
+      "thumbnailId": "qPT6B5J_H1sF6YmVlx30Vdi952xV4evOxTP4ff3gdqIiVGzkSvLM475r0XZLF540hnH9YlVpMkI9_sMF"
+    },
+    {
+      "id": "V10bI_AvPH0",
+      "name": "Madhro Darudo Official Song (From \"Hahacar\")",
+      "thumbnailId": "KtKgtcLRYJ3ngS0fzeuR9LSl2V-phv6e0gHIdtf-tzzb4mWqrnVCnvU0_ZxVv-IjaGEeJ9xtG2j7yJs"
+    },
+    {
+      "id": "an1NUNGo0Ps",
+      "name": "Kaan Tari Re",
+      "thumbnailId": "gB2bTkowVUEeY9rGbz6RdcL5g3wUnkiBBhsOXXZY3HNstmu59gHE94Ql8LzONiwaPFQZC467u1GEzZ54"
+    },
+    {
+      "id": "A2F5BhgzhtY",
+      "name": "Sona Rupana Paraniyama",
+      "thumbnailId": "UIhkseb49zwpz4baA5u-CSINdQ1uXVV4qSmi_ZxwhqR1oGVSWGTC2zcetPWrCprdwQ-8jkKs3FL7JlN3ug"
+    },
+    {
+      "id": "5wsAIGvVCeY",
+      "name": "To Pain Nebi Mu",
+      "thumbnailId": "fIvizLozAADgaE0c3J6f8JTdmknWfFdyjYqCwGevrBaWo9mG8VOulvb27tNoPHqxYHKpegh608QGMRbj"
+    },
+    {
+      "id": "AReZuwi4C3w",
+      "name": "Vaagyo Re Dhol",
+      "thumbnailId": "guCK0Rt_PtPifTsIcASGrmnThzkRJudB8vKHrnxjhHx-Bi-mbh4Z7_Ea49tA7TUVRegST7a4BriXPEdB"
+    },
+    {
+      "id": "mIvDndSTOfY",
+      "name": "Jina Jina Moraliya",
+      "thumbnailId": "bGs8tbTnQ57pZ5Vm6NCPh78VhuiJE5Ycd3BMhvdtbzi7xiSWfTNx_-3cGuJq1zhLzg3eckBfv6k-3l2y"
+    },
+    {
+      "id": "i7N5WimpFwM",
+      "name": "Ram Lilu Pidu Ponjaru Ghadavo",
+      "thumbnailId": "2ZDMhN2xXdPDnFwYBpJBI3jmpgmynfqZx7eJZM2Nn7EdzJnIKkFncYUf7ec1D0fAHAlwJXSlrqWzfEf2"
+    },
+    {
+      "id": "1VbTLIv7ZQ0",
+      "name": "Luv Ni Love Storys",
+      "thumbnailId": "L2KuMsrQNXFco8GXyyUxRv4glgMZGaHIaoK1d63M2ic52DxXvEE-DoxCaIt4wpDDxZR0lo_z1JvzChY"
+    },
+    {
+      "id": "wvZMoKpTH30",
+      "name": "Popat Bole (from Chaniya Toli)",
+      "thumbnailId": "Rz3y2jpn9Ek4odHs70d3nyv5oFISSxA04Lg0fdAdtz_4tpBrXKrMeR2iNyH6QxaSSii-CLyrg_kOoQuj"
+    },
+    {
+      "id": "DZOrzeW13d0",
+      "name": "Saiba Mane Nindaradi",
+      "thumbnailId": "bGs8tbTnQ57pZ5Vm6NCPh78VhuiJE5Ycd3BMhvdtbzi7xiSWfTNx_-3cGuJq1zhLzg3eckBfv6k-3l2y"
+    },
+    {
+      "id": "I0TpXuJKloc",
+      "name": "Tu Maro Dariyo (From Samandar)",
+      "thumbnailId": "YjRH5DNv0UdyAXIG1Aa1a0ixcnUrrQG8-9jistWVUAXeEMQUaCCXxwiaz8sNB-tmb74e5a8vB02lVpps"
+    },
+    {
+      "id": "T66Bg53Dm2o",
+      "name": "Dharyu To Dhani Nu Thay (From ''State of Rama'')",
+      "thumbnailId": "YoMUubpMSFkq9cxE-ySJmXLze8nv9CpLy0smW6GjegvDG8qegHZnuKRHZukjnuOhepBPn72RjqPB1L8fGQ"
+    },
+    {
+      "id": "86dQe8PCbgA",
+      "name": "Prem Gori Taro Kem Kari Bhulay",
+      "thumbnailId": "EOTZQjmLLjmSH6afaA46T_n9TidXl2jRxacKSuU647Sdovzybcd7A6iXkyKPSlZ-kBDXtB2iJrYxqQAq3w"
+    },
+    {
+      "id": "EC4lexrR5YQ",
+      "name": "Krishna Theme Song (From Laalo)",
+      "thumbnailId": "crFwCAZ5b1U9yNbhBomFaq91EfL2--jehnIfJ4svZl-fXb2-gm01KN049cnAPsJeNvXpMklXE69EELLn"
+    },
+    {
+      "id": "ttlf73rbaPI",
+      "name": "Radha Chudlo Perje Mara Naam No",
+      "thumbnailId": "ixKC2ZL2D6K_GEO_NW9QxbAKukix-A0nX8H4r_6sztIwX8Ug5IabO1UuXXJ_8G-X8WZLBkSIBRBRN3d2"
+    },
+    {
+      "id": "N131r_dwHpM",
+      "name": "Tahuke Sajan Sambhare",
+      "thumbnailId": "c2Yy5_1eicKiUX_GzI7Q4KQdhqXPO58ppl7FfX3htZbEwYZz5nYrsdhKyFbBqxLqaJ1pzlxZVAbQYZs"
+    },
+    {
+      "id": "KaVTAkro8vE",
+      "name": "Preet Janmo Janamni Bhulashe Nahi",
+      "thumbnailId": "ak98dEX9Q-LNajzEEd9E9O4EdB9fTyCD_h2YwOswdjbc308PbcUxKpX6Kr2DVRFpbDd2s8CzIRZnXnY"
+    },
+    {
+      "id": "Ygi6LRowrws",
+      "name": "He Betho Joban Ni Dal",
+      "thumbnailId": "nSFjjLGCEOkSZQHrayU7mjhWr0Sk4YY-PgC6sBwLsOGg1JAcDDaZGRolm3Nw2_VQERKef7j4vo3smIbcRA"
+    },
+    {
+      "id": "pxjG1UggnFE",
+      "name": "Pa Pa Pagli",
+      "thumbnailId": "X8hSv1jh4VkGXvn5QeUVuJzMaYZFk7HIzL6SRmNUAEAQuP8aSDf_i_g9KjFjdE0NwvYNk0PnAmVsPk7o"
+    },
+    {
+      "id": "8pBA3G1_gaQ",
+      "name": "TASVEER TARI DIL MA (From \"Sorry Sajna\")",
+      "thumbnailId": "Lu9BONjJrwkmURqB2goGhaHicEO8MvpIdEpqZc2yTPknSWIC8BS6i8J90IP7_LhMpl1goILbKHNljmg"
+    },
+    {
+      "id": "3LELDjbvujk",
+      "name": "Mangi Evi Mann Ne Rani",
+      "thumbnailId": "Od2sgkKNP0mRZE39ekjRAruPbyrl9dZ-cYPtdwkzRvHebz2m_qrpCo6gRKagQuW-EKsOl8SqlBUKqL-x"
+    },
+    {
+      "id": "DJsWJG_Jn7o",
+      "name": "Koyaladi Jobaniyaani",
+      "thumbnailId": "bGs8tbTnQ57pZ5Vm6NCPh78VhuiJE5Ycd3BMhvdtbzi7xiSWfTNx_-3cGuJq1zhLzg3eckBfv6k-3l2y"
+    },
+    {
+      "id": "1ScCuR_wdDw",
+      "name": "Khamma",
+      "thumbnailId": "XoRaowBO0tJbfIsIF4Evz8DWNOnK87FyK82umYcKPhAYYRZivD4pS-p0dORUbsq50E-wQJDr7oEZmOnKCA"
+    },
+    {
+      "id": "ULXel4l1R-g",
+      "name": "Bhaiband Mara Aaya Aatham Na Daada (From \"Bhai Ni Beni Ladki\")",
+      "thumbnailId": "5oRPHEl9fkSeGS7RZwAERMQnc0NsLj7y5ENXJB0nTb_Ra_J1TP0sG2NjCez9IK52Y1Z3iGGu5_T4jnSx"
+    },
+    {
+      "id": "gFXKFu07iuk",
+      "name": "Ek Vaar Mara Malak Ma Aavjo",
+      "thumbnailId": "ACHTFfEte71cUjz-WGpGyUmrqV9v3lpHjcscKcS6U3R_nSC-AYLHl8ltd9-Ru7Ebt10AlB85NAvlzVV98A"
+    },
+    {
+      "id": "yTHjJPpyzQs",
+      "name": "Dhak Dhak Dhadke Dil (From \"Bhola No Bhagwan\")",
+      "thumbnailId": "Bw7ig_Un9TVZMBrdMgKCkVkH_rrrZMTt0oT0ykGR43Q4pGOHPZvwZQbsSDHWSd9DVsYGy2Ja-wD5L0NHFQ"
+    },
+    {
+      "id": "uN95gB66uws",
+      "name": "Lejo Rasiya Re Rumal (Happy) (Navrang Chundadi / Soundtrack Version)",
+      "thumbnailId": "aMDfNfaaNFDnIzQUcThGdt6XgdgzodInNW87Yg31nCoZiAmcJalExCfi7qMPAw6_KihCiflOjozHESE"
+    },
+    {
+      "id": "Tcm8-I5eJaw",
+      "name": "O Saibaji O Saibaji",
+      "thumbnailId": "nSFjjLGCEOkSZQHrayU7mjhWr0Sk4YY-PgC6sBwLsOGg1JAcDDaZGRolm3Nw2_VQERKef7j4vo3smIbcRA"
+    },
+    {
+      "id": "_eNIMpD6_Oc",
+      "name": "Chaand Ne Kaho",
+      "thumbnailId": "X8hSv1jh4VkGXvn5QeUVuJzMaYZFk7HIzL6SRmNUAEAQuP8aSDf_i_g9KjFjdE0NwvYNk0PnAmVsPk7o"
+    },
+    {
+      "id": "DsGnxrxvuKM",
+      "name": "Ja Gorande Ja",
+      "thumbnailId": "Od2sgkKNP0mRZE39ekjRAruPbyrl9dZ-cYPtdwkzRvHebz2m_qrpCo6gRKagQuW-EKsOl8SqlBUKqL-x"
+    },
+    {
+      "id": "2XUwa257NQg",
+      "name": "Matali Futi Gayi",
+      "thumbnailId": "aHay5mXL3STSBIvp3xpmZMKpKrnMFThDcV-X5pCfV0nAkAzQr2ir8bZeXvmk21N0b60a2_bE3V45f_DK"
+    },
+    {
+      "id": "PID5hH6BAMQ",
+      "name": "Mara Rudiye Rangana Tame Saajana",
+      "thumbnailId": "B-HXAijJW28pHqhP0iCjkylMV_rxUKQ_1P-3W1xLcBmn1PiwBLTyAabiAxe7_2eddh-FPi77FrrppVk"
+    },
+    {
+      "id": "12vgt5Qmpm0",
+      "name": "Ghammar Ghaghro (From \"Pidha Pachhi\")",
+      "thumbnailId": "IrZ2uha0xGBa4K7vexrYDLFcdHmSlWO1VYkSJ1-hxkwBpR4c3YRH4nOFKKgkB9n4w80lhgcmj8lB7hRhFA"
+    },
+    {
+      "id": "Ix_gCqriqOI",
+      "name": "Kaali Kaali (From \"Vaanki Chuki Love Story\")",
+      "thumbnailId": "x2ch35EqfBTLLJl8bUQOvZU7SW2L343hECUdxLbpXA7rxBHbTgVd5gNRCQarNOJAaqDY1JzvsFfbH0Cm"
+    },
+    {
+      "id": "V3oC6BNz5b8",
+      "name": "Uttar Jashu Dakhkhan Jashu",
+      "thumbnailId": "p530p4ikmpjQKSzXtmDJNt9Cp7kui3o21VH9C4jVqRtRLXLBgMsV_MyM4pIMO6mMgCWmLO1qTgFlTQ4TOg"
+    },
+    {
+      "id": "_h-g3U0FUQg",
+      "name": "Radha O Radha",
+      "thumbnailId": "w6R3_oiIjBDDpNcrlCyMm68SPvgAsvGH1Zg_ONq-U60Zi27MCnXenSY3I4gyUJj2dm4phe1vg-72PIw"
+    },
+    {
+      "id": "Xt1ledWJ5a0",
+      "name": "Ladi To Lakhni Saybo Sava Lakhno",
+      "thumbnailId": "r8nbhZsC8IlV8Tjx-XVT3SEmro2iOXmI2EkjVRTA4U9bFQ0KxChr7zxK2-WFpMB0UJDX8gYCZEbbawE"
+    },
+    {
+      "id": "TCgj86KTyMU",
+      "name": "Dhulki Tari Maya Lagi Version 2",
+      "thumbnailId": "LRRZG4UWDjx2cv7HPEzQo-jeo0qwq38mki529ez713hTyXDBsKw5FO2ccUOr-eMzPSQ4qXk79pxvILas"
+    },
+    {
+      "id": "P4G_4_rRq4A",
+      "name": "Tane Parki Manu Ke Manu Potani",
+      "thumbnailId": "X7lBLi3A9cirDQz940SBKXGGzAiM-mlrYkyg0swn1mJMx2vETLd1KFhzQ1RBUtmifmo23iUhAHGigxxy8Q"
+    },
+    {
+      "id": "6E0W_4rcmHs",
+      "name": "Behna O Behna",
+      "thumbnailId": "pkInCPDw6iAPuP32L5r_cl3ih2632zweitsmVzSHEiPV-O_mvK6pkwuAsBZ37c1R0NVgmld3C03yQSYj"
+    },
+    {
+      "id": "wkXMzDFexEk",
+      "name": "Athdaya Kare Chhe",
+      "thumbnailId": "QLoiGFk90ESslQsfeYxki8ZJCseiTf_uqDLBaAqFG1WaLCAIgVtEPD91dFKeu29NgvSaW8XooNQP79hs"
+    },
+    {
+      "id": "uurvulU4jkY",
+      "name": "Ke Bole Koyaldi",
+      "thumbnailId": "nSFjjLGCEOkSZQHrayU7mjhWr0Sk4YY-PgC6sBwLsOGg1JAcDDaZGRolm3Nw2_VQERKef7j4vo3smIbcRA"
+    },
+    {
+      "id": "s37cbBOpZjE",
+      "name": "Ek Prem No Diwano Ek Prem Ni Diwani Title Song",
+      "thumbnailId": "72xblcTxBf_w_9jgkr8ayIR7luAXE1cRNlw4CrmOIzzmNu6onCLdwuJ-Gg1VFB5EgGt3_P0XL_JO5QY"
+    },
+    {
+      "id": "gtcj7RIUbbo",
+      "name": "O Roop Raseela Chora",
+      "thumbnailId": "f0PUPDOGQIdAkE6Vu-tGTZSV-HvDs2cqadDuQvQabo5-_RBoSkw9JHCsHrUNK1XHlmD_sMSLcMyZEkxN"
+    }
+  ],
+  "Featured playlists": [
+    {
+      "id": "RDCLAK5uy_n2S5rcCsh7xTdULPMqgPaFdaleM43gKGg",
+      "name": "Gujarati Hitlist",
+      "thumbnailId": "wKSHmLH1hrajDLkmiyUSqTPH1F97UAhfQ21aFI5W4c-anZnLhQAuMgJzATLtIw0ixIVHcySQL0pofQ8"
+    },
+    {
+      "id": "RDCLAK5uy_nEvvxY2OU4MkNRdS-3isNKWYpW6q-LQfo",
+      "name": "Mataji Na Garba",
+      "thumbnailId": "4VhLlinYRlSfHo6eomXtRT0Fyw_gpQq-fLZyWm58utaH0HpXGNMYjibjfZuohx5UbGEhNuPe7_a_aQ"
+    },
+    {
+      "id": "RDCLAK5uy_k20OybDVzYoKi7CLQOYkSdVoENVZSU7k4",
+      "name": "Krishna Ni Raasleela",
+      "thumbnailId": "-xYl7NyGL04ZOGhXtzLlBaR3U6dLzNGf00etfdD3ecIugAalium_yaw1GGgqzwWWH5bd35-3C600yw"
+    },
+    {
+      "id": "RDCLAK5uy_nnwiTDpD_QNsGCXcIfuqyNa4qGLYsgy7I",
+      "name": "Garba Raas",
+      "thumbnailId": "ZXgjPsYBV-fp2lj6pJz2yfS38CVRw8Dpm890v9Cjx_VFoqfVXCEcRD-Ig86w4qCwyna8lXQ4-HKBVA"
+    },
+    {
+      "id": "RDCLAK5uy_mi8uVo4C6o78LfXcI9pHIu8bkunxmcUjQ",
+      "name": "Dandiya Raas",
+      "thumbnailId": "BUU5vt5gETfpAA3uCkHk_k9d7-nyIAbHWTcbL1Py_Mde0kTWIJj2JqJjhkkNLGyIwidOC18OI0-IAQ"
+    }
+  ],
+  "Community playlists": [
+    {
+      "id": "PLxJzmW8l2cWE6driAeupWYUhu7UJe-Y9B",
+      "name": "Morning T",
+      "thumbnailId": "RmIxLuYPVC-mL4bAkU6AROI1tVS9iNrjRs5ZHcZcXCxHiFaQ9zRjpvBEsULO6rGNzGExS5ah3-6E"
+    },
+    {
+      "id": "PL_c5PSxL5cOVGSzBa-xmgzyUDh4oOQ96H",
+      "name": "રાજેશ",
+      "thumbnailId": "2au0CQth_xmdcfpzPw685gkmjsJh8whRaMIPdbbo1Kk3SaR-BSEcRAOPoNCNJB_H16jFZpVmzDs"
+    },
+    {
+      "id": "PL5qMMHSnAdYI2x0gKrqHt8-Apy3vegou0",
+      "name": "Garba party",
+      "thumbnailId": "BGwGEuARE20yD0GDv5YPfclbguecOuaHwB-ArPqZ-Nge5cRKWNZq9_j-QwcEVavQjg97DlKeRw"
+    },
+    {
+      "id": "PLu60_fZdSGh1gkIAxzMJvtWinPyaic9m3",
+      "name": "Super like",
+      "thumbnailId": "Fd2Xl9wuT4iQ2KKXluGI4E3Q0LbCMdffKR8bsC_NREpdj5cJPm7iMAQe4-UFqLzio7bFDjKwprqi"
+    },
+    {
+      "id": "PLZHsbkjMmgc7HNyMBrgJDqtapu2AsW3_U",
+      "name": "garba playlist",
+      "thumbnailId": "VTBxykI7UShgP8Cgxjbr1sPX_H04Cu4aqxBEayYO2gN0AKuJxhuFuk9Iv4SefE9Q92k0Frw1FP7K"
+    },
+    {
+      "id": "PLajsICABM0JD6AMh8k4z7mBhOGMq1rHnu",
+      "name": "Gujarati wedding",
+      "thumbnailId": "dIJ1aUMzKSBds3rL5PE5E74BIV9GjxHOJ6lCm_gpRVvZnYRqRZqT9x3SEs7gvVO_ni8FkEh8XC0"
+    }
+  ],
+  "Music videos": [
+    {
+      "id": "4CMFhc8N6gk",
+      "name": "Dwarika No Naath Gujarati Song | Laalo | Jaysinh Gadhavi | Smmit Jay | In Cinemas September 2025",
+      "thumbnailId": "4CMFhc8N6gk"
+    },
+    {
+      "id": "8KAZDi0bREw",
+      "name": "Mann Mohan Song | Laalo Krishna Sada Sahaayate | Shruhad Goswami | KRISHNA, Smmit Jay, Prem Dave",
+      "thumbnailId": "8KAZDi0bREw"
+    },
+    {
+      "id": "pGG_Zosn-qo",
+      "name": "Gori Tame Manda Lidha Mohi Raj",
+      "thumbnailId": "pGG_Zosn-qo"
+    },
+    {
+      "id": "pq--D_o4XTc",
+      "name": "Dwarika No Naath Gujarati Song | Laalo | Jaysinh Gadhavi | Smmit Jay | In Cinemas 10 - 10 - 2025",
+      "thumbnailId": "pq--D_o4XTc"
+    },
+    {
+      "id": "9T83Dj-jFnY",
+      "name": "Madhro Darudo",
+      "thumbnailId": "9T83Dj-jFnY"
+    },
+    {
+      "id": "lzs8PQuwXcI",
+      "name": "Kaan Tari Re Song | Laalo - Krishna Sada Sahaayate | Aishwarya Majmudar, Kirtidan Gadhvi | Smmit Jay",
+      "thumbnailId": "lzs8PQuwXcI"
+    },
+    {
+      "id": "cgDf9PV-Moo",
+      "name": "Manorath Jeev Song | Kirtidan Gadhvi | Smmit Jay | Laalo - Krishna Sada Sahaayate | 10-10-2025",
+      "thumbnailId": "cgDf9PV-Moo"
+    },
+    {
+      "id": "v6l0dznToPs",
+      "name": "Gori Radha Ne Kalo Kaan",
+      "thumbnailId": "v6l0dznToPs"
+    },
+    {
+      "id": "tQsIFoAzzRs",
+      "name": "Valam",
+      "thumbnailId": "tQsIFoAzzRs"
+    },
+    {
+      "id": "5gIpqS-Qpzw",
+      "name": "Vhalam Aavo Ne",
+      "thumbnailId": "5gIpqS-Qpzw"
+    },
+    {
+      "id": "sDZA54sTqwQ",
+      "name": "Vaagyo Re Dhol",
+      "thumbnailId": "sDZA54sTqwQ"
+    },
+    {
+      "id": "_qGo6FXv5iI",
+      "name": "Saiba Mane Nindaradi",
+      "thumbnailId": "_qGo6FXv5iI"
+    },
+    {
+      "id": "_xwJSbrmljY",
+      "name": "Tane Lai Jashe Varraja Mane Lai Jashe Yamaraja",
+      "thumbnailId": "_xwJSbrmljY"
+    },
+    {
+      "id": "TxidFkYHDfI",
+      "name": "Dhun Laagi | Full Audio Song | Love Ni Bhavai | Sachin-Jigar | Siddharth Amit Bhavsar",
+      "thumbnailId": "TxidFkYHDfI"
+    },
+    {
+      "id": "SGEJ6znM5bc",
+      "name": "Hiral Mari Hetal",
+      "thumbnailId": "SGEJ6znM5bc"
+    },
+    {
+      "id": "3Y4-VQsBYSw",
+      "name": "Maade Mane Lai Ja- Gujarati Film Song | Laalo Krishna Sada Sahaayate | Yashita, Ashish, Kirtidan",
+      "thumbnailId": "3Y4-VQsBYSw"
+    },
+    {
+      "id": "IQa9sYTiUTs",
+      "name": "Maa",
+      "thumbnailId": "IQa9sYTiUTs"
+    },
+    {
+      "id": "MPEDguL_-lvkY5o",
+      "name": "Lyrical: Chaand Ne Kaho | Yash Soni | Aarohi | Jigardan Gadhavi | Chaal Jeevi Laiye",
+      "thumbnailId": "guL_-lvkY5o"
+    },
+    {
+      "id": "bKt904bRyxU",
+      "name": "Raanjhana",
+      "thumbnailId": "bKt904bRyxU"
+    },
+    {
+      "id": "ToVffnZgCKg",
+      "name": "Popat",
+      "thumbnailId": "ToVffnZgCKg"
+    },
+    {
+      "id": "CqviNDjKT9c",
+      "name": "VSR Baap Che",
+      "thumbnailId": "CqviNDjKT9c"
+    },
+    {
+      "id": "0SiQ8vNUMPE",
+      "name": "He Betho Joban Ni Dal",
+      "thumbnailId": "0SiQ8vNUMPE"
+    },
+    {
+      "id": "AZqgmapqmUg",
+      "name": "Kaljug No Kanaiyo | Luv Ni Love Storys | Pratik Gandhi | Aditya Gadhvi | Siddharth Amit Bhavsar",
+      "thumbnailId": "AZqgmapqmUg"
+    },
+    {
+      "id": "OrIB35fVK44",
+      "name": "Radha Chudlo Perje Mara Naam No",
+      "thumbnailId": "OrIB35fVK44"
+    },
+    {
+      "id": "Q7Ec_q0E-mE",
+      "name": "ટહુકે સાજન સાંભરે - Jhankar Beats | પ્રફુલ દવે, કવિતા ક્રિષ્નામૂર્તિ | નરેશ કનોડિયા",
+      "thumbnailId": "Q7Ec_q0E-mE"
+    },
+    {
+      "id": "MPED9EaO9BHqDjc",
+      "name": "Pa Pa Pagli",
+      "thumbnailId": "9EaO9BHqDjc"
+    },
+    {
+      "id": "t-NhkgKYlhM",
+      "name": "Jivan Jivvu Sahelu Nathi",
+      "thumbnailId": "t-NhkgKYlhM"
+    },
+    {
+      "id": "5j3XxqqpeCY",
+      "name": "Vikram Thakor - Tuto Sajan Kalaje Korani - Full Sad Song",
+      "thumbnailId": "5j3XxqqpeCY"
+    },
+    {
+      "id": "zPUxv7b5uTQ",
+      "name": "Bol Mari Ambe | Fakt Mahilao Maate | HD | Yash Soni | Gujarati Garba Song | @shemaroogujaratimusic",
+      "thumbnailId": "zPUxv7b5uTQ"
+    },
+    {
+      "id": "zzAh92K4L5Y",
+      "name": "Lakh Rupiya No Ghaghro",
+      "thumbnailId": "zzAh92K4L5Y"
+    },
+    {
+      "id": "BgacpnlPpmo",
+      "name": "Preet Janmo Janamni Bhulashe Nahi",
+      "thumbnailId": "BgacpnlPpmo"
+    },
+    {
+      "id": "3Xl6FwmkiSA",
+      "name": "Lavva Lavvi | Offical Video Song | Naadi Dosh | Yash Soni | Janki Bodiwala | @GujaratNaGeet",
+      "thumbnailId": "3Xl6FwmkiSA"
+    },
+    {
+      "id": "j7niZhtrTxE",
+      "name": "Najaro Lage Na Mara Pyar Ne",
+      "thumbnailId": "j7niZhtrTxE"
+    },
+    {
+      "id": "BdqVKpmFOyE",
+      "name": "Bhaiband Mara Aaya Aatham Na Daada (From \"Bhai Ni Beni Ladki\")",
+      "thumbnailId": "BdqVKpmFOyE"
+    },
+    {
+      "id": "axZp-nF3V8s",
+      "name": "Jode Rahejo Raj | જોડે રહેજો રાજ | પ્રફુલ દવે,અલકા યાજ્ઞિક | નરેશ કનોડિયા, દીપિકા |રોમેન્ટિક ગુજરાતી",
+      "thumbnailId": "axZp-nF3V8s"
+    },
+    {
+      "id": "2kl74fiCoVY",
+      "name": "Kan Seri Ramo કાન શેરી રામો | Upendra Trivedi, Snehlata | DHARTI NA AMI 1984 Gujarati Film Song",
+      "thumbnailId": "2kl74fiCoVY"
+    },
+    {
+      "id": "jQsLGbsFBOk",
+      "name": "સાથી રે | Sathi Re | Main to Odhi Chundadi Tara Naam Ni | Vikram Thakor | Gujarat Na Geet",
+      "thumbnailId": "jQsLGbsFBOk"
+    },
+    {
+      "id": "oQrQ0dMp7DQ",
+      "name": "Tu Maro Dariyo (From Samandar)",
+      "thumbnailId": "oQrQ0dMp7DQ"
+    },
+    {
+      "id": "NP0l3vu9B-g",
+      "name": "Jaag Re Malan Jaag",
+      "thumbnailId": "NP0l3vu9B-g"
+    },
+    {
+      "id": "OGMljZ9-xz8",
+      "name": "O Saibaji O Saibaji",
+      "thumbnailId": "OGMljZ9-xz8"
+    },
+    {
+      "id": "1TErN_s5hMk",
+      "name": "Kurja E Mahara Bhanwarmila De Re | SAANKAL | NEW HINDI SONG 2017 | HD VIDEO",
+      "thumbnailId": "1TErN_s5hMk"
+    },
+    {
+      "id": "FKwrYfPsznU",
+      "name": "Ke Odhni Odhu Odhu Ne Udi Jaye",
+      "thumbnailId": "FKwrYfPsznU"
+    },
+    {
+      "id": "R9Y8fj6u7Qw",
+      "name": "Ja Gorande Ja",
+      "thumbnailId": "R9Y8fj6u7Qw"
+    },
+    {
+      "id": "PD4zplNAYdo",
+      "name": "સાજન તારા સંભારણા - 8K VIDEO | રોમેન્ટિક ગુજરાતી ગીત | Superhit Gujarati Love Song 2025",
+      "thumbnailId": "PD4zplNAYdo"
+    },
+    {
+      "id": "WXDDGUSQd-w",
+      "name": "Ghammar Ghaghro (From \"Pidha Pachhi\")",
+      "thumbnailId": "WXDDGUSQd-w"
+    },
+    {
+      "id": "ddeCXBz2kPw",
+      "name": "Insta Viral Song | Meghali Raate Morlo Bole | Gujarati Love Song | Aave Tari Yaad | LoFi Song 2026",
+      "thumbnailId": "ddeCXBz2kPw"
+    },
+    {
+      "id": "XjQUnLxleZI",
+      "name": "Ek Var Piyu Ne Malva Aavje - Sad Song",
+      "thumbnailId": "XjQUnLxleZI"
+    },
+    {
+      "id": "MPEDTxQJyKXtoys",
+      "name": "Khamma",
+      "thumbnailId": "TxQJyKXtoys"
+    },
+    {
+      "id": "dyNY0O0iOAw",
+      "name": "Varase Varase Ashadhi વરસે વરસે આષાઢી | SNEHLATA | SAMPOORNA MAHABHARAT 1983 Gujarati Film Song",
+      "thumbnailId": "dyNY0O0iOAw"
+    },
+    {
+      "id": "zxvtBruQhzQ",
+      "name": "Sinh Mate To Sihan Joeye - Vikram Thakor||સિંહ માટે તો સિંહણ જોઈએ //FULL HD Video//",
+      "thumbnailId": "zxvtBruQhzQ"
+    }
+  ],
+  "Albums": [
+    {
+      "id": "OLAK5uy_nOUDrQ4FDOuE8qGkMKMglhszDyAOoUnuo",
+      "name": "Laalo ( Original Motion Picture Soundtrack )",
+      "thumbnailId": "gB2bTkowVUEeY9rGbz6RdcL5g3wUnkiBBhsOXXZY3HNstmu59gHE94Ql8LzONiwaPFQZC467u1GEzZ54"
+    },
+    {
+      "id": "OLAK5uy_mWRK4DDQmJlE_zv-uf9xvHSVM2A4CGq6w",
+      "name": "Love Ni Bhavai (Original Motion Picture Soundtrack)",
+      "thumbnailId": "QLoiGFk90ESslQsfeYxki8ZJCseiTf_uqDLBaAqFG1WaLCAIgVtEPD91dFKeu29NgvSaW8XooNQP79hs"
+    },
+    {
+      "id": "OLAK5uy_mmB3VGTLc5CwbP0BSbQHqhYVx1OcJdfDw",
+      "name": "Luv Ni Love Storys (Original Motion Picture Soundtrack)",
+      "thumbnailId": "L2KuMsrQNXFco8GXyyUxRv4glgMZGaHIaoK1d63M2ic52DxXvEE-DoxCaIt4wpDDxZR0lo_z1JvzChY"
+    },
+    {
+      "id": "OLAK5uy_k9p_nAq0OA4REejmpo8_t1CfahQvD6xVs",
+      "name": "Preet Janmo Janamni Bhulashe Nahi",
+      "thumbnailId": "ak98dEX9Q-LNajzEEd9E9O4EdB9fTyCD_h2YwOswdjbc308PbcUxKpX6Kr2DVRFpbDd2s8CzIRZnXnY"
+    },
+    {
+      "id": "OLAK5uy_lb0wR1wAf8gbVwdxnsxEyqmK_VAve9tA0",
+      "name": "Maiyarmaa Manadu Nathi Laagtu",
+      "thumbnailId": "bGs8tbTnQ57pZ5Vm6NCPh78VhuiJE5Ycd3BMhvdtbzi7xiSWfTNx_-3cGuJq1zhLzg3eckBfv6k-3l2y"
+    },
+    {
+      "id": "OLAK5uy_k0ytfQCctgpkyouWPV3vpFlgeENZ9oVog",
+      "name": "Mandavda Ropavo Mana Raj",
+      "thumbnailId": "nSFjjLGCEOkSZQHrayU7mjhWr0Sk4YY-PgC6sBwLsOGg1JAcDDaZGRolm3Nw2_VQERKef7j4vo3smIbcRA"
+    },
+    {
+      "id": "OLAK5uy_mcx03MAq8lC07bIH3ulVdqg21O708RE0Y",
+      "name": "Mara Rudiye Rangana Tame Saajana (Original Motion Picture Soundtrack)",
+      "thumbnailId": "B-HXAijJW28pHqhP0iCjkylMV_rxUKQ_1P-3W1xLcBmn1PiwBLTyAabiAxe7_2eddh-FPi77FrrppVk"
+    },
+    {
+      "id": "OLAK5uy_nS3PiOD3Us-UNKRCgvgDeTZWDJgqEGVbE",
+      "name": "Navrang Chundadi",
+      "thumbnailId": "aMDfNfaaNFDnIzQUcThGdt6XgdgzodInNW87Yg31nCoZiAmcJalExCfi7qMPAw6_KihCiflOjozHESE"
+    },
+    {
+      "id": "OLAK5uy_nJRqlgWOEg-cB-b59HLTmCNb5kX74IPek",
+      "name": "Chaal Jeevi Laiye",
+      "thumbnailId": "X8hSv1jh4VkGXvn5QeUVuJzMaYZFk7HIzL6SRmNUAEAQuP8aSDf_i_g9KjFjdE0NwvYNk0PnAmVsPk7o"
+    },
+    {
+      "id": "OLAK5uy_l_u9sW7tyFbCxdPk1_dWt81PJy1NUW9kc",
+      "name": "Parki Thapan",
+      "thumbnailId": "lWgbRpHJedypNOkr_rZKLuIz02OGm2XEZjloZFVHey1BzkkAwWoCiHli11HiPGRzSVTbvB78Gha-UD5N"
+    },
+    {
+      "id": "OLAK5uy_mRPP5sfXdwMoN3iiw8uPQF5JRBLDJXcKo",
+      "name": "Sharato Lagu",
+      "thumbnailId": "Epx3q50MpbjlHFCrk5bCbaxnK-5nmsY46Orq8Lfj_dEPBajIU79j0zsvCiCQ41AgflqFwGYxDFvdvR0"
+    },
+    {
+      "id": "OLAK5uy_mfoAjGF-WYZM8HhK5RPhRwriAoxnnSoYk",
+      "name": "Satywadi Raja Harish Chander",
+      "thumbnailId": "K2TWcvgWljEM-2nGr8Krq3CQBheLC6HHMnuVDKYy1X-WHJehQebXddamd4yzk7Xa030xv6jP27NJNnW2tg"
+    },
+    {
+      "id": "OLAK5uy_mB2ayNH893F9_aMTVa0KJIBUY9ZfsAY0M",
+      "name": "Verna Valamna",
+      "thumbnailId": "9f-oDwKc1fAQAsICnaxdeO8DNF_w5XoCTYZJPrstxQBt7_fO7DVmiXCQFqM2HEpT34KYpe7ZNxRgR87X"
+    },
+    {
+      "id": "OLAK5uy_lwskjAM1FCYy6cacR1zw_yon1RQIEz31E",
+      "name": "Kasoombo",
+      "thumbnailId": "vgXOg8MjTRmA8wclTmrXtktabowPV7EmCv28yCP7qHNHL2dWbyJzgvkFCRiDn6GEovQE9ibuYUwQZXCK"
+    },
+    {
+      "id": "OLAK5uy_lsZzXlBAGf7e8f1DJnAY9ZyD7VA7gL5GQ",
+      "name": "Tame Re Champo Ne Ame Kel",
+      "thumbnailId": "DEqb2NfKso_jiTfo0KqCRoAd6tdbxbORFRGLlyAFYeS6LDU9s3rqFUsILaKEywrZzkBLHBQ-Ot95Mcdd"
+    },
+    {
+      "id": "OLAK5uy_mGCLk_Bv7a4OmmNiATBBy5E8q4zRKEaCg",
+      "name": "Meru Mulande",
+      "thumbnailId": "hXSmh3QiUn4VZCSwI7X69BamAtCxU06UgHic8BERqwOZd-RvJ7NmhhWfM3lxfcRma7TDKspnQZKz1437UA"
+    },
+    {
+      "id": "OLAK5uy_kIlNChfzrmJqkKRiVKmtQubHRDgCVpA-c",
+      "name": "Son Kansari Guj",
+      "thumbnailId": "SUGAJXhQOGXOvBH24afvuVXpdWbDaOg7om1MFJVdlbh_UR4sqbTOYRUQXTmmUDDFSDfqTtD0BV99m1NB"
+    },
+    {
+      "id": "OLAK5uy_n-OIOdHFTVzsR8_0604wbvCDrdi1KZTOo",
+      "name": "Bhathiji Maharaj",
+      "thumbnailId": "1r0DVf6Uun_9kKF92Z3tzlyuO42ZRDth6Ob_5P9Dtxi3nCbKgMuW2hbwB7Hhq5VT67QuQP8EJzi7jltZ"
+    },
+    {
+      "id": "OLAK5uy_lI337xKx1-LJmLCrI2dH9bGLEkgfAzixU",
+      "name": "Kem Re Bhulay Sajan Tari Preet",
+      "thumbnailId": "Od2sgkKNP0mRZE39ekjRAruPbyrl9dZ-cYPtdwkzRvHebz2m_qrpCo6gRKagQuW-EKsOl8SqlBUKqL-x"
+    },
+    {
+      "id": "OLAK5uy_mjtLKWQeLPF_FrnyhepHU9gBZ_k1BJdVU",
+      "name": "Radha Tari Janmo Janamni Preet",
+      "thumbnailId": "WtCWbokhcLvmZGTpodFFW-jjxDNexpYgArGEtACYWW11RcCunMjCZ11O1wL2NGgn_arCyVyJOE5JpkQ"
+    },
+    {
+      "id": "OLAK5uy_n9Fc8EnMjNDQuMvi0dE9zyLRZgxr4d-go",
+      "name": "Desh Re Joya Dada Pardesh Joya",
+      "thumbnailId": "373ixdPft04QLjMXcYELknNPDBew7rMDdgLz_hQ-EGBwNfDWgPlHcy18feTmgusIZbXX6iBO9JaQLL4i"
+    },
+    {
+      "id": "OLAK5uy_mE5q0NAKSNraVnqTCrkI9iT24jA0MQpAQ",
+      "name": "Manek Thumb Guj",
+      "thumbnailId": "r40YC2e235c4-LFE32HoDTnzm0DREuf69H4vrzhNCxfQ90vBGm5EILUVFGyFqngyiRzCcFn340YZzZxCeQ"
+    },
+    {
+      "id": "OLAK5uy_mp_6BHRqBM_VvkZUktPT8jfJHRRoo1lbQ",
+      "name": "Son Kansari",
+      "thumbnailId": "RxoXl_YLKtHOHoqAAdxE1I0H16hkGqNaD0tIA7F5see_6gRxF1ErLrXd1F0vlvHDWoxL4bvRw5vP_SlIAg"
+    },
+    {
+      "id": "OLAK5uy_m7qjsbymAchxamyqvyGZYe9UvD2B6G6gc",
+      "name": "Raja Gopichand Guj",
+      "thumbnailId": "TvnG4qwd9F_3ZAOBU3QBnLrJO1X7OaKNx91W1-dvIFF0JGuO3PTO9KBADZ6oidoRqOO0jAprIuNiyakd"
+    },
+    {
+      "id": "OLAK5uy_m42Sjr-_T8pOvKSx3o4_G4LS1FGMTYpKs",
+      "name": "Vanazari Vaav Guj",
+      "thumbnailId": "ufEM2B1_vOenynWm3DVXifOt-7_2IDLDNldbJ41YJJ0vI1vmztD973eenQbsqeic6qZNzL-SgahoAf1fOQ"
+    },
+    {
+      "id": "OLAK5uy_kXmvejfrRxPAaW6qw9fUUh9YpNUE6oawA",
+      "name": "Mahulo Luhar",
+      "thumbnailId": "1jqjMb8bFw_XDygrIOrtwFPbbC1e55yH2CfPCb81tDaK1FbU4p2w1N14TfVxiiF-qWVRM3Bczn4hkoWz"
+    }
+  ]
+}

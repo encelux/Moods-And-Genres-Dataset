@@ -1,0 +1,1578 @@
+{
+  "Coffee shop blends": [
+    {
+      "id": "RDCLAK5uy_nBE4bLuBHUXWZrF59ZrkPEToKt8M_I3Vc",
+      "name": "Coffee Shop Blend",
+      "thumbnailId": "CDt4RjHDGr0YiX6WxARTBFkdb9k9VsAIm88sJXZ7B3O1yMoS53kLS_dy8ZIKRrFRHHCB6OJePWU1GbY"
+    },
+    {
+      "id": "RDCLAK5uy_l80pbx0UAQ7EWipFs57eQnUIB9KbaDEow",
+      "name": "Cafecito & Chill",
+      "thumbnailId": "8-oaSCmYeAL_WyGX8AZ9fWa_z6COU5XVBqspkeJ4iAPYugoIGkB_Hkn5sTgVjzLi9V8jj8IoMtMRw8J2"
+    },
+    {
+      "id": "RDCLAK5uy_krbBs7P2iEb30IODyVbiOXWyhZtAIX9Uk",
+      "name": "Uncut Bollywood",
+      "thumbnailId": "N-wiK5w1vRVJyRZ3KczvlNrrg8xzuzqNtLg2b2k1JR97BHMsSXuQQ12pLgIPhuj2o7XIkl7bVU5qRA"
+    },
+    {
+      "id": "RDCLAK5uy_kh1VlYGs0WjyJCvQt7RMQEUWkcWdZ7_1s",
+      "name": "Retro Lounge: Tamil",
+      "thumbnailId": "klvpSyC7zpMRjv6SVQaOBU4J-WVDCPp1mQiRl5IvZWgVZSDGc8rZKLF4utKBfHzEgNFJMSAnY_CQPI4"
+    },
+    {
+      "id": "RDCLAK5uy_lHpBhjR3PefMmM-_sCM4cWOY6AcpxtCIk",
+      "name": "90s Chill: Bollywood",
+      "thumbnailId": "aXujg5jLYYyiXejyWEinBsN2b0w6atupVlV-SPK1rf0u-aApSHVCOExATcSRb4QHhDDk2tpa6uGtlQ"
+    },
+    {
+      "id": "RDCLAK5uy_k57D_uJ__EztQMQLVzPjIOHbRGykWFoQo",
+      "name": "Incense & Tea",
+      "thumbnailId": "4CJmDX4W94mD4qevm_s33k2XEYuPdUcHxJoM2ACLw87opLGPjOWiuyNvMUWrRh5J5uwKqYwZNo3T40A"
+    },
+    {
+      "id": "RDCLAK5uy_nO9nYxthXmN7mnquoiR7KUERIIe0-nIaE",
+      "name": "Feelin' Good: Indian Indie",
+      "thumbnailId": "NtLglLqnR-VlE3-p53nD9Ekr7b_EiPTAWOb9U-mpKhNrwhH6N8vS7v-VxdodXmd6_XnkZ7glFsbDYw"
+    },
+    {
+      "id": "RDCLAK5uy_mvS2gucyO1Jl1XTMwbSne-pH-P_A2Q7bg",
+      "name": "Soulful Tollywood",
+      "thumbnailId": "frd-quU7DtYSxziEbbFs4KKayl-86auHo55hizwrCTDwdRyBtaP1fiNQ1eMo0lUlyUNdyO0e-L9xpg"
+    },
+    {
+      "id": "RDCLAK5uy_mLoyxfoJLZQFAKLsxt1NfSatUzRRSXG5k",
+      "name": "Indie Chai Sessions",
+      "thumbnailId": "lWO2VpJ5C3bDX243S2LH6kANqrtEe9JS5utE3-ZJh2rnz0gYjeSFIZOAM7wsRHMdfRaXQiFEyiTWW8s"
+    },
+    {
+      "id": "RDCLAK5uy_kuj0ZF7ijSaRt3ZlJ3iv2YOWBjp9zyF1Q",
+      "name": "Coffee Shop Indie",
+      "thumbnailId": "xy7zR_wM1mTEXF9VCW6qHl6rdydw-1dF8ZuKfb67sx9Svgr4mVujzb9dRyKFRsZ5kKIwtCFz50lYXGw"
+    },
+    {
+      "id": "RDCLAK5uy_mIoeqbTVNXY4E3oTc-7CXcwupt_Jvp850",
+      "name": "Mellow Metal",
+      "thumbnailId": "QVG5aqDxeeXTLuRutc3s1gUv39Otl9i1zY-qJPvgWAdu0C1rZWW5AfZsSISYbrSWTiqoe0QesV1BC2C4"
+    },
+    {
+      "id": "RDCLAK5uy_l6iwn_NChNpDeUQkGxLIX1AedfkRmIXcs",
+      "name": "Oriental Chill",
+      "thumbnailId": "XblBBo8pjhrMcepxcYOIjdVh0cBEcxYJjhaIUaGI_NxrRJ38IaijIxzsTlzrO57ITDB0U0hxak2Rt3g"
+    },
+    {
+      "id": "RDCLAK5uy_nqHoq8CFYwOb_JdlZUn9mbV7wiSjRC3w4",
+      "name": "Peaceful Singer-Songwriter",
+      "thumbnailId": "CIEKMYAk9MB3bVQqoWEs0Uidb2yhK95COcXDxZ9M4lrj3Ccig2g3i6NiaiO38ZAU5fK8lAFH9-4AzAI"
+    },
+    {
+      "id": "RDCLAK5uy_lzovqKuo2WXDbKmON6Jrl51hmqoK1uo04",
+      "name": "slowcore",
+      "thumbnailId": "K9SYco70ii1Gg56ZbYrXgbub-X9WvY1o4RWHXe1b-RuJSGIBPNiJXPvNlJr2WkKGPuE2SQrfwBZuSw"
+    },
+    {
+      "id": "RDCLAK5uy_kluqSMlnog1GDp3fK-kzf787f9DMW8LB0",
+      "name": "All-Time Easy Acoustics",
+      "thumbnailId": "t9xcLjNlSeEJMQKHLC4r8ToQACpGuX2Rocmd-V4bLefZ9ltYzzgNtOrYjigjprXGZwDqTz17k5V4zl4"
+    },
+    {
+      "id": "RDCLAK5uy_lXWhlJsihey6xq1b50d7Uv93NLqle8TSc",
+      "name": "Take It Easy Indie",
+      "thumbnailId": "i1cf2IRNeECrZsxufoFzkBb9yC89L42HuwkNawo_PZ94VG3v9tU5zHvv6mS9bBM0N9y_fmTIzspAnQ"
+    },
+    {
+      "id": "RDCLAK5uy_lcB75QX_a3V2HFQuvDzWU_lUb3EBQiWqk",
+      "name": "Esensi R&B",
+      "thumbnailId": "BzCDgn_Z0jF6ctkvez4sAtHHqj_SffsAuJRgPkaiw7KfU8YxCQcTYoPa-KXEQSl8SdHpQLsP2qXn9nNz"
+    },
+    {
+      "id": "RDCLAK5uy_n4jtH1BoYT7FxNFJAGmJw5WQFF_ZzBTBM",
+      "name": "Indo Indie On Repeat",
+      "thumbnailId": "rz9Lm4DLgdux38AHz1IZDDoYUKMoXb5hOaPLCyl1WA0TTG2Qr-TQP0GWF_pCXIzl7TU9QffHvnilvQ"
+    }
+  ],
+  "Unwind + explore": [
+    {
+      "id": "RDCLAK5uy_nHSqCJjDrW9HBhCNdF6tWPdnOMngOv0wA",
+      "name": "Pop Gold",
+      "thumbnailId": "rAUuEbLF7CYEYBXU3yAY4npMCzTgPxMhlD-ygH9iv_SuDXGDuDvO0Z4MTh33xAI6o3UnpWFe26MS_hBZ"
+    },
+    {
+      "id": "RDCLAK5uy_nyKVppE-RpLkeCcwLct4rvN9e8AAsS_qw",
+      "name": "Soft Rock Ballads",
+      "thumbnailId": "kIOCCx-ipN4FIOR4DXED5Ag-i0Y_EHMRdHki5M_wvENLMuoD7lDN1eAo4Fd400NY5b4GtamjIsti9Q"
+    },
+    {
+      "id": "RDCLAK5uy_nm4NA8cldZNPqj1D0ayZxfySeY89qedRs",
+      "name": "The Smoothest of Smooth Jazz",
+      "thumbnailId": "_fJbAPvRvDFktq7Ot97d-FPGQW3zkOpcxgb-B369Tq9h7fVm5LpUWJoea-fuZ0FbWQFdTfhSzqKmOnI"
+    },
+    {
+      "id": "RDCLAK5uy_neriXH6JbZPr7Pf4LOi5bGQP-_lWRZXs4",
+      "name": "Cozy Jazz",
+      "thumbnailId": "TSUtbquRFr7lhlYJq_fZnfxn8FnzXpbzWiZLJb8-WscOEWDXfldNPT3OcTxkdBL_1vKFG_Ni0_nJ8P5h"
+    },
+    {
+      "id": "RDCLAK5uy_n0BEng8y9HmKm6-moud8jAQ9RkE7Ie1G4",
+      "name": "Turkish Folk Classics",
+      "thumbnailId": "mhGRlIWZP4WAI5faJLdPQhwTBxyxh9Bm4uOA1NdQrg5UgPVE_AMNnmuGszxvSPoRjjHydSyz92tj1ew"
+    },
+    {
+      "id": "RDCLAK5uy_lbcexX19-ShfMgzXpxayVFh_9l4Dml-kg",
+      "name": "Mellow Solo Piano",
+      "thumbnailId": "CzqNOsy9Lj5cKRJtsRXruWwHn3P0_Cqy9xM0CsJEZzoL7JtmThflUTfGv0uNXyneaCyzArbY2qnCYUg"
+    },
+    {
+      "id": "RDCLAK5uy_nRr0zn4n0C5AGQqZKdSaSzs2zmbImOIwU",
+      "name": "Jazz Piano",
+      "thumbnailId": "xpEqkV7xoz1ZXsCHszYT0fjmc06QoWczDWRUTNoaTSeTw5hE3vtTSkgEN3r7xOwwajjXEWs9ZvF2epzU"
+    },
+    {
+      "id": "RDCLAK5uy_kXvJt59314AsVv6QdJnFqHL7W75HkqtB4",
+      "name": "Cinematic Ambience",
+      "thumbnailId": "QbMcbgiMHCedCNBELR_cdEvRPO1sG1Pzx0E2-A--R2qNf2RnOLVuxYn3lt9MP31w9uteRTzFiJp_gHc"
+    },
+    {
+      "id": "RDCLAK5uy_m0X_CFV7sbR3EKDoP_FvqyK5faV7xorUY",
+      "name": "Freshly Chilled: Alt Pop and Indie",
+      "thumbnailId": "dQaic8cocQVGqI0ZHfCIaow7mCJCy2fe4I-G1Kim0yqgcvvJftZ5dZnbLp7U-mkwD9asaXIuzycVmQ"
+    },
+    {
+      "id": "RDCLAK5uy_l3jcyafhPprVNoFpQZL02ofimw9WsO6mE",
+      "name": "Solo Piano Bliss",
+      "thumbnailId": "-1H7_JKtT1ZLn07odmQtMXpikTfTd9HANrJli8yE1HnHJOQj1E4Vu-xfxba9x_Q0jVS-kNjtstXQfMJx"
+    },
+    {
+      "id": "RDCLAK5uy_n2cq0PxECLzVblC6NOorWjaCtF5NwXJT4",
+      "name": "Late Night Jazz",
+      "thumbnailId": "idWICmKd1-yjJrMC-sqvLLnb9J2jbzBwZsD-uIsOKGS3YVGySaJeRGaHwycigQSIlVhN1IiRawGCvQ"
+    },
+    {
+      "id": "RDCLAK5uy_nNGk2yOsNF2AWjk3FbtO8FjvQhT1FUi_c",
+      "name": "Classic Easy Rock",
+      "thumbnailId": "FmEI7Y44J_hp2ecFJgoestuzzbTknk1tMMT8MAx1zKYOUN97i5zxlcstXhVzJXulPBKzcpFrAOdARG4"
+    },
+    {
+      "id": "RDCLAK5uy_m2p5A1NXN8SInEzfsxzFEvQ6zws-V-wBo",
+      "name": "Gentle Chamber Music",
+      "thumbnailId": "8psoIIvcQhqSUljk5cYVTSBbIfK4n3uaQ7Sa2NN0NnlNmeAIVBhptLrorZ3UZgh0mbKF0CF55bcD5w"
+    },
+    {
+      "id": "RDCLAK5uy_kQmVjdr90p2onIIAnijgU8u9iUUAOXM2I",
+      "name": "Today's Smooth Jazz",
+      "thumbnailId": "zVyRXKhRjKic25UjckND_LyzoLYY_t1pWc2ui0526oa9YoqkXPzvq7oQJaNuooNRZDLoeOpYEGfOIQ"
+    },
+    {
+      "id": "RDCLAK5uy_km8j1Msn0n8FTLRIw0krI9k2sf-t1Z4hg",
+      "name": "Acoustic Covers of Love Songs",
+      "thumbnailId": "Gzvo5VvqNiV-Xr-rGmYrSEPL5L3yAMtp0PVaGG9ekpqiOin6kcGIiV-a-3Vl_r7GgB5TaPJk7AqzNmw"
+    },
+    {
+      "id": "RDCLAK5uy_kmK1aMjb7sJ6eWV95Co02JwJJmdi0z05M",
+      "name": "Classical Solo Piano",
+      "thumbnailId": "Oqy21N5liarP3dhmBg7J3NECiG-RAH2NavdLV62ugcmgR6v_dushUh52ZN_FRjP1BTvAvREAYCwcew"
+    },
+    {
+      "id": "RDCLAK5uy_m5EyAGTathBjwdrXC6D2G9AR-YmJrAkpw",
+      "name": "Never-Ending Slow Jams",
+      "thumbnailId": "eW1VhdMZLMHfaDIJwQn2YPIizWHGy8hCSxkZvS7dSoxYj5y0LAsScinOmSzLuou0lxS4vNMQJmNjzSDj"
+    },
+    {
+      "id": "RDCLAK5uy_ldooV6iHaoPy6VKyVuHDq0DT4lh-3tRqQ",
+      "name": "Gentle Piano",
+      "thumbnailId": "w_IkywS60PT1JsZafZXkcUtpFR83tsa1vlziPdAP8syGHsMVLOH4QwQKZk8yRi0Lv_eWju4bNQVpz6yj"
+    },
+    {
+      "id": "RDCLAK5uy_lsl0WiIp96sJajCIcHkUnOWtsU29tDSNg",
+      "name": "Gentle Acoustic Instrumentals",
+      "thumbnailId": "AcqSsqL9dQNa0QLBVTjSJDtoCWwm666wj0s1IOzJULZjI2eA8TaVrRC88So3rid-YeK-Ctwb4cZBGo8"
+    },
+    {
+      "id": "RDCLAK5uy_l3Iir9QZmCUPLjUqyR9PmYIKkkY7YEJZA",
+      "name": "Cool Jazz Moods",
+      "thumbnailId": "-LOaMhH9BN-W_jjoliVSZRAh36iziK8GGPO0VEC62CvaE58AqOeMV5475fGN3C5PIyDr-8FE1wFEH3k"
+    },
+    {
+      "id": "RDCLAK5uy_m_nTTDNmqZqV2E3Trgyxz8f-d_my9YSZk",
+      "name": "Turkish Saz Masters",
+      "thumbnailId": "YT_V4pabv74zJA5qGEnzYnBDf5MbI-M7JKyuswjDnZxAP6He-8Dphq29146lvV_wmbycrNFNNixTegE"
+    },
+    {
+      "id": "RDCLAK5uy_n7sTcaLpQClN41GSmP1jFn2pZs2uPeSw4",
+      "name": "Soothing Classical Harp",
+      "thumbnailId": "x9_0iAH1gNIN3Nt62BBonYfWHD87wr40UTGisTOG_1tNIvziTY-aOIxXe58gSOeVdoSYr4373X3V_w"
+    },
+    {
+      "id": "RDCLAK5uy_nBOvRANXhyfsK6oGe_wTHNwOW-0kSMB8w",
+      "name": "Classical Calm",
+      "thumbnailId": "D8mw4OfckbnyW2cu0nUHBmrDROUF1Iq7DNdDPHO8xNBGVxA0XbONCeeW5DLVs4sfT2o10EpoY66g8NM"
+    },
+    {
+      "id": "RDCLAK5uy_l33rnweoz4jR7hsfgDJrpkExUnA-9B45E",
+      "name": "Le coin chill",
+      "thumbnailId": "SIf9CNBm4qzzSNrr71gjxVPXWXtv-C9CJaPPcLq6bBD6SzEOhSmO56qrhD_PQzvRtibAeGNeuhmvDQ"
+    },
+    {
+      "id": "RDCLAK5uy_kfocULaE1ZmVD0lO2WZS1iTkDyo0SpxVw",
+      "name": "Dinner for Two",
+      "thumbnailId": "M67VfPYkRpAaLb5nJUl3Hw1pAlppXedBNhSu9WnHniwQpQxNk36_g4_R4XP0MOsC1vq2FJeacok92Q"
+    },
+    {
+      "id": "RDCLAK5uy_libYW_CF3kIfvFc3hWof7wNVYQl5mzV3Q",
+      "name": "Black Sea Folk",
+      "thumbnailId": "fcf8v0lUfy0jLuDhF1DcZ-P1-kGGGtaouTETJR6R90vGpZ3i_ffID880fy2TTMkPamA3bra6z32AGbM"
+    },
+    {
+      "id": "RDCLAK5uy_kTjUwIUwKmNgaGW1YDq7JxCGB6vMGA1q4",
+      "name": "Presenting Chopin",
+      "thumbnailId": "gsSihhgybNql-GJVJq5Rd-nsCROzUw_bTEpoY4y98cgt2OL3AyYRQ95RE4YobCM-zXtsPKbB7WXm-ObR"
+    },
+    {
+      "id": "RDCLAK5uy_kyiI0YDVHzT-IsAObUN9w0aBMLVBiKYoo",
+      "name": "desconectao'",
+      "thumbnailId": "SaMp4V0wBLdzUJa4BqOoqlcjHwEBkAlqYNqUzs-FKTcT_pk1O4F-9Y7yfq8v4XmjNu_PLas2dw-fE20"
+    },
+    {
+      "id": "RDCLAK5uy_lWfuEE9muOjxNxKnvVL_KZOhsMG7-FxMI",
+      "name": "Electro Deceleration",
+      "thumbnailId": "8bZoYe4ui5wWgXHI87-WX1Zzv-FbdaHW_pW_NLTE4W-MfCdtp_INK4t0rRzATOl8R3_4zod_Paid3w"
+    },
+    {
+      "id": "RDCLAK5uy_m8ULgAe9Lkf7wIsoguU3IqZ8ZePk1ndMc",
+      "name": "Classical Spanish Guitar",
+      "thumbnailId": "427dllrVLETRtMdFn1U_Pq4esHK7k2cM3cbBJMkJDgidu3wQSkT_5rvXZRTC5lDwMOr66wKsSUzkLQQJ"
+    },
+    {
+      "id": "RDCLAK5uy_mWErjt-FkztCN26qeIL_gb04fQCla4rQ0",
+      "name": "Eastern Anatolia Folk",
+      "thumbnailId": "_cvcCuRKGY4cJ_vUrKMDdhEzfaxXTORc9Yru4woxiwgK8YTK31hGGkvtSS1fuEi9Za-kEqtOe7plpuY"
+    },
+    {
+      "id": "RDCLAK5uy_ktkqrgIqlP46yBkUsZp4go2j59McnSsYY",
+      "name": "Mellow Hype",
+      "thumbnailId": "T_Ld23Sb42RE0nxCQfpmAUejVWkQ-pZNZ8xROUjS9LRR75SY5g-I1-ivHYQtcgIacMV6tKiIqdC0TrpO"
+    },
+    {
+      "id": "RDCLAK5uy_lH6Paw96Fef7BIa_vmvBAYJ4qDwnQfI_U",
+      "name": "Relaxing Time",
+      "thumbnailId": "QTEAaeBaypRo7Y3q4hoQ54OhhJu0DAN8b9YpS8hUuUc4D1HgpSCPKhKnqZEYZSiKLXX1qDmdczLhPJI"
+    },
+    {
+      "id": "RDCLAK5uy_kL7seJinYAVpulQQbre887jeaIDkrnAg0",
+      "name": "Background Jazz",
+      "thumbnailId": "OYJPNfj51KL4b17grXq3QkMOpYNk71Z2aUKLE2vSu74wcHBUXZxLzerTWXBfhwaQdUmmWrOoVW6Dcxs"
+    },
+    {
+      "id": "RDCLAK5uy_nlJdxcHTlQmkhdN48_-8CjPKyja3x86tQ",
+      "name": "New Jazz Impressions",
+      "thumbnailId": "5GD_aWp7Gj2UsmzjHIjKLtORDHm8bbqXVAP42nF7MByaENB71oV-5tktKT6u6_7P6FDfOrEAGFvodA"
+    },
+    {
+      "id": "RDCLAK5uy_nSOL68i5YjTpuaCX0BlTL1pMzg2uAmmq0",
+      "name": "Contemporary Classical Guitar",
+      "thumbnailId": "h-P_IbiqGTGASZCQint12GYalPOleSgZPqEcAR8-3h_oVBaKcEwJjjVyV4zNwmaFkkSsuN2GyH0W6i7h"
+    },
+    {
+      "id": "RDCLAK5uy_lYFxAcRDypMHhJLhu6Fhf8iDdY0p1a7j0",
+      "name": "The chic filles",
+      "thumbnailId": "vn3Tr6ve9t4QfYKWEYCTkgs5olrjL-lsafOZEPGRch7IFWce_TO4MaT0GdxsteCwp0cQNswDDXQLjWPu"
+    },
+    {
+      "id": "RDCLAK5uy_n38QBvlkETFzw_TX8Z7wfA733kKr2vo0o",
+      "name": "Brazilian Phonk (slowed)",
+      "thumbnailId": "fpOcwFvxGdiVimi9apA4oISOfbGxXZbSrvTySjcozMg2J_aKlfYr4fHlUo1Ngh0IKnleh7qnQ0DYCm8B"
+    },
+    {
+      "id": "RDCLAK5uy_lzovqKuo2WXDbKmON6Jrl51hmqoK1uo04",
+      "name": "slowcore",
+      "thumbnailId": "K9SYco70ii1Gg56ZbYrXgbub-X9WvY1o4RWHXe1b-RuJSGIBPNiJXPvNlJr2WkKGPuE2SQrfwBZuSw"
+    },
+    {
+      "id": "RDCLAK5uy_l2OjbOL4oVkkHE86UT6oQCNufuv8d0luQ",
+      "name": "Deep Sleep Meditation",
+      "thumbnailId": "xyXsi35vQy3dpqG7dKguId0u04QgBgo-9sc5GpQ46UCTEoqEgKtKr3Y05NQzvVXYA3BQzR8zIwMzos6i"
+    },
+    {
+      "id": "RDCLAK5uy_kkRECg2hUY0thQbY5MaLzPgcN9s4yb87w",
+      "name": "Brown Noise",
+      "thumbnailId": "ZXhsFV2sm-aLKeKhsj68iTD96Twazs2rkLToljeTjfgAvuIQbu9sFE6jeMwQWuRhYlfihVzXOXUR39sw"
+    },
+    {
+      "id": "RDCLAK5uy_m9YprJ504SUVUWr1oygQy6p-lV8N11BZw",
+      "name": "White Noise",
+      "thumbnailId": "PwNiEOYzXucXTiETNaF_5hRkViFSvAG5G3fgtlRWGhOlnY801O1AT3SDD218v4_MLWiOgWY9B0U-rzwt"
+    },
+    {
+      "id": "RDCLAK5uy_naZbZR0biQkhIHsrfLLQ8bn2qNIzFy05s",
+      "name": "sleep",
+      "thumbnailId": "qTjdReNYGC9cHS-tNfObIxapYwYxPjCnH_Eu_UUDhaNPAcpyCo56FEc7tbCvDqNsHiZnTiBABSWTr_Qh"
+    },
+    {
+      "id": "RDCLAK5uy_nPKG3faKyALfUXrqEe2vRJlrfefQo1B0s",
+      "name": "Focused Gaming",
+      "thumbnailId": "j68VSIWwBnrBbLiX1v1jQZ1NWdaj5yxOoNZfnd-8g9kDgVtnOlQh1mDTs8d0QekvQagtN90ETNj2IslF"
+    },
+    {
+      "id": "RDCLAK5uy_nvnF3rA9hgZHUuJPze8JuhaMhdyjur8BM",
+      "name": "Self Care",
+      "thumbnailId": "1-aHcBpJG6D7b2t6T5M6Udco0oGgr-85IgF6-oV372BNOL_akTzrS5hrVL4JsaWdpDUASThb2ILQDuA"
+    },
+    {
+      "id": "RDCLAK5uy_mOsCZqAheLdEq9og0_sycjYAEE67wjgzA",
+      "name": "Chill Phonk (slowed)",
+      "thumbnailId": "VNEEdMnDo3k9qz66heXW7lqMaRX0wHLpUQprV9DdDrM8DG7EvKi-ZK496HZ1hmV9aexXqYR2UzdMeWM"
+    }
+  ],
+  "Mindfulness & meditation": [
+    {
+      "id": "RDCLAK5uy_m7I7OhxMQp4dAK2AKvrEoiNmrIDnAX5Z8",
+      "name": "Zen Meditation",
+      "thumbnailId": "phet14I_8rdgCq-g6JPi8MoQQU5ZOnIzrDoTWtdhlVkz1wlCe-drqdkb2Qfxggd6C66g1wejgx9uxd1Y"
+    },
+    {
+      "id": "RDCLAK5uy_kjbesFvpAjQl3z_xUxMArIfRpubFn791o",
+      "name": "Tranquil Spa Day",
+      "thumbnailId": "NymHUHk1b2UwDbEA7ZmKQ754Vr8gWziyb9neOQKV8Eg4mY9ov-u1OCh4jLeUfblqRX-kDBkmkaAXow"
+    },
+    {
+      "id": "RDCLAK5uy_mwJztsnautpobBg-95AVJ_xd5Gnb5DV-w",
+      "name": "Peace",
+      "thumbnailId": "vpNvm1Fxj_lHolVbiEJIlFpxcVqDWIDy6p5jez77odSdBmQbz__r7ogyj8181d6Bxs6lGORJuzd0nns"
+    },
+    {
+      "id": "RDCLAK5uy_ldLj_raotpFCQGWiQ7L-Ag5GTbGOyjgRY",
+      "name": "Classical Meditation",
+      "thumbnailId": "eKIUu0x74PRwdst4LEQewuo8sCGQGaFP1uSc2L1xFLmNDppCUCsit_tAH0Z_95Rg02s0AX57c5pruw"
+    },
+    {
+      "id": "RDCLAK5uy_mS5x3haS3YiflmBHa8rK0rOZHgn0lhG0w",
+      "name": "Symphonic Serenity",
+      "thumbnailId": "UJhpG7kQzhoanrDAw8bTRD4syjTiDzpqMSa8axay3QCdbj4T6ochCwFpiHBZJlxTOjjmjEFsMT4qK32O"
+    },
+    {
+      "id": "RDCLAK5uy_mkG6Cj4VqXPmlYf3xbLQQhhAZHGI8vJHo",
+      "name": "Infinite Sound Healing",
+      "thumbnailId": "MfPgkhYVNnnXVbiTjjJZYgpmejz2mWO06o9Kmhs5m73bjDrZ6-58aaDkRNvS8TMjj6BZYUaqVH85aw"
+    },
+    {
+      "id": "RDCLAK5uy_m6-fOiMxDip-4p9uD4lhzm3I9WMCSTy_Y",
+      "name": "Yoga & Chill",
+      "thumbnailId": "m8gv95ZI8zl1QH8Xx2xtSuHuafuz2JlB4BoSYd9Z4n7bdBhXDkR6SRgLFUd8Y6FdXq_oXUJFSVYFbw"
+    },
+    {
+      "id": "RDCLAK5uy_kXvJt59314AsVv6QdJnFqHL7W75HkqtB4",
+      "name": "Cinematic Ambience",
+      "thumbnailId": "QbMcbgiMHCedCNBELR_cdEvRPO1sG1Pzx0E2-A--R2qNf2RnOLVuxYn3lt9MP31w9uteRTzFiJp_gHc"
+    },
+    {
+      "id": "RDCLAK5uy_mTrr21OCLdb2dJgl_BJ-6MdJDXWqB-1gc",
+      "name": "Yoga & Meditation",
+      "thumbnailId": "KFBEEAE8C7FMDOGJdJthPSNpP7xz-evjPkVg79ba3MZcykaDuhXfa6yUNLSP1Z45uiegf08OYVtopA"
+    },
+    {
+      "id": "RDCLAK5uy_n7sTcaLpQClN41GSmP1jFn2pZs2uPeSw4",
+      "name": "Soothing Classical Harp",
+      "thumbnailId": "x9_0iAH1gNIN3Nt62BBonYfWHD87wr40UTGisTOG_1tNIvziTY-aOIxXe58gSOeVdoSYr4373X3V_w"
+    },
+    {
+      "id": "RDCLAK5uy_nmyiTFaD-osoI95yEMuRjaSMQiTDRJz6E",
+      "name": "Néctar",
+      "thumbnailId": "oS2Zfc-qXFPq6R6cQwet6Qn7KpQ3xRirMh8o25iTrwKq9sahQjcC1hCufPjwdRScP82aYKPade_rfxY"
+    },
+    {
+      "id": "RDCLAK5uy_kmK1aMjb7sJ6eWV95Co02JwJJmdi0z05M",
+      "name": "Classical Solo Piano",
+      "thumbnailId": "Oqy21N5liarP3dhmBg7J3NECiG-RAH2NavdLV62ugcmgR6v_dushUh52ZN_FRjP1BTvAvREAYCwcew"
+    },
+    {
+      "id": "RDCLAK5uy_kb7EBi6y3GrtJri4_ZH56Ms786DFEimbM",
+      "name": "Lofi Loft",
+      "thumbnailId": "9I45SYZAfTeR17ByV9i2yDpWhQ5DTWMCrW3Lei8vMIiZzeyUnf2zRFUDBob4TGwgUkXAAR_x1Xa8VA"
+    },
+    {
+      "id": "RDCLAK5uy_ldooV6iHaoPy6VKyVuHDq0DT4lh-3tRqQ",
+      "name": "Gentle Piano",
+      "thumbnailId": "w_IkywS60PT1JsZafZXkcUtpFR83tsa1vlziPdAP8syGHsMVLOH4QwQKZk8yRi0Lv_eWju4bNQVpz6yj"
+    },
+    {
+      "id": "RDCLAK5uy_kY7xcBh8q-Rm2_Cg3NuTJ2Qcq-hTj_jYk",
+      "name": "Innerwaves",
+      "thumbnailId": "LkHXZvzppzQNzJs4tnGg1gXQIivEcVXEWemW6c6ff_T9trMpCrqUGW3YdET7i2_cXDA5_0L6DkhzUw"
+    },
+    {
+      "id": "RDCLAK5uy_n9hGvSNdO2TpX8jJuiThvnfrfIi1qNRnY",
+      "name": "Classical Focus",
+      "thumbnailId": "Jx8ayDHUoBH0ZDj87d2Jibuvd0nXxeVf3RAbYUAf3f2o3Sr9vWkMVVGfgMLjjAuFBXcp7Wl-JW3pVzw"
+    },
+    {
+      "id": "RDCLAK5uy_l2OjbOL4oVkkHE86UT6oQCNufuv8d0luQ",
+      "name": "Deep Sleep Meditation",
+      "thumbnailId": "xyXsi35vQy3dpqG7dKguId0u04QgBgo-9sc5GpQ46UCTEoqEgKtKr3Y05NQzvVXYA3BQzR8zIwMzos6i"
+    },
+    {
+      "id": "RDCLAK5uy_kkRECg2hUY0thQbY5MaLzPgcN9s4yb87w",
+      "name": "Brown Noise",
+      "thumbnailId": "ZXhsFV2sm-aLKeKhsj68iTD96Twazs2rkLToljeTjfgAvuIQbu9sFE6jeMwQWuRhYlfihVzXOXUR39sw"
+    },
+    {
+      "id": "RDCLAK5uy_m9YprJ504SUVUWr1oygQy6p-lV8N11BZw",
+      "name": "White Noise",
+      "thumbnailId": "PwNiEOYzXucXTiETNaF_5hRkViFSvAG5G3fgtlRWGhOlnY801O1AT3SDD218v4_MLWiOgWY9B0U-rzwt"
+    },
+    {
+      "id": "RDCLAK5uy_naZbZR0biQkhIHsrfLLQ8bn2qNIzFy05s",
+      "name": "sleep",
+      "thumbnailId": "qTjdReNYGC9cHS-tNfObIxapYwYxPjCnH_Eu_UUDhaNPAcpyCo56FEc7tbCvDqNsHiZnTiBABSWTr_Qh"
+    },
+    {
+      "id": "RDCLAK5uy_nPKG3faKyALfUXrqEe2vRJlrfefQo1B0s",
+      "name": "Focused Gaming",
+      "thumbnailId": "j68VSIWwBnrBbLiX1v1jQZ1NWdaj5yxOoNZfnd-8g9kDgVtnOlQh1mDTs8d0QekvQagtN90ETNj2IslF"
+    },
+    {
+      "id": "RDCLAK5uy_nvnF3rA9hgZHUuJPze8JuhaMhdyjur8BM",
+      "name": "Self Care",
+      "thumbnailId": "1-aHcBpJG6D7b2t6T5M6Udco0oGgr-85IgF6-oV372BNOL_akTzrS5hrVL4JsaWdpDUASThb2ILQDuA"
+    }
+  ],
+  "Chilled": [
+    {
+      "id": "RDCLAK5uy_mYa86YJNGqE4Jl5jG7DZP9NKdflw0hQL0",
+      "name": "Super Chill",
+      "thumbnailId": "gStib6WPuxExmcTH9cWa0y2s7MLQtJtplRzikNIwcq6r_H4EPtqPXxb9exUy-mfTw-9XZhksFljUS8pu"
+    },
+    {
+      "id": "RDCLAK5uy_kb4ZGlRsXD8VU8qaJPnj3ip89BydG6UBk",
+      "name": "Soft Touch",
+      "thumbnailId": "O0iqTCrysNAO4aprL7f2lZYZks2JDMRZq2rd4TEzqy-nWoG1ZgFpNM0cRAZTHk42DrL1-hDSrpc2pAE"
+    },
+    {
+      "id": "RDCLAK5uy_lTN8j40AYIG_Mc9P2t7DECfqGn0A1uQo4",
+      "name": "Reggae Relaxation",
+      "thumbnailId": "jZ9prKBqVQhTW2X1DXxyJTH89Hlkf6oCxmoUk8b9n2tR5EfbAm2Ik5dGjYMXkI6K7Vq7vtiXGZ5smeQ"
+    },
+    {
+      "id": "RDCLAK5uy_k57D_uJ__EztQMQLVzPjIOHbRGykWFoQo",
+      "name": "Incense & Tea",
+      "thumbnailId": "4CJmDX4W94mD4qevm_s33k2XEYuPdUcHxJoM2ACLw87opLGPjOWiuyNvMUWrRh5J5uwKqYwZNo3T40A"
+    },
+    {
+      "id": "RDCLAK5uy_np_soSTj6w3-N7Dh_xmdDpQINJ8LsVpa8",
+      "name": "Unwind",
+      "thumbnailId": "VpOriKyGqxkLFfgo6IMEyr9BhKBO3eQwmCAyYrTZFd6WKQisnz0Y9V9skWgg_dDDscugoTmYD6zr"
+    },
+    {
+      "id": "RDCLAK5uy_nWEJYv-Uz64iDaI_cc9ink9grqEpQViPc",
+      "name": "Go Slower",
+      "thumbnailId": "Bi9-K9n_QKlEBviawY1GX9YUAWR85I9NWdpSHCx9aFKbsn67TrQo9x8eoy3cNozPFTMUxgp7uSmw7g"
+    },
+    {
+      "id": "RDCLAK5uy_m_0U5VQNyyzwwH1lRi7cPAAGXqNQnAOqY",
+      "name": "Laid-Back Sofa Pop",
+      "thumbnailId": "IKBTW8jZAxhiUfUkM9u-BLTuuFYrO2833EMuUmH4od_9Acn2pOhh0xOda0iSxo_C24TW3EHGPkkXF2o"
+    },
+    {
+      "id": "RDCLAK5uy_mSaYvcoVvag_GrAc593WX3MoxTLvUXYT8",
+      "name": "Relaxing Evening",
+      "thumbnailId": "HAKNNaXo0xQA17H5slT9-u1BxtSxVaTQgGERsSz59DAU79IXALdDy7xkeLgHD4fq2raQYEmzMqs6hObB"
+    },
+    {
+      "id": "RDCLAK5uy_nDL8KeBrUagwyISwNmyEiSfYgz1gVCesg",
+      "name": "Mellow Pop Classics",
+      "thumbnailId": "WIpNILSEB_Fs-esO3Z_jRiQgkRvHK41un394zFPHwG49pO1Kn9qVI_ud_J2BuGaoJiRVAUjOKOE9kRmN"
+    },
+    {
+      "id": "RDCLAK5uy_mkPdnadBmgXk28mbGxm_5uGeKvHrec208",
+      "name": "Acoustic Pop",
+      "thumbnailId": "tE56EFMRtd1aLWwyhIOPH55gNMF2c_h_PP30_gGMl1jpbrA48GTbFpuWgKlbRHKo_7gwN-9QvVdp1lZd"
+    },
+    {
+      "id": "RDCLAK5uy_nBE4bLuBHUXWZrF59ZrkPEToKt8M_I3Vc",
+      "name": "Coffee Shop Blend",
+      "thumbnailId": "CDt4RjHDGr0YiX6WxARTBFkdb9k9VsAIm88sJXZ7B3O1yMoS53kLS_dy8ZIKRrFRHHCB6OJePWU1GbY"
+    },
+    {
+      "id": "RDCLAK5uy_m0X_CFV7sbR3EKDoP_FvqyK5faV7xorUY",
+      "name": "Freshly Chilled: Alt Pop and Indie",
+      "thumbnailId": "dQaic8cocQVGqI0ZHfCIaow7mCJCy2fe4I-G1Kim0yqgcvvJftZ5dZnbLp7U-mkwD9asaXIuzycVmQ"
+    },
+    {
+      "id": "RDCLAK5uy_mkG6Cj4VqXPmlYf3xbLQQhhAZHGI8vJHo",
+      "name": "Infinite Sound Healing",
+      "thumbnailId": "MfPgkhYVNnnXVbiTjjJZYgpmejz2mWO06o9Kmhs5m73bjDrZ6-58aaDkRNvS8TMjj6BZYUaqVH85aw"
+    },
+    {
+      "id": "RDCLAK5uy_m7I7OhxMQp4dAK2AKvrEoiNmrIDnAX5Z8",
+      "name": "Zen Meditation",
+      "thumbnailId": "phet14I_8rdgCq-g6JPi8MoQQU5ZOnIzrDoTWtdhlVkz1wlCe-drqdkb2Qfxggd6C66g1wejgx9uxd1Y"
+    },
+    {
+      "id": "RDCLAK5uy_mdwsZFtQhJyGQPuQA612VoRPXp-OJfzx8",
+      "name": "Hits Unplugged",
+      "thumbnailId": "Ak2NfztczrGcwMmYBl069LaHPCKTHv-V6sxRxwVdIelNv2Rf1sLLP8ArDVCDQ9ci6skBB5SM6rtpeotO"
+    },
+    {
+      "id": "RDCLAK5uy_n_0vMGj-9WtHuj2fbdwMGsSxL_7qglBCI",
+      "name": "Egyptian Chill",
+      "thumbnailId": "2x4YDDGH0XqNnznVXKGvW6U3o9JQjtzR74st22sozs1tiV5dTOxp_STqWQW3FhPXKVGz4-OeyHInHZ20"
+    },
+    {
+      "id": "RDCLAK5uy_m6XXtQxtjnB5lr_FhgBANwp7mHKY5Yoik",
+      "name": "Acoustic Singer-Songwriters",
+      "thumbnailId": "t_nl8Y2nAlpQKoEQDu1oUaG5BA4jcc1QXNERMuJ71vJWdXZ__dXvbtJl88Xi3BHDCOQ2JnCHTLQ2AQ"
+    },
+    {
+      "id": "RDCLAK5uy_k3dazOzqqDagSIBhGET4VrDKHS9dEjXPA",
+      "name": "Khaleeji Chill",
+      "thumbnailId": "_5Uzjh4bm8tMSny2LHtc-exkcloPWJ_Rdff3br3SHGe425WST-ld1FHG1TU8SirwMGZZjj7geZU-xGAI"
+    },
+    {
+      "id": "RDCLAK5uy_m6-fOiMxDip-4p9uD4lhzm3I9WMCSTy_Y",
+      "name": "Yoga & Chill",
+      "thumbnailId": "m8gv95ZI8zl1QH8Xx2xtSuHuafuz2JlB4BoSYd9Z4n7bdBhXDkR6SRgLFUd8Y6FdXq_oXUJFSVYFbw"
+    },
+    {
+      "id": "RDCLAK5uy_l978SYxPKPizMqjLKtWAs-CAeReEqRy5c",
+      "name": "Rewind/Unwind",
+      "thumbnailId": "NR7iAKF-JioQxsTT7CPcXNHngilmsYjzUPQmDD2IZwssNNolUppE_w5-58HJhSg69G79eF-swvX-yT8"
+    },
+    {
+      "id": "RDCLAK5uy_njvsGKIUycy_a4h7zTS8upbKhHcMVzHFM",
+      "name": "Easy-Going Pop & Rock",
+      "thumbnailId": "j5IpK4riMymgVlZOMQrxo4WkLTFofJ-JG_-_Zca2epcu7EvTfXbdwtcGO4oO3-qdobVS_mmYJmjVUuM"
+    },
+    {
+      "id": "RDCLAK5uy_lcM4s2QvgekvNoHcX6dmb0pCl2aMgFxdc",
+      "name": "Wallow",
+      "thumbnailId": "ympKPOf9e5dWKNyZBPMKuuCKhXSHYyvM_g7AVv1QBdVA_hmd7Jd3Q-0PSRCGw9sCEwShSeWGu1hgWkUT"
+    },
+    {
+      "id": "RDCLAK5uy_mwJztsnautpobBg-95AVJ_xd5Gnb5DV-w",
+      "name": "Peace",
+      "thumbnailId": "vpNvm1Fxj_lHolVbiEJIlFpxcVqDWIDy6p5jez77odSdBmQbz__r7ogyj8181d6Bxs6lGORJuzd0nns"
+    },
+    {
+      "id": "RDCLAK5uy_mwxGoOtv8258D3gdLZ0i0clri0O1-MhKU",
+      "name": "Laid-Back 00s Hits",
+      "thumbnailId": "wIzD0qkrJap_OcipaEM23ZQ-niUHR0QN9bMAtWAf94QOOp2onpRRYTDN0xZOXjiv7w5mBMFl8im9AQ"
+    },
+    {
+      "id": "RDCLAK5uy_l2OjbOL4oVkkHE86UT6oQCNufuv8d0luQ",
+      "name": "Deep Sleep Meditation",
+      "thumbnailId": "xyXsi35vQy3dpqG7dKguId0u04QgBgo-9sc5GpQ46UCTEoqEgKtKr3Y05NQzvVXYA3BQzR8zIwMzos6i"
+    },
+    {
+      "id": "RDCLAK5uy_kZV9OCuNPSp11tslT5Qu0NVG3WR8xGo_A",
+      "name": "Your Morning Coffee",
+      "thumbnailId": "-FenGO0ajtMN0kij6BWsKvRFJeqgql8-nnLqaCpY9JTDcySEjAoC0rmKYKKEP5Zet4SWd7isR3Mqr6tD"
+    },
+    {
+      "id": "RDCLAK5uy_k5psGic7w1Z8Udh8rwqpoKxqznjhq8p54",
+      "name": "Classy Arabic",
+      "thumbnailId": "f2BX8WWG1onCNG5-4tAS5wDCaNgQCvREnvqv7RSdwdkIcsZnJbvQBFCAB9ugdIxtHWPG_5o3qmcqvn8"
+    },
+    {
+      "id": "RDCLAK5uy_nlISyc3Ro85hbdC6z16nGQo5jif_dzk_M",
+      "name": "Chill Arabic Indie",
+      "thumbnailId": "MX_ON_54jY7W11IvVNr7sx1Q0K2KVcnFhf4wa9WLcPAs-0Yv_Q9_sAylGJ4jeMcTctdbicX6OrsItS2y"
+    },
+    {
+      "id": "RDCLAK5uy_lzZ2FTtItPTnWXpdiYpNyiH5_xIXf17q8",
+      "name": "Rawa'",
+      "thumbnailId": "8T0qib8aaq4YQgrKXiCdtg6mWFB8rwhIPhCfR_3wgz2MZADMKhoRcwRcVaY4lGrTcEeXn2THQChCLqk"
+    },
+    {
+      "id": "RDCLAK5uy_nOQfhuQ-yKUIAFqFyxJ-M7vGfwcEg257U",
+      "name": "Emo EDM",
+      "thumbnailId": "ZdzMmRD8ULxjOZfpOeRU03c4qo1CVs0YJ2TYE7JTj-rOyRhoph7eLrXctXfMxSmNfqnanoe-j2AGBoQ"
+    },
+    {
+      "id": "RDCLAK5uy_lp8LtelM9GiSwRFGGQjctKaGoHcrgQVEU",
+      "name": "#sadforever",
+      "thumbnailId": "OT_8CLh4WqVpBFvEda3HAr585F707dWntqssopJI7P9Rtl-ouYAQ6dmwMGZ5eejOyeLvBT1Lbhvufwk"
+    },
+    {
+      "id": "RDCLAK5uy_nuMpvdFFPBATWGBB1IQEokh8u3jELKnSc",
+      "name": "sad summer",
+      "thumbnailId": "3fZ5P_uh6E1igEayW0kvXx3zivLEJrHTDMVIYhUwUKXiy7yXhq-1HhnBBJ6kGwudxi2NUtuHcO5vSOU"
+    },
+    {
+      "id": "RDCLAK5uy_lnFyVNMZVO3Jgi18hFYliVPUrglgPnDRU",
+      "name": "Chill House & Techno",
+      "thumbnailId": "p9HsCJMPvI5j55YDVOt4usva3L_knfbuGi5yO7mLlbfasxBRcyiCHospVyopJpjcE_4eCMDJ8Yoq_Q"
+    },
+    {
+      "id": "RDCLAK5uy_kTh6wa62hZCbKX0oevcV-_LD-A8l7CInk",
+      "name": "Chill Bangers",
+      "thumbnailId": "Z7v_4osh9MjzHJqdvMDTKbS53yuIvNTEbNKGdAzMTQy5wYA8pnyYjRSi9l7UGQh8Y82AOgwUyI9ystc"
+    },
+    {
+      "id": "RDCLAK5uy_mPolD_J22gS1SKxufARWcTZd1UrAH_0ZI",
+      "name": "deep chill",
+      "thumbnailId": "W-d-Yf4kNuESQAswMbEcXhYcyn3A-bbTEZQK9vzJhyrOuIIhnzi0PyKunsVCPNtMOg_Cu_-F0DeP00gk"
+    },
+    {
+      "id": "RDCLAK5uy_n38QBvlkETFzw_TX8Z7wfA733kKr2vo0o",
+      "name": "Brazilian Phonk (slowed)",
+      "thumbnailId": "fpOcwFvxGdiVimi9apA4oISOfbGxXZbSrvTySjcozMg2J_aKlfYr4fHlUo1Ngh0IKnleh7qnQ0DYCm8B"
+    },
+    {
+      "id": "RDCLAK5uy_lzovqKuo2WXDbKmON6Jrl51hmqoK1uo04",
+      "name": "slowcore",
+      "thumbnailId": "K9SYco70ii1Gg56ZbYrXgbub-X9WvY1o4RWHXe1b-RuJSGIBPNiJXPvNlJr2WkKGPuE2SQrfwBZuSw"
+    },
+    {
+      "id": "RDCLAK5uy_lXWhlJsihey6xq1b50d7Uv93NLqle8TSc",
+      "name": "Take It Easy Indie",
+      "thumbnailId": "i1cf2IRNeECrZsxufoFzkBb9yC89L42HuwkNawo_PZ94VG3v9tU5zHvv6mS9bBM0N9y_fmTIzspAnQ"
+    },
+    {
+      "id": "RDCLAK5uy_kgpCGgJj2cEqRIaeMfGEYDHVr-m5wHQlM",
+      "name": "Drift Away Indie",
+      "thumbnailId": "h0uXRDQkkGjQnWMa1FBJQng16HOz9dypSANFpg7LWZH3E20b6DdtOYqCGA746fxxKRlQ1gWiaVawIA"
+    },
+    {
+      "id": "RDCLAK5uy_naZbZR0biQkhIHsrfLLQ8bn2qNIzFy05s",
+      "name": "sleep",
+      "thumbnailId": "qTjdReNYGC9cHS-tNfObIxapYwYxPjCnH_Eu_UUDhaNPAcpyCo56FEc7tbCvDqNsHiZnTiBABSWTr_Qh"
+    },
+    {
+      "id": "RDCLAK5uy_nPKG3faKyALfUXrqEe2vRJlrfefQo1B0s",
+      "name": "Focused Gaming",
+      "thumbnailId": "j68VSIWwBnrBbLiX1v1jQZ1NWdaj5yxOoNZfnd-8g9kDgVtnOlQh1mDTs8d0QekvQagtN90ETNj2IslF"
+    },
+    {
+      "id": "RDCLAK5uy_nQXTlvzUfwEzk3B4wnaeaQqZ7FFRd1_rY",
+      "name": "Slow Down",
+      "thumbnailId": "XxfCv6LW60cUiBx_Q0g9l6hwc1Lvhl0_Qh-ckRL6qD4KUGzGwGDvSaRqm-e0zuRQvxg_1lue6nQ6Snh1"
+    },
+    {
+      "id": "RDCLAK5uy_lE5hd-xT1yLqpoQWn8BOo99JL45hC31d8",
+      "name": "mindful",
+      "thumbnailId": "HxcqusAiwtBEWwf-m6bRcf1aSIuyQHiBvTB61s_ZB0Gp7oGcdrpN-6rHK04n3t3-R27VNmH3fVjUuP_b"
+    },
+    {
+      "id": "RDCLAK5uy_nvnF3rA9hgZHUuJPze8JuhaMhdyjur8BM",
+      "name": "Self Care",
+      "thumbnailId": "1-aHcBpJG6D7b2t6T5M6Udco0oGgr-85IgF6-oV372BNOL_akTzrS5hrVL4JsaWdpDUASThb2ILQDuA"
+    },
+    {
+      "id": "RDCLAK5uy_kfEoXjtVgX1p_8Fer0ajD9wM5qSn-MGP8",
+      "name": "Chill Tracks 2026",
+      "thumbnailId": "xIQYq0yoEl0fG0j_ZEVrR-6O7HNGqKz1Y8hQupQX3vrLneJ_HSliC8EhaIt_Wj5w1my34pQW9oNKzoVq"
+    },
+    {
+      "id": "RDCLAK5uy_mOsCZqAheLdEq9og0_sycjYAEE67wjgzA",
+      "name": "Chill Phonk (slowed)",
+      "thumbnailId": "VNEEdMnDo3k9qz66heXW7lqMaRX0wHLpUQprV9DdDrM8DG7EvKi-ZK496HZ1hmV9aexXqYR2UzdMeWM"
+    }
+  ],
+  "Yoga": [
+    {
+      "id": "RDCLAK5uy_nZJzoZEBYRptA2XXskbxGTvKkevapT_F4",
+      "name": "Lofi Flow State",
+      "thumbnailId": "Xzndf084o4ian2SBi8hMmRL2wPCpkwsHRU4EQl5U9pgLNEGt57Z4j-0ZO-eZZHG1gJ1I7NnUZFYjoKM"
+    },
+    {
+      "id": "RDCLAK5uy_ldLj_raotpFCQGWiQ7L-Ag5GTbGOyjgRY",
+      "name": "Classical Meditation",
+      "thumbnailId": "eKIUu0x74PRwdst4LEQewuo8sCGQGaFP1uSc2L1xFLmNDppCUCsit_tAH0Z_95Rg02s0AX57c5pruw"
+    },
+    {
+      "id": "RDCLAK5uy_kjbesFvpAjQl3z_xUxMArIfRpubFn791o",
+      "name": "Tranquil Spa Day",
+      "thumbnailId": "NymHUHk1b2UwDbEA7ZmKQ754Vr8gWziyb9neOQKV8Eg4mY9ov-u1OCh4jLeUfblqRX-kDBkmkaAXow"
+    },
+    {
+      "id": "RDCLAK5uy_mwJztsnautpobBg-95AVJ_xd5Gnb5DV-w",
+      "name": "Peace",
+      "thumbnailId": "vpNvm1Fxj_lHolVbiEJIlFpxcVqDWIDy6p5jez77odSdBmQbz__r7ogyj8181d6Bxs6lGORJuzd0nns"
+    },
+    {
+      "id": "RDCLAK5uy_mS5x3haS3YiflmBHa8rK0rOZHgn0lhG0w",
+      "name": "Symphonic Serenity",
+      "thumbnailId": "UJhpG7kQzhoanrDAw8bTRD4syjTiDzpqMSa8axay3QCdbj4T6ochCwFpiHBZJlxTOjjmjEFsMT4qK32O"
+    },
+    {
+      "id": "RDCLAK5uy_mkG6Cj4VqXPmlYf3xbLQQhhAZHGI8vJHo",
+      "name": "Infinite Sound Healing",
+      "thumbnailId": "MfPgkhYVNnnXVbiTjjJZYgpmejz2mWO06o9Kmhs5m73bjDrZ6-58aaDkRNvS8TMjj6BZYUaqVH85aw"
+    },
+    {
+      "id": "RDCLAK5uy_l4IwIcgRUB8_0PPyLLBuIMmldGADJlZMc",
+      "name": "Relaxing Yoga",
+      "thumbnailId": "AErS9z4ypniozdtcbbR2hHmXVNgetsmVk13QCiNdPTWHLDAM6SnxhHBz7n3MA0QEVcJRvlXj9nHD_D4"
+    },
+    {
+      "id": "RDCLAK5uy_nmyiTFaD-osoI95yEMuRjaSMQiTDRJz6E",
+      "name": "Néctar",
+      "thumbnailId": "oS2Zfc-qXFPq6R6cQwet6Qn7KpQ3xRirMh8o25iTrwKq9sahQjcC1hCufPjwdRScP82aYKPade_rfxY"
+    },
+    {
+      "id": "RDCLAK5uy_nj-SfVLWmvrL6nxX2mSt8E9e3TC6Zr3gY",
+      "name": "Slow Flow",
+      "thumbnailId": "EYsLhVxiCU4x3E4JKcuJegs31DkG5b3p3vJLW5N351dIg7w1oc5RMNtrK5ATuZ4Bp7ANTJDWU5uXpQ"
+    },
+    {
+      "id": "RDCLAK5uy_m6-fOiMxDip-4p9uD4lhzm3I9WMCSTy_Y",
+      "name": "Yoga & Chill",
+      "thumbnailId": "m8gv95ZI8zl1QH8Xx2xtSuHuafuz2JlB4BoSYd9Z4n7bdBhXDkR6SRgLFUd8Y6FdXq_oXUJFSVYFbw"
+    },
+    {
+      "id": "RDCLAK5uy_mTrr21OCLdb2dJgl_BJ-6MdJDXWqB-1gc",
+      "name": "Yoga & Meditation",
+      "thumbnailId": "KFBEEAE8C7FMDOGJdJthPSNpP7xz-evjPkVg79ba3MZcykaDuhXfa6yUNLSP1Z45uiegf08OYVtopA"
+    },
+    {
+      "id": "RDCLAK5uy_kzJF5L0orSQpW0MBQyGjFlWVm2J_TmQPo",
+      "name": "Soul House Vibe",
+      "thumbnailId": "WzBzOrRnXcQXEyZZ3BKT9XvRv-iG36jwYN1n8b-IjfkLGB8cmkFEeLNXFRharN8gBUG_IFZyQE9X_Fk"
+    },
+    {
+      "id": "RDCLAK5uy_nlHCD7Y3YATeFPwGmGRiZv4pKXW57yN8o",
+      "name": "Yoga: Elevation of Spirit",
+      "thumbnailId": "4_pKnB6AqjwboLq1dS3Wcze0fG72h9KmAc3IYVR-SI28t-4eMrZsIHBSrJom_X1r72h8_wIhhurITRw"
+    },
+    {
+      "id": "RDCLAK5uy_l2OjbOL4oVkkHE86UT6oQCNufuv8d0luQ",
+      "name": "Deep Sleep Meditation",
+      "thumbnailId": "xyXsi35vQy3dpqG7dKguId0u04QgBgo-9sc5GpQ46UCTEoqEgKtKr3Y05NQzvVXYA3BQzR8zIwMzos6i"
+    },
+    {
+      "id": "RDCLAK5uy_m9YprJ504SUVUWr1oygQy6p-lV8N11BZw",
+      "name": "White Noise",
+      "thumbnailId": "PwNiEOYzXucXTiETNaF_5hRkViFSvAG5G3fgtlRWGhOlnY801O1AT3SDD218v4_MLWiOgWY9B0U-rzwt"
+    },
+    {
+      "id": "RDCLAK5uy_lakC34Al6Kd5kidN8Bq0jpdnGUpIw2ctQ",
+      "name": "Ambient Dreams",
+      "thumbnailId": "wIfBUg3xNQfRL-P-x_XfS_JRLwczofydHbXpWSvojY8zknDeh0Qtn-A4TcMGdimbJsZBabXj8hklugU"
+    },
+    {
+      "id": "RDCLAK5uy_lQ2iiRFCsEvoxLRfTCOyVd6-tdZ75Gw-E",
+      "name": "Rain Sounds",
+      "thumbnailId": "4kY86HKnF6GY9VXvbcvNADz3SSiD-feffTNa32I1JXM7tbjL_UnPc3Q9OSH1esc9am-CzwjzB252tAc"
+    }
+  ],
+  "Peaceful bedtime": [
+    {
+      "id": "RDCLAK5uy_k83Q0BJ_yGLX2nTNKxOXb3BP3Pb7uMIN0",
+      "name": "Classical for Sleeping",
+      "thumbnailId": "SwyowKe-kDLokD2wEouPllJwjfKlG73podaFDHBzaEDeR0mu3mgp0x4iy7ouTDD0JuksjzG3ObZsfQ"
+    },
+    {
+      "id": "RDCLAK5uy_mSaYvcoVvag_GrAc593WX3MoxTLvUXYT8",
+      "name": "Relaxing Evening",
+      "thumbnailId": "HAKNNaXo0xQA17H5slT9-u1BxtSxVaTQgGERsSz59DAU79IXALdDy7xkeLgHD4fq2raQYEmzMqs6hObB"
+    },
+    {
+      "id": "RDCLAK5uy_k2csipDOuQwX6-GGZd4ys5MM5bueEqkrE",
+      "name": "Fall Asleep",
+      "thumbnailId": "uABch78iXzNqPW5ot6KpF6cqrVqhx1c3L7VGRGqZDoV-0ZkjkodzE2nZH5sk7hRK59dHNWvdv7eSkhbW"
+    },
+    {
+      "id": "RDCLAK5uy_kTgC4HnOI3u2_HgrS_x6D9n3gyImsgnh0",
+      "name": "Acoustic Indie & Alternative",
+      "thumbnailId": "6cMdrO2434AD4kCEHVKHYiSAvWIyttzM7d7LNzHb5WIxfri65pL3EMCQc0rqQYF2zB-WHyGeFIyVA24"
+    },
+    {
+      "id": "RDCLAK5uy_l4rPvz8nCpkqPnBxstuE6OhDSRsCW4aVk",
+      "name": "nuGaze",
+      "thumbnailId": "vJp9HKtSwGj_0gzBC_4DMJrB9f4lwyQW0dMpmpGBu6QXMoVF2l5WpwiJoSYfVLfZv9DQCcWixVWBQqk"
+    },
+    {
+      "id": "RDCLAK5uy_l2OjbOL4oVkkHE86UT6oQCNufuv8d0luQ",
+      "name": "Deep Sleep Meditation",
+      "thumbnailId": "xyXsi35vQy3dpqG7dKguId0u04QgBgo-9sc5GpQ46UCTEoqEgKtKr3Y05NQzvVXYA3BQzR8zIwMzos6i"
+    },
+    {
+      "id": "RDCLAK5uy_nNaRgDdtxqig84vFR4hHMYsCXRZpUbfNE",
+      "name": "Late Night Classical Music",
+      "thumbnailId": "ron_VA73vnRP7gKB0XL2FRbrLhieZJjPu_8r7VosBM7sy1MBXJmjquKMC3n3POF9CXMjsLdBu9sP6OU"
+    },
+    {
+      "id": "RDCLAK5uy_ntOL7kXTRxvIvmIsrYzKQ_MEpBdIywpQc",
+      "name": "Acoustic Bedtime",
+      "thumbnailId": "cURNN8e1dnUy2lL5QJsY160cHzifE06Kc2Nt4ymcvnNhR_SH2YnbuOGfUP6BE3cyfYOY_yNjb6JBWEA"
+    },
+    {
+      "id": "RDCLAK5uy_kABC3nlv35ioOf0D9mih-37tNip6SWre8",
+      "name": "Classic Rock Lullabies",
+      "thumbnailId": "1VO6E7FuuKC9K6vZwZuvy2zGG4P2g4s3zJmr7z3WM0Ne31HIUGMe6YlJb8V74_VU6VJsRxUVMoroEnQ"
+    },
+    {
+      "id": "RDCLAK5uy_ldooV6iHaoPy6VKyVuHDq0DT4lh-3tRqQ",
+      "name": "Gentle Piano",
+      "thumbnailId": "w_IkywS60PT1JsZafZXkcUtpFR83tsa1vlziPdAP8syGHsMVLOH4QwQKZk8yRi0Lv_eWju4bNQVpz6yj"
+    },
+    {
+      "id": "RDCLAK5uy_neriXH6JbZPr7Pf4LOi5bGQP-_lWRZXs4",
+      "name": "Cozy Jazz",
+      "thumbnailId": "TSUtbquRFr7lhlYJq_fZnfxn8FnzXpbzWiZLJb8-WscOEWDXfldNPT3OcTxkdBL_1vKFG_Ni0_nJ8P5h"
+    },
+    {
+      "id": "RDCLAK5uy_ldLj_raotpFCQGWiQ7L-Ag5GTbGOyjgRY",
+      "name": "Classical Meditation",
+      "thumbnailId": "eKIUu0x74PRwdst4LEQewuo8sCGQGaFP1uSc2L1xFLmNDppCUCsit_tAH0Z_95Rg02s0AX57c5pruw"
+    },
+    {
+      "id": "RDCLAK5uy_kL57PLcOmExjhzqGfGhvA82ZWe4fPH2c4",
+      "name": "Muted Jazz",
+      "thumbnailId": "9LRgeba47a0U1xYHxZnLvo9HUG3ML7b26A9gx0JcBZR7sQimfE2cI0N1yGtQGOqMFPEW0NpwII0YGw"
+    },
+    {
+      "id": "RDCLAK5uy_lbcexX19-ShfMgzXpxayVFh_9l4Dml-kg",
+      "name": "Mellow Solo Piano",
+      "thumbnailId": "CzqNOsy9Lj5cKRJtsRXruWwHn3P0_Cqy9xM0CsJEZzoL7JtmThflUTfGv0uNXyneaCyzArbY2qnCYUg"
+    },
+    {
+      "id": "RDCLAK5uy_lQ2iiRFCsEvoxLRfTCOyVd6-tdZ75Gw-E",
+      "name": "Rain Sounds",
+      "thumbnailId": "4kY86HKnF6GY9VXvbcvNADz3SSiD-feffTNa32I1JXM7tbjL_UnPc3Q9OSH1esc9am-CzwjzB252tAc"
+    },
+    {
+      "id": "RDCLAK5uy_k0oJ5JQqsSSQQvYS8xzcAh29CFryqs0mc",
+      "name": "Soothing Soul",
+      "thumbnailId": "rAuzuLfViDJUshG4WU2sHbQv6hFX6ZCnGpI-_ucalfi9RGDoZisfPx9iESN1--HSyeCmTc2YKfJO4wM"
+    },
+    {
+      "id": "RDCLAK5uy_nZJzoZEBYRptA2XXskbxGTvKkevapT_F4",
+      "name": "Lofi Flow State",
+      "thumbnailId": "Xzndf084o4ian2SBi8hMmRL2wPCpkwsHRU4EQl5U9pgLNEGt57Z4j-0ZO-eZZHG1gJ1I7NnUZFYjoKM"
+    },
+    {
+      "id": "RDCLAK5uy_mS5x3haS3YiflmBHa8rK0rOZHgn0lhG0w",
+      "name": "Symphonic Serenity",
+      "thumbnailId": "UJhpG7kQzhoanrDAw8bTRD4syjTiDzpqMSa8axay3QCdbj4T6ochCwFpiHBZJlxTOjjmjEFsMT4qK32O"
+    },
+    {
+      "id": "RDCLAK5uy_m9YprJ504SUVUWr1oygQy6p-lV8N11BZw",
+      "name": "White Noise",
+      "thumbnailId": "PwNiEOYzXucXTiETNaF_5hRkViFSvAG5G3fgtlRWGhOlnY801O1AT3SDD218v4_MLWiOgWY9B0U-rzwt"
+    },
+    {
+      "id": "RDCLAK5uy_l7nE3iR6eJpMdU08uxoNBJ7QenxwqfY0E",
+      "name": "Velvet Voices",
+      "thumbnailId": "Y4zG1YK045h-_QjYBNBihBfJVoYbcDQodKwr7M3pSuU1E8_ZbVh5xZnCMRvMHCihvM8VJ7V7BBW1nj8"
+    },
+    {
+      "id": "RDCLAK5uy_nBOvRANXhyfsK6oGe_wTHNwOW-0kSMB8w",
+      "name": "Classical Calm",
+      "thumbnailId": "D8mw4OfckbnyW2cu0nUHBmrDROUF1Iq7DNdDPHO8xNBGVxA0XbONCeeW5DLVs4sfT2o10EpoY66g8NM"
+    },
+    {
+      "id": "RDCLAK5uy_kGcITlIUh14Xy7FgqGiLtEJtKoDax4TkI",
+      "name": "Wind & Rain",
+      "thumbnailId": "juPh9cpdhftAoJ4wbUDF213DrHNADONcQYXKActK8Fz7tUfTuOSHQ-HWg_aAaymAuFzQEkbbmDFIrFA"
+    },
+    {
+      "id": "RDCLAK5uy_nA42_0IX0YmeKb7pLRjm_J8e2ja445Urc",
+      "name": "Mellow Jazz",
+      "thumbnailId": "PlQSxuGLm8bF97gW6771Akz_OENSg_PYF2wSZZwKCbed7u9lJR_NRW7wWUcVNQBoBWqEQuvatU4DqrI"
+    },
+    {
+      "id": "RDCLAK5uy_li40oRtkZfR06nf8rRzgRMraDx764TEN0",
+      "name": "Mellow Cello",
+      "thumbnailId": "9GTdK0ASn_0M6jlnWBVqbGm4iUFmIhJhZs_luU3sqJOZ4Qvr-v9Y3U_9YLQOFhSt83MYXtnmqj6mUeY"
+    },
+    {
+      "id": "RDCLAK5uy_n8797v38N8JhZdT2JJtlM0OfIpgkJ3Mkk",
+      "name": "Traditional Jazz",
+      "thumbnailId": "yddA6irVEwpzX4sSiGCycEHG67l5aVcvp4jQQG4R7y84eZzRr3uGyy4ppV6cbMyzFsz52IYwixXeofmd"
+    },
+    {
+      "id": "RDCLAK5uy_kL7seJinYAVpulQQbre887jeaIDkrnAg0",
+      "name": "Background Jazz",
+      "thumbnailId": "OYJPNfj51KL4b17grXq3QkMOpYNk71Z2aUKLE2vSu74wcHBUXZxLzerTWXBfhwaQdUmmWrOoVW6Dcxs"
+    },
+    {
+      "id": "RDCLAK5uy_nPaBlmfKLPFyzWF0NeUzb9XhJwpWT5p1I",
+      "name": "Classic Ambient",
+      "thumbnailId": "N2IX9WbSttaFO3fjS1dszeCEUw-8tbWycwhpSMtwunC42mLUPYMhZvDGFJsNCp1WrogJjyxeOKDxYw"
+    },
+    {
+      "id": "RDCLAK5uy_lq4Mm_BGGH1VmOL1gSySABLvuX2Li_EGc",
+      "name": "'60s Folk",
+      "thumbnailId": "nRO2hqtPoXqXm9PRHMQaRhqicJXUwG-QR4bZW_2zHaupjT-pVSUyFY3Qtk7gLE0ZtzYOhQu7hqi41GsL"
+    },
+    {
+      "id": "RDCLAK5uy_np_soSTj6w3-N7Dh_xmdDpQINJ8LsVpa8",
+      "name": "Unwind",
+      "thumbnailId": "VpOriKyGqxkLFfgo6IMEyr9BhKBO3eQwmCAyYrTZFd6WKQisnz0Y9V9skWgg_dDDscugoTmYD6zr"
+    },
+    {
+      "id": "RDCLAK5uy_l9nSIU91U-FUBH_0P9wB3dVewP9gCwD2Y",
+      "name": "'90s Slow Jams",
+      "thumbnailId": "XZXKvl04UYKGUycPEeccZDQkZouNEVZBNa6fCcXIOFAjVUopjujVVQ4vXnyRfV5_C5qiDXWgYddKwhg"
+    },
+    {
+      "id": "RDCLAK5uy_m1CIAqS3N5vxATzzTCZOlQ2uyt6DdjqYY",
+      "name": "Relaxing J-Pop",
+      "thumbnailId": "6LEFRaGKTgIX2BmnaxSG7Uwr7Aot0loLBUC89RZqT1PE2LSAmpU7jrkyt-6sUiArt9sESsZN-X1HWG_U"
+    },
+    {
+      "id": "RDCLAK5uy_nnF2-hklIXSM7GRyM5jmvB2MHGPNS-wI8",
+      "name": "Acoustic Japan",
+      "thumbnailId": "MMvo937CnR-O9L_UWJjJmLAsp03Gl2wFrkzewaA3COubq3BzAuUnP7r9cmEJWlO7y558HpgXShglumKK"
+    },
+    {
+      "id": "RDCLAK5uy_ndAJusuZt_EEyDuPpzowQuzA8Nxa8znjg",
+      "name": "Take It Easy",
+      "thumbnailId": "sC5xDEtzhvsO8uzThoK9t4cCoQuIqgTISGWrCxpAKJ-IZut7gU_s-n_fRJE2cGr2o7tq_G07StHGTlA"
+    },
+    {
+      "id": "RDCLAK5uy_lyevq8yYHBWApU2AKRwrLdcWFXaRk94kk",
+      "name": "J-Lofi",
+      "thumbnailId": "o1NIa0j1N7xlQqwgWMzo3EjqNXylyo91aaxSAY7EDsN2KQQJXbJ4OoTgqFiRY79YGq_K7OAgUCN5Px4"
+    },
+    {
+      "id": "RDCLAK5uy_kkRECg2hUY0thQbY5MaLzPgcN9s4yb87w",
+      "name": "Brown Noise",
+      "thumbnailId": "ZXhsFV2sm-aLKeKhsj68iTD96Twazs2rkLToljeTjfgAvuIQbu9sFE6jeMwQWuRhYlfihVzXOXUR39sw"
+    },
+    {
+      "id": "RDCLAK5uy_naZbZR0biQkhIHsrfLLQ8bn2qNIzFy05s",
+      "name": "sleep",
+      "thumbnailId": "qTjdReNYGC9cHS-tNfObIxapYwYxPjCnH_Eu_UUDhaNPAcpyCo56FEc7tbCvDqNsHiZnTiBABSWTr_Qh"
+    },
+    {
+      "id": "RDCLAK5uy_nvnF3rA9hgZHUuJPze8JuhaMhdyjur8BM",
+      "name": "Self Care",
+      "thumbnailId": "1-aHcBpJG6D7b2t6T5M6Udco0oGgr-85IgF6-oV372BNOL_akTzrS5hrVL4JsaWdpDUASThb2ILQDuA"
+    },
+    {
+      "id": "RDCLAK5uy_kRMtamnVCD4AQaBkMy_ULry_26F3YzYps",
+      "name": "Ambient Music Japan",
+      "thumbnailId": "sf2uw2RwWhuLUTtr9NFifQ4R2jz1AboaNC0bPzpUgy8ZGsSK5_t0OjU1Zqmt85Sbs4VCw3tX51vJyNOH"
+    }
+  ],
+  "Laidback + acoustic": [
+    {
+      "id": "RDCLAK5uy_nNGk2yOsNF2AWjk3FbtO8FjvQhT1FUi_c",
+      "name": "Classic Easy Rock",
+      "thumbnailId": "FmEI7Y44J_hp2ecFJgoestuzzbTknk1tMMT8MAx1zKYOUN97i5zxlcstXhVzJXulPBKzcpFrAOdARG4"
+    },
+    {
+      "id": "RDCLAK5uy_km8j1Msn0n8FTLRIw0krI9k2sf-t1Z4hg",
+      "name": "Acoustic Covers of Love Songs",
+      "thumbnailId": "Gzvo5VvqNiV-Xr-rGmYrSEPL5L3yAMtp0PVaGG9ekpqiOin6kcGIiV-a-3Vl_r7GgB5TaPJk7AqzNmw"
+    },
+    {
+      "id": "RDCLAK5uy_kluqSMlnog1GDp3fK-kzf787f9DMW8LB0",
+      "name": "All-Time Easy Acoustics",
+      "thumbnailId": "t9xcLjNlSeEJMQKHLC4r8ToQACpGuX2Rocmd-V4bLefZ9ltYzzgNtOrYjigjprXGZwDqTz17k5V4zl4"
+    },
+    {
+      "id": "RDCLAK5uy_l2Y9mrA559EY5tfe8kK8YxdUVR0rADYBI",
+      "name": "Mellow Turkish Indie",
+      "thumbnailId": "HeM8hWIFXerwAPsdpV2Dy5C8FgW2bI2XS9edf8GKexw9ZnWiNTfX-gHP5zHXuSGuuDTs1hiV0zTV26k"
+    },
+    {
+      "id": "RDCLAK5uy_mkPdnadBmgXk28mbGxm_5uGeKvHrec208",
+      "name": "Acoustic Pop",
+      "thumbnailId": "tE56EFMRtd1aLWwyhIOPH55gNMF2c_h_PP30_gGMl1jpbrA48GTbFpuWgKlbRHKo_7gwN-9QvVdp1lZd"
+    },
+    {
+      "id": "RDCLAK5uy_np-ufHI4pLUbNNW8NVYznT2qZp3the3_o",
+      "name": "Acoustic Love Songs",
+      "thumbnailId": "QisYUTAlUcpa7_GDjfl17f8GAWNljl8ryMDEoSFPDrIQDmNhfayrPpZkJmlPm6Hx___lRprFE1WAsQ"
+    },
+    {
+      "id": "RDCLAK5uy_kIlyUNKFS6Z7rgWOhrPzqohetabYwby08",
+      "name": "Akustikan",
+      "thumbnailId": "lLaT7a5XVmbeoijos6pigGAemNyt6UMbTlWPXJ2qIS8S6pOI4hNWOh6N2u22Hs9hwISikeU-2Q54bqo"
+    },
+    {
+      "id": "RDCLAK5uy_nIS4kZng78XMjia0cDnzYy8EHwPrHIDX0",
+      "name": "Acoustic Turkish Pop",
+      "thumbnailId": "BnF_9HW4TNNUuTHphV_QfG7TfY2QcPw9dCwwzkvIxrIwGi7fnTS-LqScSut3HmRikQEs5dAQL60fxQ"
+    },
+    {
+      "id": "RDCLAK5uy_lx9grc9fqgdeglZz2jOVvZIxevcHjF4-c",
+      "name": "The Back Porch",
+      "thumbnailId": "xiqR1ukKXmEQXQHJIvPlwGZxBPL-5gztZ7bpmvh_2gk5W4X09o_6Pm3zywSTJIIYdVgHzWgII2IKsg"
+    },
+    {
+      "id": "RDCLAK5uy_lsl0WiIp96sJajCIcHkUnOWtsU29tDSNg",
+      "name": "Gentle Acoustic Instrumentals",
+      "thumbnailId": "AcqSsqL9dQNa0QLBVTjSJDtoCWwm666wj0s1IOzJULZjI2eA8TaVrRC88So3rid-YeK-Ctwb4cZBGo8"
+    },
+    {
+      "id": "RDCLAK5uy_kjQJh9d85PwdTFi8V03RleRqWdE6_17vo",
+      "name": "Turkish Acoustic Classics",
+      "thumbnailId": "JtAu7u8csJ-Db0F0waO2YJkA6e9GgQWPfqBo2AZXNqzEoHPFcxajxLcQkYpInu8ZtDAYgmYxOQI2Vw"
+    },
+    {
+      "id": "RDCLAK5uy_kiLhvcwQ77iHCtSSBSJd9b9qO3pqabOpk",
+      "name": "Fresh Coffee",
+      "thumbnailId": "TYZQDcwqceAYz-Ik3Am6uZoMWWgvsI6hikbG8jgsVrOnPMVpWOxmqVo2NKjIJpoPtPoApTpuvJx9Kl_p"
+    },
+    {
+      "id": "RDCLAK5uy_m6XXtQxtjnB5lr_FhgBANwp7mHKY5Yoik",
+      "name": "Acoustic Singer-Songwriters",
+      "thumbnailId": "t_nl8Y2nAlpQKoEQDu1oUaG5BA4jcc1QXNERMuJ71vJWdXZ__dXvbtJl88Xi3BHDCOQ2JnCHTLQ2AQ"
+    },
+    {
+      "id": "RDCLAK5uy_m2p5A1NXN8SInEzfsxzFEvQ6zws-V-wBo",
+      "name": "Gentle Chamber Music",
+      "thumbnailId": "8psoIIvcQhqSUljk5cYVTSBbIfK4n3uaQ7Sa2NN0NnlNmeAIVBhptLrorZ3UZgh0mbKF0CF55bcD5w"
+    },
+    {
+      "id": "RDCLAK5uy_mPmYbqPIJ2C20lzdy9hyRU1ThPlZIDdog",
+      "name": "Acoustic Soul",
+      "thumbnailId": "oB8A8xD3IWdvyGFTGCq0Sy24DXQ927OKORDH62kH6rFcjAQ1q2eeINrPscB3qHPzSTk4e-ZOPOKsJoeB"
+    },
+    {
+      "id": "RDCLAK5uy_liwwwIG8z4P25AWeLZ2Nvydx1GwbvndEI",
+      "name": "Campfire Classics",
+      "thumbnailId": "9AsBamvDn0qukL9rWgDMLveUsSZ5JAe1eGXS4XTE98JU2H5pjNCmJYO0MV6o6Q24sIeum82kBE4MZ_g"
+    },
+    {
+      "id": "RDCLAK5uy_nyWocYSe0j8kcLWxzE7KlyO8ZMI9LLCK4",
+      "name": "Turkish Acoustic Hotlist",
+      "thumbnailId": "BpkGilMrrXiaVlkfCSAwG1WU_rreCNKjl_mWR2pBy3loeFUJISz2aupmfQEYxp50yQq1pxhyPtMYwoI"
+    },
+    {
+      "id": "RDCLAK5uy_nOUUn0uPng2213dSoIyfl-LCgC_IuGjbM",
+      "name": "Calm Instrumental from Turkey",
+      "thumbnailId": "Wa3_DOPX7Z80dDZsQps7fCKo03cd-iaiDuT7A0x_V-Nmjhwc1yGXPg8PLPXkfyKhvm53fHAoMcVD30o"
+    },
+    {
+      "id": "RDCLAK5uy_lXWhlJsihey6xq1b50d7Uv93NLqle8TSc",
+      "name": "Take It Easy Indie",
+      "thumbnailId": "i1cf2IRNeECrZsxufoFzkBb9yC89L42HuwkNawo_PZ94VG3v9tU5zHvv6mS9bBM0N9y_fmTIzspAnQ"
+    },
+    {
+      "id": "RDCLAK5uy_kaRoBBGlE8Xh1enKL7w9DqNyCkBaZJjOI",
+      "name": "Turkish Acoustic Lovers",
+      "thumbnailId": "L3rASwwwDWpIncCPyhy_8Qm0HCcreQIO98FtHzf142igdPZrXOVUrcOPmpYlTDa6XrSqmsLIn5QKm_0"
+    },
+    {
+      "id": "RDCLAK5uy_nZexkv7Z-x6_aS9MlGSpmnXZceVKEsBms",
+      "name": "Ukrainian Pop Ballads",
+      "thumbnailId": "cW-HdzbLEtJGWXHcN5TGqPRBd1tNa69eI9lc3OAsDf2-1YKuS8fHnU8iK7sjKQp3fzCFwa8A10f6s3Y"
+    },
+    {
+      "id": "RDCLAK5uy_ngmjGHcYHuQC6ib3VZvzn5NaAiu3oRizc",
+      "name": "French Sweets",
+      "thumbnailId": "zUDTc2fTOLt5NXrA_EAk7BXNtTVFN0EmiU9W9aSnuAbgqfLb2Hz9F40RebaJ5idCn_K6cIz3j1mzVb8a"
+    },
+    {
+      "id": "RDCLAK5uy_m8ULgAe9Lkf7wIsoguU3IqZ8ZePk1ndMc",
+      "name": "Classical Spanish Guitar",
+      "thumbnailId": "427dllrVLETRtMdFn1U_Pq4esHK7k2cM3cbBJMkJDgidu3wQSkT_5rvXZRTC5lDwMOr66wKsSUzkLQQJ"
+    },
+    {
+      "id": "RDCLAK5uy_lH6Paw96Fef7BIa_vmvBAYJ4qDwnQfI_U",
+      "name": "Relaxing Time",
+      "thumbnailId": "QTEAaeBaypRo7Y3q4hoQ54OhhJu0DAN8b9YpS8hUuUc4D1HgpSCPKhKnqZEYZSiKLXX1qDmdczLhPJI"
+    },
+    {
+      "id": "RDCLAK5uy_lBXJA3sbgAXtfFc9gIKWF4U4gKku-XAqk",
+      "name": "Harvest Moon",
+      "thumbnailId": "dF_uwDMrDbrBV2ZMUBIBRXvIkvTPuGgedmXUA_yNmMfbRzTr12bNpgZipStO83EUfoDzcVE9zBlCgQ"
+    },
+    {
+      "id": "RDCLAK5uy_lk-XEQ33hlGUYXZ2A-e6H-mM0cBhcGv5A",
+      "name": "Turkish Latin Pop",
+      "thumbnailId": "Ap1wN0T8Yrn9y5vBGLIVjh6wvoniW3qo-OCWulaGwUHGIHLrhHVUXSBImfYUJc20w8k5A3Oyu0C5guA"
+    },
+    {
+      "id": "RDCLAK5uy_kVkMotNBbFuy4Ky2M1yxjFjYs4Ll7VXIw",
+      "name": "Classics Unplugged",
+      "thumbnailId": "NicVEFPPZiTvDY_gzZ3AJoitBl1M4Ci5cDnRfmWQPWGptzku0sDpg242NbTZ9oD5L0nqZH4ex4k5vK8"
+    },
+    {
+      "id": "RDCLAK5uy_nuMpvdFFPBATWGBB1IQEokh8u3jELKnSc",
+      "name": "sad summer",
+      "thumbnailId": "3fZ5P_uh6E1igEayW0kvXx3zivLEJrHTDMVIYhUwUKXiy7yXhq-1HhnBBJ6kGwudxi2NUtuHcO5vSOU"
+    },
+    {
+      "id": "RDCLAK5uy_mQHw3tUaHpQQ8a9BU22j5y5TrST1AvZbg",
+      "name": "Easy Rock",
+      "thumbnailId": "osiFQ53v0v7M2Udp6tGvHqNnKlNRf_30SF7UpuicmMcIrLFQBO8GUZ-ejG_XGTcugedJ0-Nbdi4b7Xs"
+    },
+    {
+      "id": "RDCLAK5uy_nnr3vEeu5eLO3nMuVbSZ3BQfJryoR57Kg",
+      "name": "Hits Unplugged",
+      "thumbnailId": "CtIHD04AYtCzxygDUVGMrCkcWCqrig-r00UWKo4oN0HbraVCgsOPa5QWB2ObOJK58wHRVzr2wi88HC3J"
+    },
+    {
+      "id": "RDCLAK5uy_kGHYAi69KWgIEaGH9-sYOJKbvhuUovJUM",
+      "name": "OPM Acoustic",
+      "thumbnailId": "3bI-KddNxAvs6uiF2b1xeWA0PfhkAK_e-zbSguVa6FMQuw1MTkdiEb5sOlopBURqEyu8q8vFdy0hUdc"
+    },
+    {
+      "id": "RDCLAK5uy_nqJYWLG-6JPxCiMl10it5PbHU7cc-K4OQ",
+      "name": "Soothing Ukrainian Rock",
+      "thumbnailId": "9HlleOZKVUp5DkY47krS7DlCPoBd36HRRjs4k7AXo5Erqi8L6lLr9Wej4Mc2AH8VvVacC8eFFq55iOiY"
+    },
+    {
+      "id": "RDCLAK5uy_mfut9V_o1n9nVG_m5yZ3ztCif29AHUffI",
+      "name": "Take It Easy Rock",
+      "thumbnailId": "Rs24V2HQ9L4Ngjw6PfhEFi7swEUHQK-rJc55WqH1eXdwHhgQhZi4cwCtxeYI8F-Xwpuc2e0D313B10o"
+    },
+    {
+      "id": "RDCLAK5uy_mk6FCBl094c5801bL5c0BU3mR5TqbrNDc",
+      "name": "Unplugged Best Of",
+      "thumbnailId": "9s7cuGfSHPuIUOk140lo8gZLFHHNON4AVX965NYq-LM9uAp_Bo5JU7dWW3rXLT8cQObPAH9HZP60TwXk"
+    },
+    {
+      "id": "RDCLAK5uy_nPKG3faKyALfUXrqEe2vRJlrfefQo1B0s",
+      "name": "Focused Gaming",
+      "thumbnailId": "j68VSIWwBnrBbLiX1v1jQZ1NWdaj5yxOoNZfnd-8g9kDgVtnOlQh1mDTs8d0QekvQagtN90ETNj2IslF"
+    },
+    {
+      "id": "RDCLAK5uy_nwv9WTWpCNUphjwSIg0sQLlPqGZQ7pfnA",
+      "name": "Indie Folk Favorites",
+      "thumbnailId": "SuHYlI8yV-KlZLKxPunsXDlLHSsNYjyfIyqDK13MU26JNxCNLUw-MCoX7xlbLQls7QTvYY0C99qEcITD"
+    },
+    {
+      "id": "RDCLAK5uy_kFR_dUAeIwAH_KMLOVWjd0Vd-8pviVMCQ",
+      "name": "Soul & Stripped",
+      "thumbnailId": "NblZ89z-h2MCH1Bo8aLj_sp8XdthY6hT3or99X_aNdyArApZipisvqmoG_w4b-OqjDuFqozHGcrVj14w"
+    },
+    {
+      "id": "RDCLAK5uy_lE5hd-xT1yLqpoQWn8BOo99JL45hC31d8",
+      "name": "mindful",
+      "thumbnailId": "HxcqusAiwtBEWwf-m6bRcf1aSIuyQHiBvTB61s_ZB0Gp7oGcdrpN-6rHK04n3t3-R27VNmH3fVjUuP_b"
+    },
+    {
+      "id": "RDCLAK5uy_n4jtH1BoYT7FxNFJAGmJw5WQFF_ZzBTBM",
+      "name": "Indo Indie On Repeat",
+      "thumbnailId": "rz9Lm4DLgdux38AHz1IZDDoYUKMoXb5hOaPLCyl1WA0TTG2Qr-TQP0GWF_pCXIzl7TU9QffHvnilvQ"
+    }
+  ],
+  "Deep grooves": [
+    {
+      "id": "RDCLAK5uy_kb7EBi6y3GrtJri4_ZH56Ms786DFEimbM",
+      "name": "Lofi Loft",
+      "thumbnailId": "9I45SYZAfTeR17ByV9i2yDpWhQ5DTWMCrW3Lei8vMIiZzeyUnf2zRFUDBob4TGwgUkXAAR_x1Xa8VA"
+    },
+    {
+      "id": "RDCLAK5uy_lUrzaYWnJvQv7UqkwbYLo9K_Qbui6WDgo",
+      "name": "Groovy Beats",
+      "thumbnailId": "hPp7LnWA_2T9xAXjjy3IPN0_sSM7jJuzka9Nb5cgzNIa_bk_2CsMMFviNuAI8gA2k-jWLJYXYtWzvtA"
+    },
+    {
+      "id": "RDCLAK5uy_kqQ1zj3L4fZK6ye75srlXMLYXdh2jMFPQ",
+      "name": "Easy Modern Soul",
+      "thumbnailId": "NEbM6_71W14Fj09GQRQQ7donpcZ1VljnrNSmieRje_UKyIq91HiimtffL0py9LelDdf8o8rOv05qqCI"
+    },
+    {
+      "id": "RDCLAK5uy_mPolD_J22gS1SKxufARWcTZd1UrAH_0ZI",
+      "name": "deep chill",
+      "thumbnailId": "W-d-Yf4kNuESQAswMbEcXhYcyn3A-bbTEZQK9vzJhyrOuIIhnzi0PyKunsVCPNtMOg_Cu_-F0DeP00gk"
+    },
+    {
+      "id": "RDCLAK5uy_m_hXTIKF2MjTVBpLZMeSRk6Wr81x2BhJQ",
+      "name": "Vibes on Deck",
+      "thumbnailId": "IyDHT-NAoZtq2LAYVm9oxHHwjqmpyZkoLfd3x0uhFsv3cqA_5sKWtKBURr5bqXkx7lvcDPg_pxk_4sI"
+    },
+    {
+      "id": "RDCLAK5uy_nzABe7CwJJ6FpItwp1LJHEejR40FtA_Q4",
+      "name": "Chilled Dance Anthems",
+      "thumbnailId": "Ld2v8TchC9q41foHTLg_hHR-znG2Y99ks-mFOI1s5R-2Pac6bIt1prQtMVVHfpIWMygqYcNHY6Jvu2zF"
+    },
+    {
+      "id": "RDCLAK5uy_lTN8j40AYIG_Mc9P2t7DECfqGn0A1uQo4",
+      "name": "Reggae Relaxation",
+      "thumbnailId": "jZ9prKBqVQhTW2X1DXxyJTH89Hlkf6oCxmoUk8b9n2tR5EfbAm2Ik5dGjYMXkI6K7Vq7vtiXGZ5smeQ"
+    },
+    {
+      "id": "RDCLAK5uy_nxZ3Bp0gO6_Wkb3bp9jESFoOz6bANXw4s",
+      "name": "Neo Soul Essentials",
+      "thumbnailId": "Amwgc3dGQNamna-ft9kc7IW58VShOLD7f7g60jkGMPPb1btq97RWSCUE9Wj7CxrjbjxecIf0XsJ6hwk"
+    },
+    {
+      "id": "RDCLAK5uy_md9QGmtE2Pn3CLaFPcx9AhVuY7CmE2yes",
+      "name": "Essential Motown Hits",
+      "thumbnailId": "TqPdtlRwNSXansiJ9Mp9eMAQuWJjI4QIlhP2YBMdAhMZSOnu_DcC3O7Ct4mjFNHB6tcCe-mOC0zxVA"
+    },
+    {
+      "id": "RDCLAK5uy_l7nE3iR6eJpMdU08uxoNBJ7QenxwqfY0E",
+      "name": "Velvet Voices",
+      "thumbnailId": "Y4zG1YK045h-_QjYBNBihBfJVoYbcDQodKwr7M3pSuU1E8_ZbVh5xZnCMRvMHCihvM8VJ7V7BBW1nj8"
+    },
+    {
+      "id": "RDCLAK5uy_lRr2S1Nmk-a4qeSFpU0WoLuVETphGyBP8",
+      "name": "Minimal Techno Flow",
+      "thumbnailId": "ssH8s0KNYxagmStF67p6RSkP1cx0a2G2APl7uWWCEDGXWfA4z0QAueTQXy2i6OQoKXy6lg-Hw7n4BUM"
+    },
+    {
+      "id": "RDCLAK5uy_n2MRgJm8KVbRLo9wpqSGGX8CQ8rLCRsWg",
+      "name": "Chill House",
+      "thumbnailId": "YFj-8bqH6cxqj0Ht-8mb2Tt4uauR17tRZCbMkgDUuyZSpEVKx7ZSuu1bCKS6EU-9fDdqt49XtVEf9_M"
+    },
+    {
+      "id": "RDCLAK5uy_lXqRFBeZCG_1Ad3Ft-xMG1a9FtKQ8cRPw",
+      "name": "Beats & Soul",
+      "thumbnailId": "MAyrFajMx6bl8EApoLPJmGP2hlQ8O7e2ZMyyiaQwoGqqR0RLqydVUvHCeLyfaPTGRfrfvO93kt7mI40U"
+    },
+    {
+      "id": "RDCLAK5uy_k57D_uJ__EztQMQLVzPjIOHbRGykWFoQo",
+      "name": "Incense & Tea",
+      "thumbnailId": "4CJmDX4W94mD4qevm_s33k2XEYuPdUcHxJoM2ACLw87opLGPjOWiuyNvMUWrRh5J5uwKqYwZNo3T40A"
+    },
+    {
+      "id": "RDCLAK5uy_ktzVJ8SgCbgResFgUTEh-O1fdH6I1rxpc",
+      "name": "Instrumental Arabic",
+      "thumbnailId": "ZAYekyIttPIDztDk19PFjmCln3StNlnrgdNHxYvFi1tTiRFrjf4JV35qOT2rKwoz4CVAwDm9IB9KrQ"
+    },
+    {
+      "id": "RDCLAK5uy_k5psGic7w1Z8Udh8rwqpoKxqznjhq8p54",
+      "name": "Classy Arabic",
+      "thumbnailId": "f2BX8WWG1onCNG5-4tAS5wDCaNgQCvREnvqv7RSdwdkIcsZnJbvQBFCAB9ugdIxtHWPG_5o3qmcqvn8"
+    },
+    {
+      "id": "RDCLAK5uy_lWfuEE9muOjxNxKnvVL_KZOhsMG7-FxMI",
+      "name": "Electro Deceleration",
+      "thumbnailId": "8bZoYe4ui5wWgXHI87-WX1Zzv-FbdaHW_pW_NLTE4W-MfCdtp_INK4t0rRzATOl8R3_4zod_Paid3w"
+    },
+    {
+      "id": "RDCLAK5uy_nlISyc3Ro85hbdC6z16nGQo5jif_dzk_M",
+      "name": "Chill Arabic Indie",
+      "thumbnailId": "MX_ON_54jY7W11IvVNr7sx1Q0K2KVcnFhf4wa9WLcPAs-0Yv_Q9_sAylGJ4jeMcTctdbicX6OrsItS2y"
+    },
+    {
+      "id": "RDCLAK5uy_ktkqrgIqlP46yBkUsZp4go2j59McnSsYY",
+      "name": "Mellow Hype",
+      "thumbnailId": "T_Ld23Sb42RE0nxCQfpmAUejVWkQ-pZNZ8xROUjS9LRR75SY5g-I1-ivHYQtcgIacMV6tKiIqdC0TrpO"
+    },
+    {
+      "id": "RDCLAK5uy_kY7xcBh8q-Rm2_Cg3NuTJ2Qcq-hTj_jYk",
+      "name": "Innerwaves",
+      "thumbnailId": "LkHXZvzppzQNzJs4tnGg1gXQIivEcVXEWemW6c6ff_T9trMpCrqUGW3YdET7i2_cXDA5_0L6DkhzUw"
+    },
+    {
+      "id": "RDCLAK5uy_lQ3MzGhb2aFP0TMt6Rzmxjbr5V_jhm4UY",
+      "name": "Mojito Lounge",
+      "thumbnailId": "sBMwv4WQZSh5xkP-pJcZ7mdy4nhp1DdY-GKhOFC6qXQ4lGwkh6AVvEVek1VG9G2zgijgKgaVhxdM5Q"
+    },
+    {
+      "id": "RDCLAK5uy_mNQPs8vK3N-dqpxN_F70pJ9d49yySQlGo",
+      "name": "Shea Butter Groove",
+      "thumbnailId": "2v3Ect8ZJ80hyhFpGg5SfW8mqYUKKQ1P-oJN5BdOmQPPByrkqEauTY9dTtd6104Dm4LT49GapodxnJw"
+    },
+    {
+      "id": "RDCLAK5uy_lxBOrv0RrMMVEmV0Gl9gDBPH0JYC1_j24",
+      "name": "Electronic Dream",
+      "thumbnailId": "B1Cm3GUnybx2Qk1D4J1XmJvSK1Oz8PEmkjD8MASyJsAK4SB1Zh1Gfqb-Kyf2nDVDLLwlcXYI42iuXs8"
+    },
+    {
+      "id": "RDCLAK5uy_mZBshSpj3FgmOd2yL5u0CoG6ItPt4kj6U",
+      "name": "Egyptian Instrumental",
+      "thumbnailId": "w1bnZU8wOp7-NwwAsok1pu5Cc0TBtUcxzbsmulASHvZH2z_yiFoG7Retwjfj41OpKKrZ2cG_0bCHGYg"
+    },
+    {
+      "id": "RDCLAK5uy_mJv_zZlF2MsRJ23FUw2QP3zvFX1RS3aA0",
+      "name": "Rose-Colored Rhythm",
+      "thumbnailId": "ZNZUyFQiQxbE5NiL7NpBbdxGDwPv7W-is5ZyErWOdTxvojchA7HbtjV9yZBcX2nUGkzlML0CMYWC1IA"
+    }
+  ],
+  "Chill pop": [
+    {
+      "id": "RDCLAK5uy_np_soSTj6w3-N7Dh_xmdDpQINJ8LsVpa8",
+      "name": "Unwind",
+      "thumbnailId": "VpOriKyGqxkLFfgo6IMEyr9BhKBO3eQwmCAyYrTZFd6WKQisnz0Y9V9skWgg_dDDscugoTmYD6zr"
+    },
+    {
+      "id": "RDCLAK5uy_mFO2tSOkp3Ti5zWQoaPsXJ-rhcKZ6iv30",
+      "name": "Feel",
+      "thumbnailId": "Xn12uyfla_ka1q0hjaDcz3LubsXQ07S2ThQfEFvgWNDJwUQ_hwtyHK3Ypks12C3_rUwO8XXQgxDGz7k"
+    },
+    {
+      "id": "RDCLAK5uy_lcM4s2QvgekvNoHcX6dmb0pCl2aMgFxdc",
+      "name": "Wallow",
+      "thumbnailId": "ympKPOf9e5dWKNyZBPMKuuCKhXSHYyvM_g7AVv1QBdVA_hmd7Jd3Q-0PSRCGw9sCEwShSeWGu1hgWkUT"
+    },
+    {
+      "id": "RDCLAK5uy_l978SYxPKPizMqjLKtWAs-CAeReEqRy5c",
+      "name": "Rewind/Unwind",
+      "thumbnailId": "NR7iAKF-JioQxsTT7CPcXNHngilmsYjzUPQmDD2IZwssNNolUppE_w5-58HJhSg69G79eF-swvX-yT8"
+    },
+    {
+      "id": "RDCLAK5uy_kKEOZ3x5ED4hNxb8lHXhOp5cHFW_CbwMk",
+      "name": "Low Key",
+      "thumbnailId": "ZGIZyaQ0SMSK798JwM7re66Os3U_f_92Igm412unzvictBV_aKobvUSLaYvwzOJh_4nzMyX27MH8kjs"
+    },
+    {
+      "id": "RDCLAK5uy_m_0U5VQNyyzwwH1lRi7cPAAGXqNQnAOqY",
+      "name": "Laid-Back Sofa Pop",
+      "thumbnailId": "IKBTW8jZAxhiUfUkM9u-BLTuuFYrO2833EMuUmH4od_9Acn2pOhh0xOda0iSxo_C24TW3EHGPkkXF2o"
+    },
+    {
+      "id": "RDCLAK5uy_nDL8KeBrUagwyISwNmyEiSfYgz1gVCesg",
+      "name": "Mellow Pop Classics",
+      "thumbnailId": "WIpNILSEB_Fs-esO3Z_jRiQgkRvHK41un394zFPHwG49pO1Kn9qVI_ud_J2BuGaoJiRVAUjOKOE9kRmN"
+    },
+    {
+      "id": "RDCLAK5uy_nqmfME1gwNMEd-b-9rSttKi306K2ogh7Y",
+      "name": "Mellow Turkish Pop",
+      "thumbnailId": "Zcw6mREbXa6wIdjwFPmsxcx0apgoSaZ2J3BDwikDI9GGv2k8UOs73CvDhgpQd4HkjxX5HuasRJAxmX8"
+    },
+    {
+      "id": "RDCLAK5uy_njvsGKIUycy_a4h7zTS8upbKhHcMVzHFM",
+      "name": "Easy-Going Pop & Rock",
+      "thumbnailId": "j5IpK4riMymgVlZOMQrxo4WkLTFofJ-JG_-_Zca2epcu7EvTfXbdwtcGO4oO3-qdobVS_mmYJmjVUuM"
+    },
+    {
+      "id": "RDCLAK5uy_kqQ1zj3L4fZK6ye75srlXMLYXdh2jMFPQ",
+      "name": "Easy Modern Soul",
+      "thumbnailId": "NEbM6_71W14Fj09GQRQQ7donpcZ1VljnrNSmieRje_UKyIq91HiimtffL0py9LelDdf8o8rOv05qqCI"
+    },
+    {
+      "id": "RDCLAK5uy_lloSnp8Tm9jF5HLLJIGpuIuFBcM0R3bEI",
+      "name": "Laid-Back 80s Hits",
+      "thumbnailId": "QXyLIOXCINcY3KYJxA3HeMx2qkYYQUin5K20DcbZ_o--NCym3jFDYqOU8dbDH8j3VNc-bPOYAvPLsA"
+    },
+    {
+      "id": "RDCLAK5uy_mkPdnadBmgXk28mbGxm_5uGeKvHrec208",
+      "name": "Acoustic Pop",
+      "thumbnailId": "tE56EFMRtd1aLWwyhIOPH55gNMF2c_h_PP30_gGMl1jpbrA48GTbFpuWgKlbRHKo_7gwN-9QvVdp1lZd"
+    },
+    {
+      "id": "RDCLAK5uy_nBE4bLuBHUXWZrF59ZrkPEToKt8M_I3Vc",
+      "name": "Coffee Shop Blend",
+      "thumbnailId": "CDt4RjHDGr0YiX6WxARTBFkdb9k9VsAIm88sJXZ7B3O1yMoS53kLS_dy8ZIKRrFRHHCB6OJePWU1GbY"
+    },
+    {
+      "id": "RDCLAK5uy_nHSqCJjDrW9HBhCNdF6tWPdnOMngOv0wA",
+      "name": "Pop Gold",
+      "thumbnailId": "rAUuEbLF7CYEYBXU3yAY4npMCzTgPxMhlD-ygH9iv_SuDXGDuDvO0Z4MTh33xAI6o3UnpWFe26MS_hBZ"
+    },
+    {
+      "id": "RDCLAK5uy_mwxGoOtv8258D3gdLZ0i0clri0O1-MhKU",
+      "name": "Laid-Back 00s Hits",
+      "thumbnailId": "wIzD0qkrJap_OcipaEM23ZQ-niUHR0QN9bMAtWAf94QOOp2onpRRYTDN0xZOXjiv7w5mBMFl8im9AQ"
+    },
+    {
+      "id": "RDCLAK5uy_lE1mKJYjSGAi2wWJ_289TZ1VDItr7wjEE",
+      "name": "Turkish Love Songs",
+      "thumbnailId": "D5uUpzMZlcnkkNntF2jr9CRLSDSw6BWS8-_rB_EPehdAhtZLd65ylGgUwkK5HrYtf8A1PHschFI5BmSz"
+    },
+    {
+      "id": "RDCLAK5uy_nFzY_pDRDZ3L9q-x7azgP17XYtE8QxSZc",
+      "name": "Laid-Back 70s Hits",
+      "thumbnailId": "KRzpdXGmsn2K4jCeN1dC-cu6JsIav_HicxDdNcDIvssjneJ-6KJZvBGACkzHK5D6TqqdLPEDsbVnFjE"
+    },
+    {
+      "id": "RDCLAK5uy_ngmjGHcYHuQC6ib3VZvzn5NaAiu3oRizc",
+      "name": "French Sweets",
+      "thumbnailId": "zUDTc2fTOLt5NXrA_EAk7BXNtTVFN0EmiU9W9aSnuAbgqfLb2Hz9F40RebaJ5idCn_K6cIz3j1mzVb8a"
+    },
+    {
+      "id": "RDCLAK5uy_nQXTlvzUfwEzk3B4wnaeaQqZ7FFRd1_rY",
+      "name": "Slow Down",
+      "thumbnailId": "XxfCv6LW60cUiBx_Q0g9l6hwc1Lvhl0_Qh-ckRL6qD4KUGzGwGDvSaRqm-e0zuRQvxg_1lue6nQ6Snh1"
+    },
+    {
+      "id": "RDCLAK5uy_kFR_dUAeIwAH_KMLOVWjd0Vd-8pviVMCQ",
+      "name": "Soul & Stripped",
+      "thumbnailId": "NblZ89z-h2MCH1Bo8aLj_sp8XdthY6hT3or99X_aNdyArApZipisvqmoG_w4b-OqjDuFqozHGcrVj14w"
+    },
+    {
+      "id": "RDCLAK5uy_kSSYZ41jnUPCIaYvFSZnU67VJEosUro5Q",
+      "name": "Japan Ballads",
+      "thumbnailId": "wxAk_GKUQ89dMxRQKYOtOj18Pqs2vkVrgC5Et0nPNaKS0tdD9ik_i7wmNgAlMZhhg7whsMZzbAcNBcA"
+    },
+    {
+      "id": "RDCLAK5uy_l1XVfU0rrXOu-c_4CXJOZYGgsUmkS5mVU",
+      "name": "Laid-Back 90s Hits",
+      "thumbnailId": "kdzHyUlsLUjRnj5DLVJzpiSmDp3aQbAkRiafrezWttr5Rri6FzJ6Km8u9xnghUPyaZxnWsh7WAIC2A"
+    },
+    {
+      "id": "RDCLAK5uy_mXD4rCLmbSeXkBsfDA0wZPAg4fJJca2u0",
+      "name": "Refreshing Spring K-Pop",
+      "thumbnailId": "oPfrc0sBnOfjrsdVE5nH1AokHJUN1FD8yLINvrF-D9fhlLbZObEFiGZHghrBykz389_3yS_GpKPbKi67"
+    },
+    {
+      "id": "RDCLAK5uy_kODrJiB2r2jrx_oITwxntKLvofERV0NSE",
+      "name": "Turkish Love Classics",
+      "thumbnailId": "1elo6rVeRqfIQOGscbiyMqifJCKJlatH68N653WaJ4IXTLTxXDRPsutT805N4r_ATZbcfI57SYenDli5"
+    },
+    {
+      "id": "RDCLAK5uy_l6qdT364tl9JDZGwhhgoJaoQsCyBnK2_k",
+      "name": "French Variety FM",
+      "thumbnailId": "bvG8cqH64lTLOZ3zWR_OWqr8nPqtb3ROM563WrA9oG15kgsmE1X9CDjjh8SmqC87R3US7aatrgiVUuw"
+    }
+  ],
+  "Relaxing R&B & soul": [
+    {
+      "id": "RDCLAK5uy_mX4JK0m7lhZ8Egv1E7bbXox_e0k6rGejo",
+      "name": "Chill R&B",
+      "thumbnailId": "os2tezdGFEBR345LVPDbBsyUgnMBu2yXtl8-1DPZg1vu7LYikXg_yot_y1VmYZ8Jl2gK8UVq74T3WA"
+    },
+    {
+      "id": "RDCLAK5uy_k0oJ5JQqsSSQQvYS8xzcAh29CFryqs0mc",
+      "name": "Soothing Soul",
+      "thumbnailId": "rAuzuLfViDJUshG4WU2sHbQv6hFX6ZCnGpI-_ucalfi9RGDoZisfPx9iESN1--HSyeCmTc2YKfJO4wM"
+    },
+    {
+      "id": "RDCLAK5uy_mPmYbqPIJ2C20lzdy9hyRU1ThPlZIDdog",
+      "name": "Acoustic Soul",
+      "thumbnailId": "oB8A8xD3IWdvyGFTGCq0Sy24DXQ927OKORDH62kH6rFcjAQ1q2eeINrPscB3qHPzSTk4e-ZOPOKsJoeB"
+    },
+    {
+      "id": "RDCLAK5uy_kqQ1zj3L4fZK6ye75srlXMLYXdh2jMFPQ",
+      "name": "Easy Modern Soul",
+      "thumbnailId": "NEbM6_71W14Fj09GQRQQ7donpcZ1VljnrNSmieRje_UKyIq91HiimtffL0py9LelDdf8o8rOv05qqCI"
+    },
+    {
+      "id": "RDCLAK5uy_mrwPvMddgVhpiTxYJ8mPNNx50V4KPUTGY",
+      "name": "Soul Made in Philly",
+      "thumbnailId": "GxC2zbO5pAdJH5_Gq2zqCOPWY62sAEHEn8yEzNeDbjpV86qxQBAa4XFe9_i8RxoS0Lt20BkbMmJUsDg"
+    },
+    {
+      "id": "RDCLAK5uy_kkPeN37jo2vQvOH9uKxqPmvdlbJViBgXY",
+      "name": "Cloudy Day R&B",
+      "thumbnailId": "DjX6HoTLjeHbAZe7ngNtthm2VTsQQNarcEbhb0nY6PeqWYi6iIZ9GaydfPoJkxFQ6G1_ZOFef4SpKQ"
+    },
+    {
+      "id": "RDCLAK5uy_kycx4KP0Kj3BcUEZN4RDhGEjUce2UPqEc",
+      "name": "'00s R&B Chill",
+      "thumbnailId": "6iE_xkEVqcrdoe6UytGmdKvzX1znJazTW0nMKfxEiBukq4cZ5E9zBRM9hc99I134sFNt-GbDWj1Q1w"
+    },
+    {
+      "id": "RDCLAK5uy_lvzdFkfuM7PzDIPRP1YTVZr3koCvwBczw",
+      "name": "'10s R&B Chill",
+      "thumbnailId": "wZQwfIrOzJjNU79Y2GNHZxXw85DpSpnyNkRZmmZ2Dp6aPnfBrCATIWdPsugwklAEm6LeIv-uFzKbt08"
+    },
+    {
+      "id": "RDCLAK5uy_ls6pkxsVNi5b3e1B3qZnRDamY6siJ-nj8",
+      "name": "50 Shades of R&B",
+      "thumbnailId": "GseHTsxCgkv9pXLFxjgqTOWcvItHcs5wsnSpnp1GmXN94_JhE3Zk2XxhZS97D7srQgbxF88Eo14dRQ"
+    },
+    {
+      "id": "RDCLAK5uy_lQi-t2mN-swhdhGPOg4h4Zw-P5KzdwUSM",
+      "name": "'90s R&B",
+      "thumbnailId": "b91-1b6om-RoIsW4JMP9PuwnRhgANMu6ywh3lYvvOrollNIzg9uHA3qZARKCxC4Gf5BgK7r9BTdAEA"
+    }
+  ],
+  "Mellow indie & alt": [
+    {
+      "id": "RDCLAK5uy_l98GhjIKA5yKA4lCEq4uAyMpAvJtupQ0k",
+      "name": "Mellow Indie",
+      "thumbnailId": "_6dWKu7Stfp7blERvT3ZFxPmhb4RYKqgqTF1l6D_YvHuVTy7dYdDCKnuTPfd43qOy3mLsnR8ZxMLSg"
+    },
+    {
+      "id": "RDCLAK5uy_m6-fOiMxDip-4p9uD4lhzm3I9WMCSTy_Y",
+      "name": "Yoga & Chill",
+      "thumbnailId": "m8gv95ZI8zl1QH8Xx2xtSuHuafuz2JlB4BoSYd9Z4n7bdBhXDkR6SRgLFUd8Y6FdXq_oXUJFSVYFbw"
+    },
+    {
+      "id": "RDCLAK5uy_mSaYvcoVvag_GrAc593WX3MoxTLvUXYT8",
+      "name": "Relaxing Evening",
+      "thumbnailId": "HAKNNaXo0xQA17H5slT9-u1BxtSxVaTQgGERsSz59DAU79IXALdDy7xkeLgHD4fq2raQYEmzMqs6hObB"
+    },
+    {
+      "id": "RDCLAK5uy_nWEJYv-Uz64iDaI_cc9ink9grqEpQViPc",
+      "name": "Go Slower",
+      "thumbnailId": "Bi9-K9n_QKlEBviawY1GX9YUAWR85I9NWdpSHCx9aFKbsn67TrQo9x8eoy3cNozPFTMUxgp7uSmw7g"
+    },
+    {
+      "id": "RDCLAK5uy_kha4t7zxJWIbFQonE6cWE6v144KJkqJQ0",
+      "name": "Turkish Post-Punk & Darkwave",
+      "thumbnailId": "5mkEQZ4vYpKWB2PYT2fIwlKBHaK4ng2wAuaa2bQmZwZlCoVRH9yaR4LPtS_mNQ8a3yfqMddZ4lkxLB6F"
+    },
+    {
+      "id": "RDCLAK5uy_mYa86YJNGqE4Jl5jG7DZP9NKdflw0hQL0",
+      "name": "Super Chill",
+      "thumbnailId": "gStib6WPuxExmcTH9cWa0y2s7MLQtJtplRzikNIwcq6r_H4EPtqPXxb9exUy-mfTw-9XZhksFljUS8pu"
+    }
+  ],
+  "Electronic chillout": [
+    {
+      "id": "RDCLAK5uy_lmztFiBPwa16-qz6nwMaNrtVFPzCYNOkA",
+      "name": "Chill EDM Hits",
+      "thumbnailId": "X5tJkYgbX9x6s7Qq4mPU5ExTv2qEnIprOE4zSvIdO5ZyyoOrnXNorz3Ru46DRwSuE7C6MeCYKJ-b5b8"
+    },
+    {
+      "id": "RDCLAK5uy_mPolD_J22gS1SKxufARWcTZd1UrAH_0ZI",
+      "name": "deep chill",
+      "thumbnailId": "W-d-Yf4kNuESQAswMbEcXhYcyn3A-bbTEZQK9vzJhyrOuIIhnzi0PyKunsVCPNtMOg_Cu_-F0DeP00gk"
+    },
+    {
+      "id": "RDCLAK5uy_mC6cJlKJYzu5UqmrF-qIK9W8vJDxEwKFk",
+      "name": "Beach Beats",
+      "thumbnailId": "C7nk6N95Ns43ZlaZH_4VhMeVVTcjRtGvPwifavt_Q2OFmYPamzLt4I2UOwdIY_Ew53dxN2umUzxpGQ"
+    },
+    {
+      "id": "RDCLAK5uy_nmyiTFaD-osoI95yEMuRjaSMQiTDRJz6E",
+      "name": "Néctar",
+      "thumbnailId": "oS2Zfc-qXFPq6R6cQwet6Qn7KpQ3xRirMh8o25iTrwKq9sahQjcC1hCufPjwdRScP82aYKPade_rfxY"
+    },
+    {
+      "id": "RDCLAK5uy_kY7xcBh8q-Rm2_Cg3NuTJ2Qcq-hTj_jYk",
+      "name": "Innerwaves",
+      "thumbnailId": "LkHXZvzppzQNzJs4tnGg1gXQIivEcVXEWemW6c6ff_T9trMpCrqUGW3YdET7i2_cXDA5_0L6DkhzUw"
+    },
+    {
+      "id": "RDCLAK5uy_nM6gXW5m1DqYCO6eu0P8Di2jEdj_Hm4fQ",
+      "name": "Chilled Ibiza",
+      "thumbnailId": "D-hwIp13Ypiw9wlR9M_80Nw81_Qu6m_riBul_mo5q-q4qhEiFopLT90YUqmdNK8qPI68VvBzkbvmFvwv"
+    },
+    {
+      "id": "RDCLAK5uy_mfg_6GSiCHx47UrIySSqhp4L-v1sxGPLo",
+      "name": "Downtempo Soundscapes",
+      "thumbnailId": "aMTi2tumc_UQzwYzfVLq25v98MHazy5v0rPeurzVfKk_qGOB9OYvDsWNzljmFU6r2UwYbyzpZ4eicQ"
+    },
+    {
+      "id": "RDCLAK5uy_nguTyTmN1FWN_ZAOW7C7gRvGHkN3vw7DE",
+      "name": "Qahwa Sada",
+      "thumbnailId": "6_lCn9bTk25A6XITuAdE3GAMH3zpcS00iUpH51tgC4o7D6TyQiBSi2sqR6b43nGILLepWjDrjJVkQqM"
+    },
+    {
+      "id": "RDCLAK5uy_lnFyVNMZVO3Jgi18hFYliVPUrglgPnDRU",
+      "name": "Chill House & Techno",
+      "thumbnailId": "p9HsCJMPvI5j55YDVOt4usva3L_knfbuGi5yO7mLlbfasxBRcyiCHospVyopJpjcE_4eCMDJ8Yoq_Q"
+    }
+  ],
+  "Muted jazz": [
+    {
+      "id": "RDCLAK5uy_kL57PLcOmExjhzqGfGhvA82ZWe4fPH2c4",
+      "name": "Muted Jazz",
+      "thumbnailId": "9LRgeba47a0U1xYHxZnLvo9HUG3ML7b26A9gx0JcBZR7sQimfE2cI0N1yGtQGOqMFPEW0NpwII0YGw"
+    },
+    {
+      "id": "RDCLAK5uy_nm4NA8cldZNPqj1D0ayZxfySeY89qedRs",
+      "name": "The Smoothest of Smooth Jazz",
+      "thumbnailId": "_fJbAPvRvDFktq7Ot97d-FPGQW3zkOpcxgb-B369Tq9h7fVm5LpUWJoea-fuZ0FbWQFdTfhSzqKmOnI"
+    },
+    {
+      "id": "RDCLAK5uy_neriXH6JbZPr7Pf4LOi5bGQP-_lWRZXs4",
+      "name": "Cozy Jazz",
+      "thumbnailId": "TSUtbquRFr7lhlYJq_fZnfxn8FnzXpbzWiZLJb8-WscOEWDXfldNPT3OcTxkdBL_1vKFG_Ni0_nJ8P5h"
+    },
+    {
+      "id": "RDCLAK5uy_klnZmBbgmGFVrCYSZMceEHODgK9YHfIt4",
+      "name": "Jazz Hotlist",
+      "thumbnailId": "Ee2n_pnr904boH_Kh4WT4kFQEyza1shDQrJKyM3ZCXJpLEKZmAYPyRgAsuCAqMfqeuIjGFaBILWn1Q8"
+    },
+    {
+      "id": "RDCLAK5uy_kJ_IDbyBg0NncOUY83KQMQw39lspfUuT4",
+      "name": "Jazz Guitar",
+      "thumbnailId": "QuJZEPdVWUtal_pMasTp1n9d7JnRLkvYWHPhwzNXnqlO3HPo6CAl6fm0bugXzs9lT8qidNoquKPLbJM"
+    },
+    {
+      "id": "RDCLAK5uy_nRr0zn4n0C5AGQqZKdSaSzs2zmbImOIwU",
+      "name": "Jazz Piano",
+      "thumbnailId": "xpEqkV7xoz1ZXsCHszYT0fjmc06QoWczDWRUTNoaTSeTw5hE3vtTSkgEN3r7xOwwajjXEWs9ZvF2epzU"
+    },
+    {
+      "id": "RDCLAK5uy_nA42_0IX0YmeKb7pLRjm_J8e2ja445Urc",
+      "name": "Mellow Jazz",
+      "thumbnailId": "PlQSxuGLm8bF97gW6771Akz_OENSg_PYF2wSZZwKCbed7u9lJR_NRW7wWUcVNQBoBWqEQuvatU4DqrI"
+    },
+    {
+      "id": "RDCLAK5uy_kY-qKujvKmhfzV5CJW73SBPkDuZByO8xI",
+      "name": "Sophisticated Vocal Jazz",
+      "thumbnailId": "5pYiWXO1qpSYyutcTJPZMd5mJbbHtjw_Lp5Ovi_fIoBopF2ICvYm89qqlkkS6ijZgRBzHZYO4Y2g5Po"
+    },
+    {
+      "id": "RDCLAK5uy_kL7seJinYAVpulQQbre887jeaIDkrnAg0",
+      "name": "Background Jazz",
+      "thumbnailId": "OYJPNfj51KL4b17grXq3QkMOpYNk71Z2aUKLE2vSu74wcHBUXZxLzerTWXBfhwaQdUmmWrOoVW6Dcxs"
+    }
+  ]
+}
