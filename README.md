@@ -77,7 +77,7 @@ Each mood and genre has a dedicated JSON file under `./moods/<slug>.json` and `.
 
 ## Web Explorer ([`index.html`](./index.html))
 
-The repository includes a single, zero-dependency [`index.html`](./index.html) file ready for GitHub Pages:
+The repository includes a single, zero-dependency [`index.html`](./index.html) file ready to be served directly via GitHub Pages (Source: `Deploy from a branch` -> `/ (root)`):
 
 - **Zero dependencies**: Pure HTML, CSS, and Vanilla JavaScript in a single file.
 - **Client-Side Data Fetching**: Dynamically loads `data.json` and fetches individual category files (`./moods/<slug>.json`, `./genres/<slug>.json`) on demand.
@@ -99,7 +99,6 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 1. **Schedule**: Runs periodically every week (`0 0 * * 0`) or on-demand (`workflow_dispatch`).
 2. **Scrapes Fresh Data**: Runs `bun run scrape` using the latest InnerTube API configuration.
 3. **Auto-Commits**: Detects changes in `data.json`, `moods/`, and `genres/` and commits them back to `main`.
-4. **Deploys GitHub Pages**: Automatically deploys the root directory including `index.html` and dataset files to GitHub Pages.
 
 ---
 
@@ -107,7 +106,7 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 
 ```
 ├── .github/workflows/
-│   └── update-data.yml    # Scheduled update & Pages deployment workflow
+│   └── update-data.yml    # Scheduled dataset update workflow
 ├── index.html             # Zero-dependency web explorer for GitHub Pages
 ├── data.json              # Primary index mapping moods & genres to browse IDs
 ├── moods/                 # Category JSON files for each mood (11 files)
