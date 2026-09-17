@@ -409,12 +409,14 @@ export function extractTrackItem(renderer: any): TrackItem | null {
   const watchCfg =
     r.flexColumns?.[0]?.musicResponsiveListItemFlexColumnRenderer?.text
       ?.runs?.[0]?.navigationEndpoint?.watchEndpoint
-      ?.watchEndpointMusicSupportedConfigs?.watchEndpointMusicConfig;
+      ?.watchEndpointMusicSupportedConfigs?.watchEndpointMusicConfig ||
+    r.overlay?.musicItemThumbnailOverlayRenderer?.content
+      ?.musicPlayButtonRenderer?.playNavigationEndpoint?.watchEndpoint
+      ?.watchEndpointMusicSupportedConfigs?.watchEndpointMusicConfig ||
+    r.navigationEndpoint?.watchEndpoint?.watchEndpointMusicSupportedConfigs
+      ?.watchEndpointMusicConfig;
   const musicVideoType = watchCfg?.musicVideoType;
-  const isSong =
-    musicVideoType === "MUSIC_VIDEO_TYPE_ATV" ||
-    musicVideoType === "MUSIC_VIDEO_TYPE_OMV" ||
-    !musicVideoType?.includes("UGC");
+  const isSong = musicVideoType === "MUSIC_VIDEO_TYPE_ATV";
 
   return {
     id: videoId,

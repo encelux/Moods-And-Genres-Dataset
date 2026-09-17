@@ -37,7 +37,7 @@ Contains the entire nested tree: **moods/genres &rarr; categories &rarr; playlis
             {
               "id": "ekAsG_p2jM4",
               "title": "Look To Him (Official Video)",
-              "isSong": true,
+              "isSong": false,
               "duration": 264,
               "durationStr": "4:24",
               "thumbnailId": "ekAsG_p2jM4",
@@ -59,7 +59,7 @@ Contains the entire nested tree: **moods/genres &rarr; categories &rarr; playlis
 
 - `id`: YouTube video / track identifier (e.g. `"yNa8jP4zoJo"`).
 - `title`: Name of the track or song.
-- `isSong`: `true` for official songs / audio tracks, `false` for user videos.
+- `isSong`: `true` strictly for pure YouTube Music songs (Audio Track Videos / official label releases: `MUSIC_VIDEO_TYPE_ATV`), `false` for YouTube video entities (Official Music Videos, lyric videos, UGC uploads).
 - `duration`: Total duration in integer seconds (e.g. `285`).
 - `durationStr`: Formatted duration string (e.g. `"4:45"`).
 - `thumbnailId`: Unique identifier for the track thumbnail image.
