@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json moods/ genres/ full_dataset.json
+          git add data.json moods/ genres/ full_dataset.json normalized_tracks.json
           if git diff --staged --quiet; then
             echo "No changes in dataset to commit."
           else

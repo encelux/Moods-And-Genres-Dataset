@@ -9,7 +9,7 @@ export interface TrackItem {
   isSong: boolean;
   duration: number;
   durationStr: string;
-  thumbnailId: string;
+  thumbnailId?: string;
   author: string;
   authorId: string | null;
 }
@@ -18,6 +18,7 @@ export interface PlaylistItem {
   id: string;
   name: string;
   thumbnailId: string;
+  contents?: string[];
   tracks?: TrackItem[];
 }
 
@@ -33,3 +34,5 @@ export interface FullDataset {
   moods: Record<string, CategoryDetails>;
   genres: Record<string, CategoryDetails>;
 }
+
+export type NormalizedTracks = Record<string, TrackItem>;

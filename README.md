@@ -2,7 +2,7 @@
 
 A comprehensive JSON dataset of moods, genres, sections, playlists, and tracks extracted directly from [YouTube Music Moods & Genres](https://music.youtube.com/moods_and_genres).
 
-Includes an interactive, zero-dependency Web Explorer for GitHub Pages ([`index.html`](./index.html)) and a GitHub Actions workflow for scheduled dataset updates.
+Includes normalized tracks dictionary, an interactive zero-dependency Web Explorer for GitHub Pages ([`index.html`](./index.html)), and a GitHub Actions workflow for scheduled dataset updates.
 
 Built with [Bun](https://bun.sh) and TypeScript.
 
@@ -10,7 +10,70 @@ Built with [Bun](https://bun.sh) and TypeScript.
 
 ## Dataset Schemas
 
-### 1. Full Dataset Hierarchy ([`full_dataset.json`](./full_dataset.json))
+### 1. Normalized Tracks ([`normalized_tracks.json`](./normalized_tracks.json))
+
+Contains all unique tracks across all playlists normalized into a single dictionary keyed by track ID: `{ [trackId: string]: TrackItem }`.
+
+- **Pure Songs (`isSong: true`)**: Retain `thumbnailId` (square cover art from official label releases).
+- **Videos / Non-Songs (`isSong: false`)**: The `thumbnailId` property is omitted.
+
+```json
+{
+  "yNa8jP4zoJo": {
+    "id": "yNa8jP4zoJo",
+    "title": "Madwoman",
+    "isSong": false,
+    "duration": 285,
+    "durationStr": "4:45",
+    "author": "Laufey",
+    "authorId": "UCJtROTPxo3qnEzww8JyDxuA"
+  },
+  "f9fqe_VvWtU": {
+    "id": "f9fqe_VvWtU",
+    "title": "Sincerely",
+    "isSong": true,
+    "duration": 113,
+    "durationStr": "1:53",
+    "thumbnailId": "_lAR-xYR8HP_AX-OUpd00ZbI3p_GZuK7d7g9bHvOM_dFBVwkYmbDQsRWBT3Os1IH6a9QBh-vuquPcfhVZA",
+    "author": "Haruomi Hosono",
+    "authorId": "UCNWPRMK0ciGFGLAuwyR_dgg"
+  }
+}
+```
+
+#### Track Item Fields:
+
+- `id`: YouTube video / track identifier (e.g. `"f9fqe_VvWtU"`).
+- `title`: Name of the track or song.
+- `isSong`: `true` strictly for pure YouTube Music songs (Audio Track Videos / official label releases: `MUSIC_VIDEO_TYPE_ATV`), `false` for YouTube video entities (Official Music Videos, lyric videos, UGC uploads).
+- `duration`: Total duration in integer seconds (e.g. `113`).
+- `durationStr`: Formatted duration string (e.g. `"1:53"`).
+- `thumbnailId`: _(Optional)_ Unique identifier for the track thumbnail image. Present strictly when `isSong` is `true`; omitted when `isSong` is `false`.
+- `author`: Primary artist or author name (e.g. `"Haruomi Hosono"`).
+- `authorId`: Artist's YouTube channel / browse identifier (e.g. `"UCNWPRMK0ciGFGLAuwyR_dgg"`), or `null`.
+
+---
+
+### 2. Category Files ([`moods/*.json`](./moods/) & [`genres/*.json`](./genres/))
+
+Each mood and genre has a dedicated JSON file under `./moods/<slug>.json` and `./genres/<slug>.json`. Each playlist contains a `contents` array of track ID strings referencing entries in [`normalized_tracks.json`](./normalized_tracks.json):
+
+```json
+{
+  "Coffee shop blends": [
+    {
+      "id": "RDCLAK5uy_nBE4bLuBHUXWZrF59ZrkPEToKt8M_I3Vc",
+      "name": "Coffee Shop Blend",
+      "thumbnailId": "CDt4RjHDGr0YiX6WxARTBFkdb9k9VsAIm88sJXZ7B3O1yMoS53kLS_dy8ZIKRrFRHHCB6OJePWU1GbY",
+      "contents": ["yNa8jP4zoJo", "ekAsG_p2jM4", "f9fqe_VvWtU", "PmSwUCdQQC4"]
+    }
+  ]
+}
+```
+
+---
+
+### 3. Full Dataset Hierarchy ([`full_dataset.json`](./full_dataset.json))
 
 Contains the entire nested tree: **moods/genres &rarr; categories &rarr; playlists/items &rarr; tracks**:
 
@@ -23,26 +86,29 @@ Contains the entire nested tree: **moods/genres &rarr; categories &rarr; playlis
           "id": "RDCLAK5uy_nBE4bLuBHUXWZrF59ZrkPEToKt8M_I3Vc",
           "name": "Coffee Shop Blend",
           "thumbnailId": "CDt4RjHDGr0YiX6WxARTBFkdb9k9VsAIm88sJXZ7B3O1yMoS53kLS_dy8ZIKRrFRHHCB6OJePWU1GbY",
+          "contents": [
+            "yNa8jP4zoJo",
+            "ekAsG_p2jM4"
+          ],
           "tracks": [
             {
               "id": "yNa8jP4zoJo",
               "title": "Madwoman",
-              "isSong": true,
+              "isSong": false,
               "duration": 285,
               "durationStr": "4:45",
-              "thumbnailId": "yNa8jP4zoJo",
               "author": "Laufey",
               "authorId": "UCJtROTPxo3qnEzww8JyDxuA"
             },
             {
-              "id": "ekAsG_p2jM4",
-              "title": "Look To Him (Official Video)",
-              "isSong": false,
-              "duration": 264,
-              "durationStr": "4:24",
-              "thumbnailId": "ekAsG_p2jM4",
-              "author": "Greentea Peng",
-              "authorId": "UCLi9BEXTwUeCdrp9Mt0Oxbg"
+              "id": "f9fqe_VvWtU",
+              "title": "Sincerely",
+              "isSong": true,
+              "duration": 113,
+              "durationStr": "1:53",
+              "thumbnailId": "_lAR-xYR8HP_AX-OUpd00ZbI3p_GZuK7d7g9bHvOM_dFBVwkYmbDQsRWBT3Os1IH6a9QBh-vuquPcfhVZA",
+              "author": "Haruomi Hosono",
+              "authorId": "UCNWPRMK0ciGFGLAuwyR_dgg"
             }
           ]
         }
@@ -55,38 +121,9 @@ Contains the entire nested tree: **moods/genres &rarr; categories &rarr; playlis
 }
 ```
 
-#### Track Item Fields:
-
-- `id`: YouTube video / track identifier (e.g. `"yNa8jP4zoJo"`).
-- `title`: Name of the track or song.
-- `isSong`: `true` strictly for pure YouTube Music songs (Audio Track Videos / official label releases: `MUSIC_VIDEO_TYPE_ATV`), `false` for YouTube video entities (Official Music Videos, lyric videos, UGC uploads).
-- `duration`: Total duration in integer seconds (e.g. `285`).
-- `durationStr`: Formatted duration string (e.g. `"4:45"`).
-- `thumbnailId`: Unique identifier for the track thumbnail image.
-- `author`: Primary artist or author name (e.g. `"Laufey"`).
-- `authorId`: Artist's YouTube channel / browse identifier (e.g. `"UCJtROTPxo3qnEzww8JyDxuA"`), or `null`.
-
 ---
 
-### 2. Category Files ([`moods/*.json`](./moods/) & [`genres/*.json`](./genres/))
-
-Each mood and genre has a dedicated JSON file under `./moods/<slug>.json` and `./genres/<slug>.json`:
-
-```json
-{
-  "Coffee shop blends": [
-    {
-      "id": "RDCLAK5uy_nBE4bLuBHUXWZrF59ZrkPEToKt8M_I3Vc",
-      "name": "Coffee Shop Blend",
-      "thumbnailId": "CDt4RjHDGr0YiX6WxARTBFkdb9k9VsAIm88sJXZ7B3O1yMoS53kLS_dy8ZIKRrFRHHCB6OJePWU1GbY"
-    }
-  ]
-}
-```
-
----
-
-### 3. Primary Index File ([`data.json`](./data.json))
+### 4. Primary Index File ([`data.json`](./data.json))
 
 Maps each mood and genre slug to its YouTube Music browse `params` identifier:
 
@@ -128,7 +165,7 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 
 1. **Schedule**: Runs periodically every week (`0 0 * * 0`) or on-demand (`workflow_dispatch`).
 2. **Scrapes Fresh Data**: Runs `bun run scrape` using the latest InnerTube API configuration.
-3. **Auto-Commits**: Detects changes in `data.json`, `moods/`, `genres/`, and `full_dataset.json` and commits them back to `main`.
+3. **Auto-Commits**: Detects changes in `data.json`, `moods/`, `genres/`, `full_dataset.json`, and `normalized_tracks.json`, and commits them back to `main`.
 
 ---
 
@@ -138,9 +175,10 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 ├── .github/workflows/
 │   └── update-data.yml    # Scheduled dataset update workflow
 ├── full_dataset.json      # Complete nested dataset (moods & genres -> playlists -> tracks)
+├── normalized_tracks.json # Normalized track dictionary (omitting thumbnailId for non-songs)
 ├── index.html             # Zero-dependency web explorer for GitHub Pages
 ├── data.json              # Primary index mapping moods & genres to browse IDs
-├── moods/                 # Category JSON files for each mood (11 files)
+├── moods/                 # Category JSON files for each mood (11 files, with contents: id[])
 │   ├── chill.json
 │   ├── commute.json
 │   ├── energize.json
@@ -152,13 +190,14 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 │   ├── sad.json
 │   ├── sleep.json
 │   └── workout.json
-├── genres/                # Category JSON files for each genre (38 files)
+├── genres/                # Category JSON files for each genre (38 files, with contents: id[])
 │   ├── african.json
 │   ├── dance_and_electronic.json
 │   ├── hip_hop.json
 │   ├── rock.json
 │   └── ...
 ├── src/
+│   ├── normalizer.ts      # Normalization logic for tracks and contents array enrichment
 │   ├── scraper.ts         # Scraping logic and Innertube API queries
 │   └── types.ts           # TypeScript interfaces and data models
 ├── index.ts               # Main entrypoint
@@ -180,27 +219,15 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 bun install
 ```
 
-### Available Commands
+### Scraping Dataset
 
-- **Full Scrape** (Index + Categories + Full Dataset with Tracks):
+```bash
+# Scrape everything (index, category files, full dataset, and normalized tracks)
+bun run scrape
 
-  ```bash
-  bun run scrape
-  ```
+# Scrape only category index and individual mood/genre files
+bun run scrape:categories
 
-- **Categories Only** (Quick scrape of `data.json`, `moods/`, and `genres/`):
-
-  ```bash
-  bun run scrape:categories
-  ```
-
-- **Tracks Only** (Update/enrich playlists and tracks into `full_dataset.json`):
-
-  ```bash
-  bun run scrape:tracks
-  ```
-
-- **Scrape with Playlist Limit** (useful for testing):
-  ```bash
-  bun run scrape:tracks --limit=20
-  ```
+# Scrape playlist tracks and build normalized_tracks.json
+bun run scrape:playlists
+```

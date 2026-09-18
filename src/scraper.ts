@@ -9,6 +9,8 @@ import type {
 } from "./types";
 
 export * from "./types";
+export { normalizeAndEnrichDataset } from "./normalizer";
+import { normalizeAndEnrichDataset } from "./normalizer";
 
 const USER_AGENT =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36";
@@ -403,7 +405,7 @@ export function extractTrackItem(renderer: any): TrackItem | null {
     r.thumbnail?.musicThumbnailRenderer?.thumbnail?.thumbnails ||
     r.thumbnailRenderer?.musicThumbnailRenderer?.thumbnail?.thumbnails;
   const thumbUrl = thumbs?.[thumbs.length - 1]?.url || thumbs?.[0]?.url;
-  const thumbnailId = extractThumbnailId(thumbUrl) || videoId;
+  const rawThumbnailId = extractThumbnailId(thumbUrl) || videoId;
 
   // Is Song boolean
   const watchCfg =
@@ -418,16 +420,19 @@ export function extractTrackItem(renderer: any): TrackItem | null {
   const musicVideoType = watchCfg?.musicVideoType;
   const isSong = musicVideoType === "MUSIC_VIDEO_TYPE_ATV";
 
-  return {
+  const item: TrackItem = {
     id: videoId,
     title,
     isSong,
     duration,
     durationStr,
-    thumbnailId,
     author,
     authorId,
   };
+  if (isSong) {
+    item.thumbnailId = rawThumbnailId;
+  }
+  return item;
 }
 
 /**
@@ -718,6 +723,7 @@ export async function buildFullDataset(
   // Final save
   await saveCurrentProgress();
   console.log(`\nSuccessfully built and saved full_dataset.json!`);
+  await normalizeAndEnrichDataset();
   return fullDataset;
 }
 
