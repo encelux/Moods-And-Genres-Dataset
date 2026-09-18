@@ -2,7 +2,7 @@
 
 A comprehensive JSON dataset of moods, genres, sections, playlists, and tracks extracted directly from [YouTube Music Moods & Genres](https://music.youtube.com/moods_and_genres).
 
-Includes normalized tracks dictionary, an interactive zero-dependency Web Explorer for GitHub Pages ([`index.html`](./index.html)), and a GitHub Actions workflow for scheduled dataset updates.
+Includes a normalized tracks dictionary, category files with playlist content references, an interactive zero-dependency Web Explorer for GitHub Pages ([`index.html`](./index.html)), and a GitHub Actions workflow for scheduled dataset updates.
 
 Built with [Bun](https://bun.sh) and TypeScript.
 
@@ -73,57 +73,7 @@ Each mood and genre has a dedicated JSON file under `./moods/<slug>.json` and `.
 
 ---
 
-### 3. Full Dataset Hierarchy ([`full_dataset.json`](./full_dataset.json))
-
-Contains the entire nested tree: **moods/genres &rarr; categories &rarr; playlists/items &rarr; tracks**:
-
-```json
-{
-  "moods": {
-    "chill": {
-      "Coffee shop blends": [
-        {
-          "id": "RDCLAK5uy_nBE4bLuBHUXWZrF59ZrkPEToKt8M_I3Vc",
-          "name": "Coffee Shop Blend",
-          "thumbnailId": "CDt4RjHDGr0YiX6WxARTBFkdb9k9VsAIm88sJXZ7B3O1yMoS53kLS_dy8ZIKRrFRHHCB6OJePWU1GbY",
-          "contents": [
-            "yNa8jP4zoJo",
-            "ekAsG_p2jM4"
-          ],
-          "tracks": [
-            {
-              "id": "yNa8jP4zoJo",
-              "title": "Madwoman",
-              "isSong": false,
-              "duration": 285,
-              "durationStr": "4:45",
-              "author": "Laufey",
-              "authorId": "UCJtROTPxo3qnEzww8JyDxuA"
-            },
-            {
-              "id": "f9fqe_VvWtU",
-              "title": "Sincerely",
-              "isSong": true,
-              "duration": 113,
-              "durationStr": "1:53",
-              "thumbnailId": "_lAR-xYR8HP_AX-OUpd00ZbI3p_GZuK7d7g9bHvOM_dFBVwkYmbDQsRWBT3Os1IH6a9QBh-vuquPcfhVZA",
-              "author": "Haruomi Hosono",
-              "authorId": "UCNWPRMK0ciGFGLAuwyR_dgg"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "genres": {
-    "african": { ... }
-  }
-}
-```
-
----
-
-### 4. Primary Index File ([`data.json`](./data.json))
+### 3. Primary Index File ([`data.json`](./data.json))
 
 Maps each mood and genre slug to its YouTube Music browse `params` identifier:
 
@@ -165,7 +115,7 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 
 1. **Schedule**: Runs periodically every week (`0 0 * * 0`) or on-demand (`workflow_dispatch`).
 2. **Scrapes Fresh Data**: Runs `bun run scrape` using the latest InnerTube API configuration.
-3. **Auto-Commits**: Detects changes in `data.json`, `moods/`, `genres/`, `full_dataset.json`, and `normalized_tracks.json`, and commits them back to `main`.
+3. **Auto-Commits**: Detects changes in `data.json`, `moods/`, `genres/`, and `normalized_tracks.json`, and commits them back to `main`.
 
 ---
 
@@ -174,7 +124,6 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 ```
 ├── .github/workflows/
 │   └── update-data.yml    # Scheduled dataset update workflow
-├── full_dataset.json      # Complete nested dataset (moods & genres -> playlists -> tracks)
 ├── normalized_tracks.json # Normalized track dictionary (omitting thumbnailId for non-songs)
 ├── index.html             # Zero-dependency web explorer for GitHub Pages
 ├── data.json              # Primary index mapping moods & genres to browse IDs
@@ -197,7 +146,6 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 │   ├── rock.json
 │   └── ...
 ├── src/
-│   ├── normalizer.ts      # Normalization logic for tracks and contents array enrichment
 │   ├── scraper.ts         # Scraping logic and Innertube API queries
 │   └── types.ts           # TypeScript interfaces and data models
 ├── index.ts               # Main entrypoint
@@ -222,12 +170,12 @@ bun install
 ### Scraping Dataset
 
 ```bash
-# Scrape everything (index, category files, full dataset, and normalized tracks)
+# Scrape everything (index, category files, playlist tracks, and normalized tracks)
 bun run scrape
 
 # Scrape only category index and individual mood/genre files
 bun run scrape:categories
 
-# Scrape playlist tracks and build normalized_tracks.json
-bun run scrape:playlists
+# Scrape playlist tracks and update normalized_tracks.json
+bun run scrape:tracks
 ```

@@ -19,7 +19,6 @@ export interface PlaylistItem {
   name: string;
   thumbnailId: string;
   contents?: string[];
-  tracks?: TrackItem[];
 }
 
 export type CategoryDetails = Record<string, PlaylistItem[]>;
@@ -28,11 +27,6 @@ export interface CategoryItem {
   name: string;
   slug: string;
   id: string;
-}
-
-export interface FullDataset {
-  moods: Record<string, CategoryDetails>;
-  genres: Record<string, CategoryDetails>;
 }
 
 export type NormalizedTracks = Record<string, TrackItem>;

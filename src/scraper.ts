@@ -5,12 +5,10 @@ import type {
   PlaylistItem,
   CategoryItem,
   TrackItem,
-  FullDataset,
+  NormalizedTracks,
 } from "./types";
 
 export * from "./types";
-export { normalizeAndEnrichDataset } from "./normalizer";
-import { normalizeAndEnrichDataset } from "./normalizer";
 
 const USER_AGENT =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36";
@@ -522,10 +520,11 @@ export async function fetchPlaylistTracksWithRetry(
 }
 
 /**
- * Builds and saves full_dataset.json containing the entire hierarchy:
- * moods & genres -> category sections -> playlists -> tracks.
+ * Scrapes tracks for all playlists across moods and genres,
+ * saves normalized tracks to normalized_tracks.json,
+ * and updates category files with the 'contents' track ID array.
  */
-export async function buildFullDataset(
+export async function scrapePlaylistTracks(
   apiKey: string,
   clientVersion: string,
   options: {
@@ -534,43 +533,22 @@ export async function buildFullDataset(
     saveEveryN?: number;
     limitPlaylists?: number;
   } = {},
-): Promise<FullDataset> {
+): Promise<{ totalTracks: number; totalPlaylists: number }> {
   const concurrency = options.concurrency ?? 6;
   const delayMs = options.delayBetweenBatchesMs ?? 100;
   const saveEveryN = options.saveEveryN ?? 50;
 
-  // In-memory cache of playlistId -> TrackItem[]
-  const playlistCache = new Map<string, TrackItem[]>();
-
-  // 1. If full_dataset.json already exists, load existing tracks to resume / cache
-  const fullDatasetFile = Bun.file("full_dataset.json");
-  if (await fullDatasetFile.exists()) {
+  // 1. Load existing normalized_tracks.json if present
+  let normalizedTracks: NormalizedTracks = {};
+  const normFile = Bun.file("normalized_tracks.json");
+  if (await normFile.exists()) {
     try {
-      const existing: FullDataset = await fullDatasetFile.json();
-      for (const group of ["moods", "genres"] as const) {
-        const categories = existing[group] || {};
-        for (const catKey of Object.keys(categories)) {
-          const sections = categories[catKey] || {};
-          for (const secKey of Object.keys(sections)) {
-            for (const item of sections[secKey] || []) {
-              if (
-                item.id &&
-                Array.isArray(item.tracks) &&
-                item.tracks.length > 0
-              ) {
-                playlistCache.set(item.id, item.tracks);
-              }
-            }
-          }
-        }
-      }
+      normalizedTracks = await normFile.json();
       console.log(
-        `Loaded ${playlistCache.size} existing playlists from full_dataset.json cache.`,
+        `Loaded ${Object.keys(normalizedTracks).length} tracks from normalized_tracks.json cache.`,
       );
     } catch {
-      console.warn(
-        "Could not parse existing full_dataset.json, starting fresh cache.",
-      );
+      normalizedTracks = {};
     }
   }
 
@@ -581,60 +559,67 @@ export async function buildFullDataset(
   const moodFiles = readdirSync(moodsDir).filter((f) => f.endsWith(".json"));
   const genreFiles = readdirSync(genresDir).filter((f) => f.endsWith(".json"));
 
-  const fullDataset: FullDataset = {
-    moods: {},
-    genres: {},
-  };
+  const moodsData: Record<string, CategoryDetails> = {};
+  const genresData: Record<string, CategoryDetails> = {};
 
-  // Collect all unique playlist IDs that need fetching
+  // Map playlistId -> contents (string[])
+  const playlistContentsMap = new Map<string, string[]>();
   const uniquePlaylistIds = new Set<string>();
 
-  for (const file of moodFiles) {
+  const processCategoryContent = (
+    dataObj: Record<string, CategoryDetails>,
+    dir: string,
+    file: string,
+  ) => {
     const slug = file.replace(/\.json$/, "");
     const content: CategoryDetails = JSON.parse(
-      readFileSync(`${moodsDir}/${file}`, "utf-8"),
+      readFileSync(`${dir}/${file}`, "utf-8"),
     );
-    fullDataset.moods[slug] = content;
+    dataObj[slug] = content;
     for (const section of Object.values(content)) {
       for (const item of section) {
+        if (!item.id) continue;
         if (
-          item.id &&
-          (item.id.startsWith("RDCLAK") ||
-            item.id.startsWith("PL") ||
-            item.id.startsWith("OLAK") ||
-            item.id.startsWith("MPREb") ||
-            item.id.length > 15)
+          item.id.startsWith("RDCLAK") ||
+          item.id.startsWith("PL") ||
+          item.id.startsWith("OLAK") ||
+          item.id.startsWith("MPREb") ||
+          item.id.length > 15
         ) {
           uniquePlaylistIds.add(item.id);
+          if (Array.isArray(item.contents) && item.contents.length > 0) {
+            playlistContentsMap.set(item.id, item.contents);
+          }
+        } else if (item.id.length === 11) {
+          // Single track entity
+          item.contents = [item.id];
+          if (!normalizedTracks[item.id]) {
+            normalizedTracks[item.id] = {
+              id: item.id,
+              title: item.name,
+              isSong: true,
+              duration: 0,
+              durationStr: "",
+              thumbnailId: item.thumbnailId,
+              author: "",
+              authorId: null,
+            };
+          }
+          playlistContentsMap.set(item.id, [item.id]);
         }
       }
     }
-  }
+  };
 
+  for (const file of moodFiles) {
+    processCategoryContent(moodsData, moodsDir, file);
+  }
   for (const file of genreFiles) {
-    const slug = file.replace(/\.json$/, "");
-    const content: CategoryDetails = JSON.parse(
-      readFileSync(`${genresDir}/${file}`, "utf-8"),
-    );
-    fullDataset.genres[slug] = content;
-    for (const section of Object.values(content)) {
-      for (const item of section) {
-        if (
-          item.id &&
-          (item.id.startsWith("RDCLAK") ||
-            item.id.startsWith("PL") ||
-            item.id.startsWith("OLAK") ||
-            item.id.startsWith("MPREb") ||
-            item.id.length > 15)
-        ) {
-          uniquePlaylistIds.add(item.id);
-        }
-      }
-    }
+    processCategoryContent(genresData, genresDir, file);
   }
 
   const allIds = Array.from(uniquePlaylistIds);
-  let toFetch = allIds.filter((id) => !playlistCache.has(id));
+  let toFetch = allIds.filter((id) => !playlistContentsMap.has(id));
 
   if (options.limitPlaylists && options.limitPlaylists > 0) {
     toFetch = toFetch.slice(0, options.limitPlaylists);
@@ -644,46 +629,44 @@ export async function buildFullDataset(
     `Found ${allIds.length} unique playlists across all moods and genres.`,
   );
   console.log(
-    `Already cached: ${playlistCache.size} | To fetch: ${toFetch.length}`,
+    `Already cached: ${playlistContentsMap.size} | To fetch: ${toFetch.length}`,
   );
 
-  // Helper function to attach cached tracks and write dataset
   const saveCurrentProgress = async () => {
-    for (const group of ["moods", "genres"] as const) {
-      for (const catKey of Object.keys(fullDataset[group])) {
-        for (const secKey of Object.keys(fullDataset[group][catKey])) {
-          for (const item of fullDataset[group][catKey][secKey]) {
-            if (playlistCache.has(item.id)) {
-              item.tracks = playlistCache.get(item.id);
-            } else if (
-              !item.id.startsWith("RDCLAK") &&
-              !item.id.startsWith("PL") &&
-              !item.id.startsWith("OLAK") &&
-              item.id.length === 11
-            ) {
-              // Single track
-              item.tracks = [
-                {
-                  id: item.id,
-                  title: item.name,
-                  isSong: true,
-                  duration: 0,
-                  durationStr: "",
-                  thumbnailId: item.thumbnailId,
-                  author: "",
-                  authorId: null,
-                },
-              ];
-            } else if (!item.tracks) {
-              item.tracks = [];
-            }
+    // Update moods files
+    for (const [slug, content] of Object.entries(moodsData)) {
+      for (const section of Object.values(content)) {
+        for (const item of section) {
+          if (playlistContentsMap.has(item.id)) {
+            item.contents = playlistContentsMap.get(item.id);
           }
         }
       }
+      await Bun.write(
+        `moods/${slug}.json`,
+        JSON.stringify(content, null, 2) + "\n",
+      );
     }
+
+    // Update genres files
+    for (const [slug, content] of Object.entries(genresData)) {
+      for (const section of Object.values(content)) {
+        for (const item of section) {
+          if (playlistContentsMap.has(item.id)) {
+            item.contents = playlistContentsMap.get(item.id);
+          }
+        }
+      }
+      await Bun.write(
+        `genres/${slug}.json`,
+        JSON.stringify(content, null, 2) + "\n",
+      );
+    }
+
+    // Save normalized_tracks.json
     await Bun.write(
-      "full_dataset.json",
-      JSON.stringify(fullDataset, null, 2) + "\n",
+      "normalized_tracks.json",
+      JSON.stringify(normalizedTracks, null, 2) + "\n",
     );
   };
 
@@ -693,12 +676,24 @@ export async function buildFullDataset(
     const chunk = toFetch.slice(i, i + concurrency);
     await Promise.all(
       chunk.map(async (playlistId) => {
-        const tracks = await fetchPlaylistTracksWithRetry(
+        const rawTracks = await fetchPlaylistTracksWithRetry(
           apiKey,
           clientVersion,
           playlistId,
         );
-        playlistCache.set(playlistId, tracks);
+        const trackIds: string[] = [];
+        for (const t of rawTracks) {
+          trackIds.push(t.id);
+          if (!normalizedTracks[t.id]) {
+            if (t.isSong) {
+              normalizedTracks[t.id] = { ...t };
+            } else {
+              const { thumbnailId, ...rest } = t;
+              normalizedTracks[t.id] = rest as TrackItem;
+            }
+          }
+        }
+        playlistContentsMap.set(playlistId, trackIds);
         fetchedCount++;
       }),
     );
@@ -707,7 +702,7 @@ export async function buildFullDataset(
       await Bun.sleep(delayMs);
     }
 
-    const currentTotal = playlistCache.size;
+    const currentTotal = playlistContentsMap.size;
     const percent = ((currentTotal / allIds.length) * 100).toFixed(1);
     console.log(
       `[Playlists Progress] ${currentTotal}/${allIds.length} (${percent}%) - Batch ${Math.floor(i / concurrency) + 1}/${Math.ceil(toFetch.length / concurrency)}`,
@@ -716,22 +711,27 @@ export async function buildFullDataset(
     // Save periodically
     if (fetchedCount > 0 && fetchedCount % saveEveryN === 0) {
       await saveCurrentProgress();
-      console.log(`  -> Periodic progress saved to full_dataset.json`);
+      console.log(`  -> Periodic progress saved to normalized_tracks.json`);
     }
   }
 
   // Final save
   await saveCurrentProgress();
-  console.log(`\nSuccessfully built and saved full_dataset.json!`);
-  await normalizeAndEnrichDataset();
-  return fullDataset;
+  console.log(
+    `\nSuccessfully updated category files and saved normalized_tracks.json!`,
+  );
+
+  return {
+    totalTracks: Object.keys(normalizedTracks).length,
+    totalPlaylists: playlistContentsMap.size,
+  };
 }
 
 /**
  * Runs the full scrape:
  * 1. Fetches index of moods and genres, saving to data.json.
  * 2. Fetches and saves category details to ./moods/<slug>.json and ./genres/<slug>.json.
- * 3. Fetches playlist tracks and builds nested full_dataset.json.
+ * 3. Fetches playlist tracks and normalizes into normalized_tracks.json and category contents.
  */
 export async function scrapeAll(
   options: {
@@ -823,8 +823,8 @@ export async function scrapeAll(
   }
 
   if (!options.categoriesOnly) {
-    console.log("\n--- Building Full Dataset with Playlist Tracks ---");
-    await buildFullDataset(apiKey, clientVersion, {
+    console.log("\n--- Scraping Playlist Tracks & Normalizing ---");
+    await scrapePlaylistTracks(apiKey, clientVersion, {
       limitPlaylists: options.limitPlaylists,
     });
   }
