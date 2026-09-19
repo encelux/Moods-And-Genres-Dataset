@@ -12,7 +12,8 @@
     "start": "bun run index.ts"
   },
   "dependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "bun-types": "^1.4.2"
   },
   "peerDependencies": {
     "typescript": "^7"
