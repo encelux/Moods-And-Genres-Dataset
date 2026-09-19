@@ -548,6 +548,9 @@
     // Helpers
     function getThumbUrl(thumbnailId) {
       if (!thumbnailId) return '';
+      if (thumbnailId.startsWith('http://') || thumbnailId.startsWith('https://')) {
+        return thumbnailId;
+      }
       // If it's a 11-character video ID
       if (/^[a-zA-Z0-9_-]{11}$/.test(thumbnailId)) {
         return `https://i.ytimg.com/vi/${thumbnailId}/hqdefault.jpg`;

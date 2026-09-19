@@ -29,7 +29,15 @@ interface LoadedCategoryEntry {
   contentSet: Set<string>;
 }
 
+// In-memory cache for all category playlists
 let cachedCategories: LoadedCategoryEntry[] | null = null;
+
+// In-memory cache for loaded partition JSONs (64 partitions total)
+const partitionCache = new Map<string, Record<string, TrackItem>>();
+
+// In-memory LRU-like cache for frequent recommendation requests
+const recommendationCache = new Map<string, RecommendationResult>();
+const MAX_RECOMMENDATION_CACHE = 500;
 
 function resolveDir(dirName: string): string {
   const candidates = [
@@ -62,6 +70,22 @@ function resolveNormalizedFile(trackId: string): string | null {
     if (existsSync(c)) return c;
   }
   return null;
+}
+
+/**
+ * Loads a track partition file with in-memory caching.
+ */
+function getPartition(fullPath: string): Record<string, TrackItem> | null {
+  const cached = partitionCache.get(fullPath);
+  if (cached) return cached;
+  try {
+    const raw = readFileSync(fullPath, "utf-8");
+    const partition: Record<string, TrackItem> = JSON.parse(raw);
+    partitionCache.set(fullPath, partition);
+    return partition;
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -100,6 +124,18 @@ function loadAllPlaylists(): LoadedCategoryEntry[] {
               Array.isArray(item.contents) &&
               item.contents.length > 0
             ) {
+              if (
+                !item.thumbnailId ||
+                item.thumbnailId.startsWith("http://") ||
+                item.thumbnailId.startsWith("https://") ||
+                item.thumbnailId.includes("/")
+              ) {
+                const firstTrackId = item.contents[0];
+                if (firstTrackId) {
+                  const meta = lookupTracks([firstTrackId]).get(firstTrackId);
+                  item.thumbnailId = meta?.thumbnailId || firstTrackId;
+                }
+              }
               results.push({
                 categoryType: type,
                 categorySlug: slug,
@@ -121,7 +157,7 @@ function loadAllPlaylists(): LoadedCategoryEntry[] {
 }
 
 /**
- * Looks up track details from normalized/<hex>.json.
+ * Looks up track details from normalized/<hex>.json with partition caching.
  */
 function lookupTracks(trackIds: string[]): Map<string, TrackItem> {
   const map = new Map<string, TrackItem>();
@@ -137,20 +173,41 @@ function lookupTracks(trackIds: string[]): Map<string, TrackItem> {
   }
 
   for (const [fullPath, ids] of partitionMap.entries()) {
-    try {
-      const raw = readFileSync(fullPath, "utf-8");
-      const partition: Record<string, TrackItem> = JSON.parse(raw);
-      for (const id of ids) {
-        if (partition[id]) {
-          map.set(id, partition[id]);
-        }
+    const partition = getPartition(fullPath);
+    if (!partition) continue;
+    for (const id of ids) {
+      if (partition[id]) {
+        map.set(id, partition[id]);
       }
-    } catch {
-      // Ignore read errors
     }
   }
 
   return map;
+}
+
+/**
+ * Resolves a clean thumbnail ID for a playlist item.
+ * Falls back to the first track's thumbnailId or 11-char video ID if invalid/missing.
+ */
+function resolveThumbnailId(
+  item: PlaylistItem,
+  trackMetadata?: Map<string, TrackItem>,
+): string | undefined {
+  if (
+    item.thumbnailId &&
+    !item.thumbnailId.startsWith("http://") &&
+    !item.thumbnailId.startsWith("https://") &&
+    !item.thumbnailId.includes("/")
+  ) {
+    return item.thumbnailId;
+  }
+  const firstTrackId = item.contents?.[0];
+  if (!firstTrackId) return undefined;
+  const meta =
+    trackMetadata?.get(firstTrackId) ||
+    lookupTracks([firstTrackId]).get(firstTrackId);
+  if (meta?.thumbnailId) return meta.thumbnailId;
+  return firstTrackId;
 }
 
 /**
@@ -170,6 +227,13 @@ export function recommendPlaylists(
       recognizedInputTracks: 0,
       recommendations: [],
     };
+  }
+
+  // Canonical cache key using sorted track IDs, limit, and minScore
+  const cacheKey = `${uniqueInputIds.slice().sort().join(",")}:${limit}:${minScore}`;
+  const cachedResult = recommendationCache.get(cacheKey);
+  if (cachedResult) {
+    return cachedResult;
   }
 
   const trackMetadata = lookupTracks(uniqueInputIds);
@@ -204,10 +268,11 @@ export function recommendPlaylists(
 
     if (score >= minScore) {
       seenPlaylistIds.add(playlistId);
+      const thumbnailId = resolveThumbnailId(entry.item, trackMetadata);
       scored.push({
         id: playlistId,
         name: entry.item.name,
-        thumbnailId: entry.item.thumbnailId,
+        thumbnailId,
         categoryType: entry.categoryType,
         categorySlug: entry.categorySlug,
         section: entry.section,
@@ -221,11 +286,20 @@ export function recommendPlaylists(
 
   scored.sort((a, b) => b.score - a.score);
 
-  return {
+  const result: RecommendationResult = {
     totalInputTracks: uniqueInputIds.length,
     recognizedInputTracks,
     recommendations: scored.slice(0, limit),
   };
+
+  // Manage in-memory cache capacity
+  if (recommendationCache.size >= MAX_RECOMMENDATION_CACHE) {
+    const oldestKey = recommendationCache.keys().next().value;
+    if (oldestKey) recommendationCache.delete(oldestKey);
+  }
+  recommendationCache.set(cacheKey, result);
+
+  return result;
 }
 
 /**
@@ -238,12 +312,27 @@ export default async function handler(
 ): Promise<Response | void> {
   const method = (req.method || "GET").toUpperCase();
 
-  const sendJson = (status: number, data: any): Response | void => {
+  const sendJson = (
+    status: number,
+    data: any,
+    cacheControl?: string,
+  ): Response | void => {
+    const defaultCache =
+      status === 200
+        ? "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400"
+        : status === 404
+          ? "public, max-age=300, s-maxage=600, stale-while-revalidate=300"
+          : "no-cache, no-store, must-revalidate";
+
+    const selectedCache = cacheControl ?? defaultCache;
+
     if (res && typeof res.status === "function") {
       res.setHeader("Content-Type", "application/json");
       res.setHeader("Access-Control-Allow-Origin", "*");
       res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
       res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+      res.setHeader("Cache-Control", selectedCache);
+      res.setHeader("Vary", "Accept-Encoding");
       return res.status(status).json(data);
     }
     return Response.json(data, {
@@ -253,6 +342,8 @@ export default async function handler(
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type",
+        "Cache-Control": selectedCache,
+        "Vary": "Accept-Encoding",
       },
     });
   };
@@ -262,6 +353,7 @@ export default async function handler(
       res.setHeader("Access-Control-Allow-Origin", "*");
       res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
       res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+      res.setHeader("Access-Control-Max-Age", "86400");
       return res.status(204).end();
     }
     return new Response(null, {
@@ -270,6 +362,7 @@ export default async function handler(
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Max-Age": "86400",
       },
     });
   }
@@ -292,13 +385,17 @@ export default async function handler(
           ? `Bun ${Bun.version}`
           : `Node.js ${process.version}`;
 
-      return sendJson(200, {
-        name: "Moods & Genres Dataset Recommendation API",
-        runtime,
-        status: "online",
-        usage: "GET /?ids=trackId1,trackId2&limit=10",
-        example: "/?ids=yNa8jP4zoJo,f9fqe_VvWtU&limit=5",
-      });
+      return sendJson(
+        200,
+        {
+          name: "Moods & Genres Dataset Recommendation API",
+          runtime,
+          status: "online",
+          usage: "GET /?ids=trackId1,trackId2&limit=10",
+          example: "/?ids=yNa8jP4zoJo,f9fqe_VvWtU&limit=5",
+        },
+        "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400",
+      );
     }
 
     const inputIds = idsParam
@@ -324,21 +421,29 @@ export default async function handler(
     const result = recommendPlaylists(inputIds, { limit });
 
     if (result.recommendations.length === 0) {
-      return sendJson(404, {
-        error:
-          "No relevant playlists found for the provided listening history.",
-        totalInputTracks: result.totalInputTracks,
-        recognizedInputTracks: result.recognizedInputTracks,
-      });
+      return sendJson(
+        404,
+        {
+          error:
+            "No relevant playlists found for the provided listening history.",
+          totalInputTracks: result.totalInputTracks,
+          recognizedInputTracks: result.recognizedInputTracks,
+        },
+        "public, max-age=300, s-maxage=600, stale-while-revalidate=300",
+      );
     }
 
-    return sendJson(200, {
-      success: true,
-      count: result.recommendations.length,
-      totalInputTracks: result.totalInputTracks,
-      recognizedInputTracks: result.recognizedInputTracks,
-      playlists: result.recommendations,
-    });
+    return sendJson(
+      200,
+      {
+        success: true,
+        count: result.recommendations.length,
+        totalInputTracks: result.totalInputTracks,
+        recognizedInputTracks: result.recognizedInputTracks,
+        playlists: result.recommendations,
+      },
+      "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400",
+    );
   } catch (err: any) {
     console.error("[API Error] recommend function failure:", err);
     return sendJson(500, {

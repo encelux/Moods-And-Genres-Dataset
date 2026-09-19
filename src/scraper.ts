@@ -37,7 +37,7 @@ export function extractThumbnailId(url: string | undefined): string {
   if (googleMatch?.[1]) return googleMatch[1];
   const ytMatch = url.match(/i\.ytimg\.com\/vi\/([^/?]+)/);
   if (ytMatch?.[1]) return ytMatch[1];
-  return url.split("?")[0] || "";
+  return "";
 }
 
 /**
@@ -697,6 +697,18 @@ export async function scrapePlaylistTracks(
           if (playlistContentsMap.has(item.id)) {
             item.contents = playlistContentsMap.get(item.id);
           }
+          if (
+            !item.thumbnailId ||
+            item.thumbnailId.startsWith("http") ||
+            item.thumbnailId.includes("/")
+          ) {
+            const firstTrackId = item.contents?.[0];
+            if (firstTrackId) {
+              const hex = getTrackPartitionHex(firstTrackId);
+              const part = getPartition(hex);
+              item.thumbnailId = part[firstTrackId]?.thumbnailId || firstTrackId;
+            }
+          }
         }
       }
       await Bun.write(
@@ -711,6 +723,18 @@ export async function scrapePlaylistTracks(
         for (const item of section) {
           if (playlistContentsMap.has(item.id)) {
             item.contents = playlistContentsMap.get(item.id);
+          }
+          if (
+            !item.thumbnailId ||
+            item.thumbnailId.startsWith("http") ||
+            item.thumbnailId.includes("/")
+          ) {
+            const firstTrackId = item.contents?.[0];
+            if (firstTrackId) {
+              const hex = getTrackPartitionHex(firstTrackId);
+              const part = getPartition(hex);
+              item.thumbnailId = part[firstTrackId]?.thumbnailId || firstTrackId;
+            }
           }
         }
       }
