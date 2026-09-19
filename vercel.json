@@ -1,21 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "bunVersion": "1.x",
-  "buildCommand": "echo 'Bun application ready'",
   "functions": {
-    "api/index.ts": {
-      "runtime": "bun",
-      "includeFiles": "{moods,genres,normalized}/**"
+    "server.ts": {
+      "includeFiles": "{moods,genres,normalized,data.json,index.html}/**"
     }
   },
-  "routes": [
-    { "src": "/index.html", "dest": "/index.html" },
-    { "src": "/data.json", "dest": "/data.json" },
-    { "src": "/moods/(.*)", "dest": "/moods/$1" },
-    { "src": "/genres/(.*)", "dest": "/genres/$1" },
-    { "src": "/normalized/(.*)", "dest": "/normalized/$1" },
-    { "src": "/(.*)", "dest": "/api/index.ts" }
-  ],
   "headers": [
     {
       "source": "/(.*)",
