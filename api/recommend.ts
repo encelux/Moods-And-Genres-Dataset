@@ -18,7 +18,8 @@ export default async function handler(req: Request): Promise<Response> {
   }
 
   try {
-    const url = new URL(req.url);
+    // Provide base URL to safely parse relative URLs (e.g. "/api/recommend?ids=...") in serverless runtimes
+    const url = new URL(req.url, "http://localhost");
     const idsParam = url.searchParams.get("ids") || url.searchParams.get("id");
 
     const inputIds = idsParam

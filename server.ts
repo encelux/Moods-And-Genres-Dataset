@@ -1,23 +1,29 @@
 import { recommendPlaylists } from "./src/recommend";
 import { existsSync, readFileSync } from "node:fs";
 
-console.log(`[Server] Initializing Bun.serve() with Bun ${process.versions.bun}...`);
+console.log(
+  `[Server] Initializing Bun.serve() with Bun ${process.versions.bun}...`,
+);
 
 export default Bun.serve({
   routes: {
-    "/health": () => Response.json({ status: "ok", runtime: `bun ${process.versions.bun}` }),
+    "/health": () =>
+      Response.json({ status: "ok", runtime: `bun ${process.versions.bun}` }),
 
     "/api/recommend": (req) => {
       if (req.method !== "GET") {
         return new Response(
-          JSON.stringify({ error: `Method ${req.method} not allowed. Only GET is supported.` }),
+          JSON.stringify({
+            error: `Method ${req.method} not allowed. Only GET is supported.`,
+          }),
           { status: 405, headers: { Allow: "GET" } },
         );
       }
 
       try {
-        const url = new URL(req.url);
-        const idsParam = url.searchParams.get("ids") || url.searchParams.get("id");
+        const url = new URL(req.url, "http://localhost");
+        const idsParam =
+          url.searchParams.get("ids") || url.searchParams.get("id");
 
         const inputIds = idsParam
           ? idsParam
@@ -38,7 +44,8 @@ export default Bun.serve({
         if (inputIds.length === 0) {
           return new Response(
             JSON.stringify({
-              error: "No valid track IDs provided. Use ?ids=id1,id2 query parameter.",
+              error:
+                "No valid track IDs provided. Use ?ids=id1,id2 query parameter.",
             }),
             { status: 400 },
           );
@@ -49,7 +56,8 @@ export default Bun.serve({
         if (result.recommendations.length === 0) {
           return new Response(
             JSON.stringify({
-              error: "No relevant playlists found for the provided listening history.",
+              error:
+                "No relevant playlists found for the provided listening history.",
               totalInputTracks: result.totalInputTracks,
               recognizedInputTracks: result.recognizedInputTracks,
             }),
@@ -71,7 +79,8 @@ export default Bun.serve({
         console.error("[API Error] recommend error:", err);
         return new Response(
           JSON.stringify({
-            error: "Internal server error while generating playlist recommendations.",
+            error:
+              "Internal server error while generating playlist recommendations.",
             message: err.message,
           }),
           { status: 500 },
@@ -81,7 +90,7 @@ export default Bun.serve({
   },
 
   async fetch(req) {
-    const url = new URL(req.url);
+    const url = new URL(req.url, "http://localhost");
 
     // Serve index.html at root
     if (url.pathname === "/" || url.pathname === "/index.html") {

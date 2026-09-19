@@ -1,9 +1,9 @@
-import { readdirSync, readFileSync, existsSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { CategoryDetails, PlaylistItem, TrackItem } from "./types";
 import { getNormalizedTrackFilePath } from "./scraper";
 
-export interface RecommendationMatch {
+export interface PlaylistRecommendation {
   id: string;
   name: string;
   thumbnailId?: string;
@@ -19,18 +19,18 @@ export interface RecommendationMatch {
 export interface RecommendationResult {
   totalInputTracks: number;
   recognizedInputTracks: number;
-  totalPlaylistsEvaluated: number;
-  recommendations: RecommendationMatch[];
+  recommendations: PlaylistRecommendation[];
 }
 
-// In-memory cache across invocations in serverless/warm runtimes
-let cachedCategories: {
-  categoryType: "mood" | "genre";
-  categorySlug: string;
-  section: string;
-  item: PlaylistItem;
-  contentSet: Set<string>;
-}[] | null = null;
+let cachedCategories:
+  | {
+      categoryType: "mood" | "genre";
+      categorySlug: string;
+      section: string;
+      item: PlaylistItem;
+      contentSet: Set<string>;
+    }[]
+  | null = null;
 
 /**
  * Loads all playlists and their contents from moods/ and genres/.
@@ -58,16 +58,23 @@ export function loadAllPlaylists(): {
   ];
 
   for (const { dir, type } of categories) {
-    if (!existsSync(dir)) continue;
-    const files = readdirSync(dir).filter((f) => f.endsWith(".json"));
+    const categoryDir = join(process.cwd(), dir);
+    if (!existsSync(categoryDir)) continue;
+    const files = readdirSync(categoryDir).filter((f) => f.endsWith(".json"));
     for (const file of files) {
       const slug = file.replace(/\.json$/, "");
-      const fullPath = join(dir, file);
+      const fullPath = join(categoryDir, file);
       try {
-        const data: CategoryDetails = JSON.parse(readFileSync(fullPath, "utf-8"));
+        const data: CategoryDetails = JSON.parse(
+          readFileSync(fullPath, "utf-8"),
+        );
         for (const [section, items] of Object.entries(data)) {
           for (const item of items) {
-            if (item.contents && Array.isArray(item.contents) && item.contents.length > 0) {
+            if (
+              item.contents &&
+              Array.isArray(item.contents) &&
+              item.contents.length > 0
+            ) {
               results.push({
                 categoryType: type,
                 categorySlug: slug,
@@ -105,10 +112,11 @@ export function lookupTracks(trackIds: string[]): Map<string, TrackItem> {
   }
 
   for (const [filePath, ids] of partitionMap.entries()) {
-    if (!existsSync(filePath)) continue;
+    const fullPath = join(process.cwd(), filePath);
+    if (!existsSync(fullPath)) continue;
     try {
       const partition: Record<string, TrackItem> = JSON.parse(
-        readFileSync(filePath, "utf-8"),
+        readFileSync(fullPath, "utf-8"),
       );
       for (const id of ids) {
         if (partition[id]) {
@@ -138,131 +146,76 @@ export function recommendPlaylists(
     return {
       totalInputTracks: 0,
       recognizedInputTracks: 0,
-      totalPlaylistsEvaluated: 0,
       recommendations: [],
     };
   }
 
-  // 1. Resolve tracks and user artist preferences
-  const trackMap = lookupTracks(uniqueInputIds);
-  const userAuthors = new Set<string>();
-  const userAuthorIds = new Set<string>();
+  const trackMetadata = lookupTracks(uniqueInputIds);
+  const recognizedInputTracks = trackMetadata.size;
 
-  for (const track of trackMap.values()) {
-    if (track.author) userAuthors.add(track.author.toLowerCase());
-    if (track.authorId) userAuthorIds.add(track.authorId);
+  // Build input artist set for artist affinity matching
+  const inputArtists = new Set<string>();
+  for (const track of trackMetadata.values()) {
+    if (track.author && track.author.trim().length > 0) {
+      inputArtists.add(track.author.toLowerCase());
+    }
   }
 
-  // 2. Evaluate all playlists
   const allPlaylists = loadAllPlaylists();
-  const playlistScores = new Map<
-    string,
-    {
-      entry: (typeof allPlaylists)[0];
-      score: number;
-      matchedTrackIds: Set<string>;
-      matchedArtists: Set<string>;
-    }
-  >();
+  const scored: Array<PlaylistRecommendation> = [];
+  const seenPlaylistIds = new Set<string>();
 
   for (const entry of allPlaylists) {
-    let score = 0;
-    const matchedTrackIds = new Set<string>();
-    const matchedArtists = new Set<string>();
+    const playlistId = entry.item.id;
+    if (seenPlaylistIds.has(playlistId)) continue;
 
-    // Exact track overlap (High weight: +10 per track)
+    // 1. Direct track matches
+    const matchedTrackIds: string[] = [];
     for (const inputId of uniqueInputIds) {
       if (entry.contentSet.has(inputId)) {
-        score += 10;
-        matchedTrackIds.add(inputId);
-        const track = trackMap.get(inputId);
-        if (track?.author) {
-          matchedArtists.add(track.author);
-        }
+        matchedTrackIds.push(inputId);
+      }
+    }
+
+    if (matchedTrackIds.length === 0) {
+      continue;
+    }
+
+    // Direct track matches award 10 points each
+    let score = matchedTrackIds.length * 10;
+
+    // 2. Artist overlap
+    const matchedArtists: string[] = [];
+    for (const trackId of matchedTrackIds) {
+      const meta = trackMetadata.get(trackId);
+      if (meta?.author && !matchedArtists.includes(meta.author)) {
+        matchedArtists.push(meta.author);
       }
     }
 
     if (score >= minScore) {
-      const existing = playlistScores.get(entry.item.id);
-      if (!existing || existing.score < score) {
-        playlistScores.set(entry.item.id, {
-          entry,
-          score,
-          matchedTrackIds,
-          matchedArtists,
-        });
-      }
+      seenPlaylistIds.add(playlistId);
+      scored.push({
+        id: playlistId,
+        name: entry.item.name,
+        thumbnailId: entry.item.thumbnailId,
+        categoryType: entry.categoryType,
+        categorySlug: entry.categorySlug,
+        section: entry.section,
+        score,
+        matchedTrackIds,
+        matchedArtists,
+        url: `https://music.youtube.com/playlist?list=${playlistId}`,
+      });
     }
   }
 
-  // 3. Sort by score descending
-  const sorted = Array.from(playlistScores.values())
-    .sort((a, b) => {
-      if (b.score !== a.score) return b.score - a.score;
-      return b.matchedTrackIds.size - a.matchedTrackIds.size;
-    })
-    .slice(0, limit);
-
-  const recommendations: RecommendationMatch[] = sorted.map((s) => ({
-    id: s.entry.item.id,
-    name: s.entry.item.name,
-    thumbnailId: s.entry.item.thumbnailId,
-    categoryType: s.entry.categoryType,
-    categorySlug: s.entry.categorySlug,
-    section: s.entry.section,
-    score: s.score,
-    matchedTrackIds: Array.from(s.matchedTrackIds),
-    matchedArtists: Array.from(s.matchedArtists),
-    url: `https://music.youtube.com/playlist?list=${s.entry.item.id}`,
-  }));
+  // Sort by score descending
+  scored.sort((a, b) => b.score - a.score);
 
   return {
     totalInputTracks: uniqueInputIds.length,
-    recognizedInputTracks: trackMap.size,
-    totalPlaylistsEvaluated: allPlaylists.length,
-    recommendations,
+    recognizedInputTracks,
+    recommendations: scored.slice(0, limit),
   };
-}
-
-// Local testing runner
-if (import.meta.main) {
-  console.log("=== Playlist Recommendation Engine Local Test ===\n");
-
-  // Sample track IDs from the dataset:
-  // "yNa8jP4zoJo" (Madwoman - Laufey)
-  // "ekAsG_p2jM4" (Look To Him - Laufey)
-  // "f9fqe_VvWtU" (Sincerely - Haruomi Hosono)
-  const sampleHistory = [
-    "yNa8jP4zoJo",
-    "ekAsG_p2jM4",
-    "f9fqe_VvWtU",
-    "PmSwUCdQQC4",
-  ];
-
-  console.log(`Input Listening History (${sampleHistory.length} tracks):`, sampleHistory);
-
-  const start = performance.now();
-  const result = recommendPlaylists(sampleHistory, { limit: 5 });
-  const elapsed = (performance.now() - start).toFixed(2);
-
-  console.log(`\nEvaluated in ${elapsed}ms:`);
-  console.log(`- Recognized input tracks: ${result.recognizedInputTracks}/${result.totalInputTracks}`);
-  console.log(`- Total playlists evaluated: ${result.totalPlaylistsEvaluated}`);
-  console.log(`- Recommendations found: ${result.recommendations.length}\n`);
-
-  if (result.recommendations.length === 0) {
-    console.log("No matching recommendations found.");
-  } else {
-    for (let i = 0; i < result.recommendations.length; i++) {
-      const rec = result.recommendations[i]!;
-      console.log(`[#${i + 1}] Score: ${rec.score} | Playlist: "${rec.name}"`);
-      console.log(`     Category: ${rec.categoryType} -> ${rec.categorySlug} (${rec.section})`);
-      console.log(`     Matched Tracks: ${rec.matchedTrackIds.join(", ")}`);
-      if (rec.matchedArtists.length > 0) {
-        console.log(`     Artists: ${rec.matchedArtists.join(", ")}`);
-      }
-      console.log(`     URL: ${rec.url}`);
-      console.log();
-    }
-  }
 }
