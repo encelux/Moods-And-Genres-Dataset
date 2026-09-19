@@ -9,19 +9,18 @@ Built with [Bun](https://bun.sh) and TypeScript.
 ## Table of Contents
 
 - [Overview & Architecture](#overview--architecture)
-- [Playlist Recommendation API (`/api/recommend`)](#playlist-recommendation-api-apirecommend)
+- [Playlist Recommendation API (`/` & `/api`)](#playlist-recommendation-api---api)
 - [Dataset Schemas & Storage Format](#dataset-schemas--storage-format)
   - [1. Normalized Track Partitions (`normalized/<hex>.json`)](#1-normalized-track-partitions-normalizedhexjson)
   - [2. Category Files (`moods/*.json` & `genres/*.json`)](#2-category-files-moodsjson--genresjson)
   - [3. Primary Index (`data.json`)](#3-primary-index-datajson)
 - [Interactive Web Explorer (`index.html`)](#interactive-web-explorer-indexhtml)
-- [Vercel Deployment with Bun Runtime](#vercel-deployment-with-bun-runtime)
+- [Vercel Serverless Bun Deployment](#vercel-serverless-bun-deployment)
 - [Automated Scheduled Updates (GitHub Actions)](#automated-scheduled-updates-github-actions)
 - [Repository & File Structure](#repository--file-structure)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Running the Local Server](#running-the-local-server)
   - [Running the Scraper](#running-the-scraper)
 - [License](#license)
 
@@ -36,20 +35,22 @@ This repository provides:
 1. **Automated Scraping**: Reverse-engineers YouTube Music's InnerTube Web Remix API to scrape and normalize all moods, genres, playlists, and tracks.
 2. **Deterministic Hex Partitioning**: Over 170,000 unique tracks are normalized and split across 64 individual partition files named after the 2-digit ASCII hex code of each track ID's first character (`normalized/<hex>.json`). This eliminates filesystem case-insensitivity bugs on Windows/macOS and provides $O(1)$ disk lookups.
 3. **Pure Song vs. Video Entity Differentiation**: Accurately differentiates between official Audio Track Videos (`MUSIC_VIDEO_TYPE_ATV`, where `isSong: true` with album art `thumbnailId`) and generic YouTube videos (music videos, UGC, live performances, where `isSong: false` with `thumbnailId` omitted).
-4. **Vercel Bun Framework Preset Server (`server.ts`)**: Single `Bun.serve()` server configured with `bunVersion: "1.4.x"` in `vercel.json` and `bun.lock` for zero-overhead, native Bun routing on Vercel Functions.
+4. **Single-File Vercel Function (`api/index.ts`)**: Self-contained recommendation engine running on Bun (`bunVersion: "latest"`) using native Bun APIs (`Bun.file`, `Bun.Glob`, `path`), accessible directly without an `/api/` prefix.
 5. **Interactive Web Explorer**: A standalone, zero-dependency `index.html` frontend designed for GitHub Pages with instant client-side search, filtering, clipboard actions, and external links.
 
 ---
 
-## Playlist Recommendation API (`/api/recommend`)
+## Playlist Recommendation API (`/` & `/api`)
 
-Served natively via `Bun.serve()` in [`server.ts`](./server.ts) on Vercel Fluid Compute.
+Runs directly at the root (`/`) or `/api`, powered by the single-file serverless handler [`api/index.ts`](./api/index.ts) on Vercel with Bun.
 
 ### Endpoint
 
 ```http
-GET /api/recommend?ids={id1},{id2},...&limit={limit}
+GET /?ids={id1},{id2},...&limit={limit}
 ```
+
+_(Also accessible at `GET /api?ids=...` or `GET /recommend?ids=...`)_
 
 ### Query Parameters
 
@@ -63,13 +64,13 @@ GET /api/recommend?ids={id1},{id2},...&limit={limit}
 The engine evaluates all 11,600+ playlist entries across moods and genres:
 
 1. **Exact Track Overlap (+10 pts / track)**: Playlists containing one or more of the user's input tracks receive primary weighting.
-2. **Partition Lookup**: The engine resolves track and artist metadata using instant $O(1)$ lookups into only the necessary `normalized/<hex>.json` files.
+2. **Partition Lookup**: The engine resolves track and artist metadata using instant $O(1)$ lookups into only the necessary `normalized/<hex>.json` partition files via `Bun.file`.
 3. **Ranking & Deduplication**: Playlists are ranked by score descending, deduplicated across duplicate category appearances, and returned with direct YouTube Music links.
 
 ### Example Request
 
 ```http
-GET /api/recommend?ids=yNa8jP4zoJo,f9fqe_VvWtU&limit=5
+GET /?ids=yNa8jP4zoJo,f9fqe_VvWtU&limit=5
 ```
 
 ### Example Response (`200 OK`)
@@ -228,34 +229,41 @@ The repository includes a single, zero-dependency [`index.html`](./index.html) f
 
 ---
 
-## Vercel Deployment with Bun Runtime
+## Vercel Serverless Bun Deployment
 
-This project uses Vercel's **Bun framework preset**:
+Configured with `bunVersion: "latest"` and direct root rewrites in [`vercel.json`](./vercel.json):
 
-- **`vercel.json`**:
-  ```json
-  {
-    "$schema": "https://openapi.vercel.sh/vercel.json",
-    "bunVersion": "1.4.x",
-    "headers": [
-      {
-        "source": "/api/(.*)",
-        "headers": [
-          { "key": "Access-Control-Allow-Origin", "value": "*" },
-          { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
-          { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
-          { "key": "Content-Type", "value": "application/json" }
-        ]
-      }
-    ]
-  }
-  ```
-- **Framework Preset Requirements**:
-  1. `bunVersion` is set to `"1.4.x"`.
-  2. `bun.lock` (text format) is committed.
-  3. Entrypoint is [`server.ts`](./server.ts) invoking `Bun.serve()`.
+```json
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "bunVersion": "latest",
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": "{moods,genres,normalized}/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/", "destination": "/api/index" },
+    { "source": "/recommend", "destination": "/api/index" },
+    { "source": "/api", "destination": "/api/index" },
+    { "source": "/api/recommend", "destination": "/api/index" },
+    { "source": "/api/(.*)", "destination": "/api/index" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
+        { "key": "Content-Type", "value": "application/json" }
+      ]
+    }
+  ]
+}
+```
 
-Deploy directly using the Vercel CLI:
+Deploy directly:
 
 ```bash
 bunx vercel deploy --prod
@@ -280,7 +288,7 @@ The repository workflow ([`.github/workflows/update-data.yml`](./.github/workflo
 ├── .github/workflows/
 │   └── update-data.yml    # Weekly dataset updater GitHub Actions workflow
 ├── api/
-│   └── recommend.ts       # Standalone recommendation handler
+│   └── index.ts           # Single self-contained recommendation function (Bun)
 ├── normalized/            # 64 normalized track partition files (<hex>.json)
 │   ├── 2d.json            # Tracks starting with '-'
 │   ├── 30.json            # Tracks starting with '0'
@@ -299,17 +307,14 @@ The repository workflow ([`.github/workflows/update-data.yml`](./.github/workflo
 │   ├── rock.json
 │   └── ...
 ├── src/
-│   ├── recommend.ts       # Core recommendation engine logic
 │   ├── scraper.ts         # YouTube Music InnerTube scraping pipeline
 │   └── types.ts           # TypeScript definitions & data models
-├── bun.lock               # Bun text lockfile
 ├── data.json              # Primary index mapping slugs to InnerTube params
 ├── index.html             # Zero-dependency Web Explorer for GitHub Pages
 ├── index.ts               # CLI scraper entrypoint
 ├── package.json
-├── server.ts              # Bun.serve() server for Vercel Bun preset
 ├── tsconfig.json
-├── vercel.json            # Vercel configuration (bunVersion: 1.4.x)
+├── vercel.json            # Vercel configuration (bunVersion: latest, direct rewrites)
 └── README.md
 ```
 
@@ -330,13 +335,6 @@ cd Moods-And-Genres-Dataset
 
 # Install dependencies
 bun install
-```
-
-### Running the Local Server
-
-```bash
-# Start the Bun HTTP server (serves index.html at http://localhost:3000 and /api/recommend)
-bun run start
 ```
 
 ### Running the Scraper

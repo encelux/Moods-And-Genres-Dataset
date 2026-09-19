@@ -1,17 +1,21 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "bunVersion": "1.4.x",
+  "bunVersion": "latest",
   "functions": {
-    "api/**/*.ts": {
-      "includeFiles": "{moods,genres,normalized}/**"
-    },
-    "server.ts": {
+    "api/index.ts": {
       "includeFiles": "{moods,genres,normalized}/**"
     }
   },
+  "rewrites": [
+    { "source": "/", "destination": "/api/index" },
+    { "source": "/recommend", "destination": "/api/index" },
+    { "source": "/api", "destination": "/api/index" },
+    { "source": "/api/recommend", "destination": "/api/index" },
+    { "source": "/api/(.*)", "destination": "/api/index" }
+  ],
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
