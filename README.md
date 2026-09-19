@@ -15,13 +15,14 @@ Built with [Bun](https://bun.sh) and TypeScript.
   - [2. Category Files (`moods/*.json` & `genres/*.json`)](#2-category-files-moodsjson--genresjson)
   - [3. Primary Index (`data.json`)](#3-primary-index-datajson)
 - [Interactive Web Explorer (`index.html`)](#interactive-web-explorer-indexhtml)
+- [Vercel Deployment with Bun Runtime](#vercel-deployment-with-bun-runtime)
 - [Automated Scheduled Updates (GitHub Actions)](#automated-scheduled-updates-github-actions)
 - [Repository & File Structure](#repository--file-structure)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+  - [Running the Local Server](#running-the-local-server)
   - [Running the Scraper](#running-the-scraper)
-  - [Local API & Web Server](#local-api--web-server)
 - [License](#license)
 
 ---
@@ -35,14 +36,14 @@ This repository provides:
 1. **Automated Scraping**: Reverse-engineers YouTube Music's InnerTube Web Remix API to scrape and normalize all moods, genres, playlists, and tracks.
 2. **Deterministic Hex Partitioning**: Over 170,000 unique tracks are normalized and split across 64 individual partition files named after the 2-digit ASCII hex code of each track ID's first character (`normalized/<hex>.json`). This eliminates filesystem case-insensitivity bugs on Windows/macOS and provides $O(1)$ disk lookups.
 3. **Pure Song vs. Video Entity Differentiation**: Accurately differentiates between official Audio Track Videos (`MUSIC_VIDEO_TYPE_ATV`, where `isSong: true` with album art `thumbnailId`) and generic YouTube videos (music videos, UGC, live performances, where `isSong: false` with `thumbnailId` omitted).
-4. **Vercel Functions Recommendation API**: Serverless Bun endpoint (`GET /api/recommend`) that takes a user's listening history track IDs and returns ranked, relevant playlist recommendations.
+4. **Vercel Bun Framework Preset Server (`server.ts`)**: Single `Bun.serve()` server configured with `bunVersion: "1.4.x"` in `vercel.json` and `bun.lock` for zero-overhead, native Bun routing on Vercel Functions.
 5. **Interactive Web Explorer**: A standalone, zero-dependency `index.html` frontend designed for GitHub Pages with instant client-side search, filtering, clipboard actions, and external links.
 
 ---
 
 ## Playlist Recommendation API (`/api/recommend`)
 
-A lightweight Vercel Function running on the **Bun runtime** that powers playlist recommendations directly from listening history track IDs.
+Served natively via `Bun.serve()` in [`server.ts`](./server.ts) on Vercel Fluid Compute.
 
 ### Endpoint
 
@@ -227,6 +228,41 @@ The repository includes a single, zero-dependency [`index.html`](./index.html) f
 
 ---
 
+## Vercel Deployment with Bun Runtime
+
+This project uses Vercel's **Bun framework preset**:
+
+- **`vercel.json`**:
+  ```json
+  {
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "bunVersion": "1.4.x",
+    "headers": [
+      {
+        "source": "/api/(.*)",
+        "headers": [
+          { "key": "Access-Control-Allow-Origin", "value": "*" },
+          { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
+          { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
+          { "key": "Content-Type", "value": "application/json" }
+        ]
+      }
+    ]
+  }
+  ```
+- **Framework Preset Requirements**:
+  1. `bunVersion` is set to `"1.4.x"`.
+  2. `bun.lock` (text format) is committed.
+  3. Entrypoint is [`server.ts`](./server.ts) invoking `Bun.serve()`.
+
+Deploy directly using the Vercel CLI:
+
+```bash
+bunx vercel deploy --prod
+```
+
+---
+
 ## Automated Scheduled Updates (GitHub Actions)
 
 The repository workflow ([`.github/workflows/update-data.yml`](./.github/workflows/update-data.yml)) automatically refreshes the dataset on a weekly schedule:
@@ -244,7 +280,7 @@ The repository workflow ([`.github/workflows/update-data.yml`](./.github/workflo
 ├── .github/workflows/
 │   └── update-data.yml    # Weekly dataset updater GitHub Actions workflow
 ├── api/
-│   └── recommend.ts       # Vercel Function (Bun) recommendation API
+│   └── recommend.ts       # Standalone recommendation handler
 ├── normalized/            # 64 normalized track partition files (<hex>.json)
 │   ├── 2d.json            # Tracks starting with '-'
 │   ├── 30.json            # Tracks starting with '0'
@@ -256,31 +292,24 @@ The repository workflow ([`.github/workflows/update-data.yml`](./.github/workflo
 │   ├── chill.json
 │   ├── commute.json
 │   ├── energize.json
-│   ├── feel_good.json
-│   ├── focus.json
-│   ├── gaming.json
-│   ├── party.json
-│   ├── romance.json
-│   ├── sad.json
-│   ├── sleep.json
-│   └── workout.json
+│   └── ...
 ├── genres/                # Genre category files (38+ files, with contents: id[])
 │   ├── african.json
 │   ├── classical.json
-│   ├── dance_and_electronic.json
-│   ├── hip_hop.json
 │   ├── rock.json
 │   └── ...
 ├── src/
 │   ├── recommend.ts       # Core recommendation engine logic
 │   ├── scraper.ts         # YouTube Music InnerTube scraping pipeline
 │   └── types.ts           # TypeScript definitions & data models
+├── bun.lock               # Bun text lockfile
 ├── data.json              # Primary index mapping slugs to InnerTube params
 ├── index.html             # Zero-dependency Web Explorer for GitHub Pages
 ├── index.ts               # CLI scraper entrypoint
 ├── package.json
+├── server.ts              # Bun.serve() server for Vercel Bun preset
 ├── tsconfig.json
-├── vercel.json            # Vercel serverless function & CORS configuration
+├── vercel.json            # Vercel configuration (bunVersion: 1.4.x)
 └── README.md
 ```
 
@@ -303,6 +332,13 @@ cd Moods-And-Genres-Dataset
 bun install
 ```
 
+### Running the Local Server
+
+```bash
+# Start the Bun HTTP server (serves index.html at http://localhost:3000 and /api/recommend)
+bun run start
+```
+
 ### Running the Scraper
 
 ```bash
@@ -317,16 +353,6 @@ bun run scrape:tracks
 
 # Limit playlist scraping for quick testing (e.g. first 20 playlists)
 bun run src/scraper.ts --limit=20
-```
-
-### Local API & Web Server
-
-```bash
-# Test the recommendation engine locally with sample track IDs
-bun run src/recommend.ts
-
-# Preview the Web Explorer locally
-bun x serve .
 ```
 
 ---
