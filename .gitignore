@@ -14,8 +14,6 @@ lerna-debug.log*
 *.sqlite
 
 # lockfiles
-bun.lock
-bun.lockb
 package-json.lock
 
 # bun deploy file

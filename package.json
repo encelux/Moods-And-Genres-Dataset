@@ -11,7 +11,7 @@
     "scrape:tracks": "bun run src/scraper.ts --playlists-only",
     "start": "bun run index.ts"
   },
-  "devDependencies": {
+  "dependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {

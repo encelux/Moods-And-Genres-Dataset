@@ -1,3 +1,4 @@
+import { readdirSync } from "node:fs";
 import { join } from "path";
 import type { CategoryDetails, PlaylistItem, TrackItem } from "../src/types";
 
@@ -51,14 +52,12 @@ async function loadAllPlaylists(): Promise<LoadedCategoryEntry[]> {
     { dir: "genres", type: "genre" },
   ];
 
-  const jsonGlob = new Bun.Glob("*.json");
-
   for (const { dir, type } of categories) {
     const categoryDir = join(process.cwd(), dir);
     let files: string[] = [];
 
     try {
-      files = Array.from(jsonGlob.scanSync(categoryDir));
+      files = readdirSync(categoryDir).filter((f) => f.endsWith(".json"));
     } catch {
       continue;
     }
@@ -220,14 +219,9 @@ export default async function handler(req: Request): Promise<Response> {
   }
 
   if (req.method !== "GET") {
-    return new Response(
-      JSON.stringify({
-        error: `Method ${req.method} not allowed. Only GET is supported.`,
-      }),
-      {
-        status: 405,
-        headers: { Allow: "GET, OPTIONS" },
-      },
+    return Response.json(
+      { error: `Method ${req.method} not allowed. Only GET is supported.` },
+      { status: 405, headers: { Allow: "GET, OPTIONS" } },
     );
   }
 
@@ -235,31 +229,24 @@ export default async function handler(req: Request): Promise<Response> {
     const url = new URL(req.url, "http://localhost");
     const idsParam = url.searchParams.get("ids") || url.searchParams.get("id");
 
-    // If root path is accessed without query parameters, return API status & usage info
-    if (
-      !idsParam &&
-      (url.pathname === "/" ||
-        url.pathname === "/api" ||
-        url.pathname === "/api/index")
-    ) {
-      return new Response(
-        JSON.stringify({
+    // If accessed without query parameters, return API status & usage info
+    if (!idsParam) {
+      return Response.json(
+        {
           name: "Moods & Genres Dataset Recommendation API",
           runtime: `Bun ${process.versions.bun || "latest"}`,
           status: "online",
           usage: "GET /?ids=trackId1,trackId2&limit=10",
           example: "/?ids=yNa8jP4zoJo,f9fqe_VvWtU&limit=5",
-        }),
+        },
         { status: 200 },
       );
     }
 
     const inputIds = idsParam
-      ? idsParam
-          .split(",")
-          .map((s) => s.trim())
-          .filter(Boolean)
-      : [];
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
 
     let limit = 10;
     const limitParam = url.searchParams.get("limit");
@@ -271,11 +258,11 @@ export default async function handler(req: Request): Promise<Response> {
     }
 
     if (inputIds.length === 0) {
-      return new Response(
-        JSON.stringify({
+      return Response.json(
+        {
           error:
             "No valid track IDs provided. Use ?ids=id1,id2 query parameter.",
-        }),
+        },
         { status: 400 },
       );
     }
@@ -283,35 +270,35 @@ export default async function handler(req: Request): Promise<Response> {
     const result = await recommendPlaylists(inputIds, { limit });
 
     if (result.recommendations.length === 0) {
-      return new Response(
-        JSON.stringify({
+      return Response.json(
+        {
           error:
             "No relevant playlists found for the provided listening history.",
           totalInputTracks: result.totalInputTracks,
           recognizedInputTracks: result.recognizedInputTracks,
-        }),
+        },
         { status: 404 },
       );
     }
 
-    return new Response(
-      JSON.stringify({
+    return Response.json(
+      {
         success: true,
         count: result.recommendations.length,
         totalInputTracks: result.totalInputTracks,
         recognizedInputTracks: result.recognizedInputTracks,
         playlists: result.recommendations,
-      }),
+      },
       { status: 200 },
     );
   } catch (err: any) {
     console.error("[API Error] recommend function failure:", err);
-    return new Response(
-      JSON.stringify({
+    return Response.json(
+      {
         error:
           "Internal server error while generating playlist recommendations.",
         message: err.message,
-      }),
+      },
       { status: 500 },
     );
   }

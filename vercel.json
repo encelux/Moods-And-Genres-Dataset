@@ -1,17 +1,20 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "bunVersion": "1.x",
+  "buildCommand": "echo 'Bun application ready'",
   "functions": {
     "api/index.ts": {
+      "runtime": "bun",
       "includeFiles": "{moods,genres,normalized}/**"
     }
   },
-  "rewrites": [
-    { "source": "/", "destination": "/api/index" },
-    { "source": "/recommend", "destination": "/api/index" },
-    { "source": "/api", "destination": "/api/index" },
-    { "source": "/api/recommend", "destination": "/api/index" },
-    { "source": "/api/(.*)", "destination": "/api/index" }
+  "routes": [
+    { "src": "/index.html", "dest": "/index.html" },
+    { "src": "/data.json", "dest": "/data.json" },
+    { "src": "/moods/(.*)", "dest": "/moods/$1" },
+    { "src": "/genres/(.*)", "dest": "/genres/$1" },
+    { "src": "/normalized/(.*)", "dest": "/normalized/$1" },
+    { "src": "/(.*)", "dest": "/api/index.ts" }
   ],
   "headers": [
     {
@@ -19,8 +22,7 @@
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
-        { "key": "Content-Type", "value": "application/json" }
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
       ]
     }
   ]
