@@ -2,9 +2,62 @@
 
 A comprehensive JSON dataset of moods, genres, sections, playlists, and tracks extracted directly from [YouTube Music Moods & Genres](https://music.youtube.com/moods_and_genres).
 
-Includes partitioned normalized tracks dictionaries, category files with playlist content references, an interactive zero-dependency Web Explorer for GitHub Pages ([`index.html`](./index.html)), and a GitHub Actions workflow for scheduled dataset updates.
+Includes partitioned normalized tracks dictionaries, category files with playlist content references, a Vercel Functions Recommendation API (`/api/recommend`), an interactive zero-dependency Web Explorer for GitHub Pages ([`index.html`](./index.html)), and a GitHub Actions workflow for scheduled dataset updates.
 
 Built with [Bun](https://bun.sh) and TypeScript.
+
+---
+
+## Playlist Recommendation API (`/api/recommend`)
+
+A Vercel Function running on Bun that recommends relevant playlists based on a user's listening history track IDs.
+
+### Endpoint: `POST /api/recommend` (or `GET /api/recommend?ids=...`)
+
+#### Request (POST):
+
+```json
+{
+  "ids": ["yNa8jP4zoJo", "f9fqe_VvWtU"],
+  "limit": 5
+}
+```
+
+#### Request (GET):
+
+```
+GET /api/recommend?ids=yNa8jP4zoJo,f9fqe_VvWtU&limit=5
+```
+
+#### Response (`200 OK`):
+
+```json
+{
+  "success": true,
+  "count": 1,
+  "totalInputTracks": 2,
+  "recognizedInputTracks": 2,
+  "playlists": [
+    {
+      "id": "RDCLAK5uy_nBE4bLuBHUXWZrF59ZrkPEToKt8M_I3Vc",
+      "name": "Coffee Shop Blend",
+      "thumbnailId": "CDt4RjHDGr0YiX6WxARTBFkdb9k9VsAIm88sJXZ7B3O1yMoS53kLS_dy8ZIKRrFRHHCB6OJePWU1GbY",
+      "categoryType": "mood",
+      "categorySlug": "chill",
+      "section": "Coffee shop blends",
+      "score": 20,
+      "matchedTrackIds": ["yNa8jP4zoJo", "f9fqe_VvWtU"],
+      "matchedArtists": ["Laufey", "Haruomi Hosono"],
+      "url": "https://music.youtube.com/playlist?list=RDCLAK5uy_nBE4bLuBHUXWZrF59ZrkPEToKt8M_I3Vc"
+    }
+  ]
+}
+```
+
+#### Error Responses:
+
+- **`400 Bad Request`**: When no track IDs are provided.
+- **`404 Not Found`**: When no matching or relevant playlists are found for the provided history.
 
 ---
 
@@ -124,6 +177,8 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 ```
 ├── .github/workflows/
 │   └── update-data.yml    # Scheduled dataset update workflow
+├── api/
+│   └── recommend.ts       # Vercel Function (Bun) recommendation API
 ├── normalized/            # 64 normalized track partition files (<hex>.json)
 │   ├── 2d.json            # Tracks starting with '-'
 │   ├── 30.json            # Tracks starting with '0'
@@ -134,26 +189,12 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 ├── index.html             # Zero-dependency web explorer for GitHub Pages
 ├── data.json              # Primary index mapping moods & genres to browse IDs
 ├── moods/                 # Category JSON files for each mood (11 files, with contents: id[])
-│   ├── chill.json
-│   ├── commute.json
-│   ├── energize.json
-│   ├── feel_good.json
-│   ├── focus.json
-│   ├── gaming.json
-│   ├── party.json
-│   ├── romance.json
-│   ├── sad.json
-│   ├── sleep.json
-│   └── workout.json
 ├── genres/                # Category JSON files for each genre (38+ files, with contents: id[])
-│   ├── african.json
-│   ├── dance_and_electronic.json
-│   ├── hip_hop.json
-│   ├── rock.json
-│   └── ...
 ├── src/
+│   ├── recommend.ts       # Recommendation engine core logic
 │   ├── scraper.ts         # Scraping logic and Innertube API queries
 │   └── types.ts           # TypeScript interfaces and data models
+├── vercel.json            # Vercel deployment configuration
 ├── index.ts               # Main entrypoint
 ├── package.json
 └── README.md
