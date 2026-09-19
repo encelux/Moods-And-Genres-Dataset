@@ -6,11 +6,10 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "bun run server.ts",
-    "serve": "bun run server.ts",
     "scrape": "bun run src/scraper.ts",
     "scrape:categories": "bun run src/scraper.ts --categories-only",
-    "scrape:tracks": "bun run src/scraper.ts --playlists-only"
+    "scrape:tracks": "bun run src/scraper.ts --playlists-only",
+    "start": "bun run index.ts"
   },
   "dependencies": {
     "@types/bun": "latest"
