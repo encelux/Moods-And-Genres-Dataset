@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync } from "node:fs";
 import type {
   DatasetIndex,
   CategoryDetails,
@@ -60,6 +60,22 @@ export function parseDuration(durationStr: string): number {
     return parts[0];
   }
   return 0;
+}
+
+/**
+ * Computes the 2-character lowercase hex code corresponding to the first
+ * character of an ID (e.g. 'a' -> '61', 'A' -> '41', '-' -> '2d', '_' -> '5f').
+ */
+export function getTrackPartitionHex(trackId: string): string {
+  if (!trackId || trackId.length === 0) return "00";
+  return trackId.charCodeAt(0).toString(16).toLowerCase().padStart(2, "0");
+}
+
+/**
+ * Returns the relative file path for a track's normalized partition file.
+ */
+export function getNormalizedTrackFilePath(trackId: string): string {
+  return `normalized/${getTrackPartitionHex(trackId)}.json`;
 }
 
 /**
@@ -521,7 +537,7 @@ export async function fetchPlaylistTracksWithRetry(
 
 /**
  * Scrapes tracks for all playlists across moods and genres,
- * saves normalized tracks to normalized_tracks.json,
+ * routes each track directly into its respective partition file normalized/<hex>.json,
  * and updates category files with the 'contents' track ID array.
  */
 export async function scrapePlaylistTracks(
@@ -538,21 +554,45 @@ export async function scrapePlaylistTracks(
   const delayMs = options.delayBetweenBatchesMs ?? 100;
   const saveEveryN = options.saveEveryN ?? 50;
 
-  // 1. Load existing normalized_tracks.json if present
-  let normalizedTracks: NormalizedTracks = {};
-  const normFile = Bun.file("normalized_tracks.json");
-  if (await normFile.exists()) {
-    try {
-      normalizedTracks = await normFile.json();
-      console.log(
-        `Loaded ${Object.keys(normalizedTracks).length} tracks from normalized_tracks.json cache.`,
-      );
-    } catch {
-      normalizedTracks = {};
-    }
-  }
+  mkdirSync("normalized", { recursive: true });
 
-  // 2. Read all mood and genre JSON files
+  // In-memory cache of partition hex -> NormalizedTracks
+  const partitionCache = new Map<string, NormalizedTracks>();
+  const dirtyPartitions = new Set<string>();
+
+  const getPartition = (hex: string): NormalizedTracks => {
+    let part = partitionCache.get(hex);
+    if (!part) {
+      const filePath = `normalized/${hex}.json`;
+      if (existsSync(filePath)) {
+        try {
+          part = JSON.parse(readFileSync(filePath, "utf-8"));
+        } catch {
+          part = {};
+        }
+      } else {
+        part = {};
+      }
+      partitionCache.set(hex, part!);
+    }
+    return part!;
+  };
+
+  const addTrack = (track: TrackItem) => {
+    const hex = getTrackPartitionHex(track.id);
+    const part = getPartition(hex);
+    if (!part[track.id]) {
+      if (track.isSong) {
+        part[track.id] = { ...track };
+      } else {
+        const { thumbnailId, ...rest } = track;
+        part[track.id] = rest as TrackItem;
+      }
+      dirtyPartitions.add(hex);
+    }
+  };
+
+  // 1. Read all mood and genre JSON files
   const moodsDir = "moods";
   const genresDir = "genres";
 
@@ -593,18 +633,16 @@ export async function scrapePlaylistTracks(
         } else if (item.id.length === 11) {
           // Single track entity
           item.contents = [item.id];
-          if (!normalizedTracks[item.id]) {
-            normalizedTracks[item.id] = {
-              id: item.id,
-              title: item.name,
-              isSong: true,
-              duration: 0,
-              durationStr: "",
-              thumbnailId: item.thumbnailId,
-              author: "",
-              authorId: null,
-            };
-          }
+          addTrack({
+            id: item.id,
+            title: item.name,
+            isSong: true,
+            duration: 0,
+            durationStr: "",
+            thumbnailId: item.thumbnailId,
+            author: "",
+            authorId: null,
+          });
           playlistContentsMap.set(item.id, [item.id]);
         }
       }
@@ -633,6 +671,18 @@ export async function scrapePlaylistTracks(
   );
 
   const saveCurrentProgress = async () => {
+    // Save dirty partition files in normalized/
+    for (const hex of dirtyPartitions) {
+      const part = partitionCache.get(hex);
+      if (part) {
+        await Bun.write(
+          `normalized/${hex}.json`,
+          JSON.stringify(part, null, 2) + "\n",
+        );
+      }
+    }
+    dirtyPartitions.clear();
+
     // Update moods files
     for (const [slug, content] of Object.entries(moodsData)) {
       for (const section of Object.values(content)) {
@@ -662,15 +712,9 @@ export async function scrapePlaylistTracks(
         JSON.stringify(content, null, 2) + "\n",
       );
     }
-
-    // Save normalized_tracks.json
-    await Bun.write(
-      "normalized_tracks.json",
-      JSON.stringify(normalizedTracks, null, 2) + "\n",
-    );
   };
 
-  // 3. Fetch playlists in concurrent batches
+  // Fetch playlists in concurrent batches
   let fetchedCount = 0;
   for (let i = 0; i < toFetch.length; i += concurrency) {
     const chunk = toFetch.slice(i, i + concurrency);
@@ -684,14 +728,7 @@ export async function scrapePlaylistTracks(
         const trackIds: string[] = [];
         for (const t of rawTracks) {
           trackIds.push(t.id);
-          if (!normalizedTracks[t.id]) {
-            if (t.isSong) {
-              normalizedTracks[t.id] = { ...t };
-            } else {
-              const { thumbnailId, ...rest } = t;
-              normalizedTracks[t.id] = rest as TrackItem;
-            }
-          }
+          addTrack(t);
         }
         playlistContentsMap.set(playlistId, trackIds);
         fetchedCount++;
@@ -711,18 +748,32 @@ export async function scrapePlaylistTracks(
     // Save periodically
     if (fetchedCount > 0 && fetchedCount % saveEveryN === 0) {
       await saveCurrentProgress();
-      console.log(`  -> Periodic progress saved to normalized_tracks.json`);
+      console.log(
+        `  -> Periodic progress saved to normalized/ partition files`,
+      );
     }
   }
 
   // Final save
   await saveCurrentProgress();
   console.log(
-    `\nSuccessfully updated category files and saved normalized_tracks.json!`,
+    `\nSuccessfully updated category files and saved partition files in normalized/!`,
   );
 
+  // Calculate total tracks across all partitions in normalized/
+  let totalTracks = 0;
+  const normFiles = readdirSync("normalized").filter((f) =>
+    f.endsWith(".json"),
+  );
+  for (const f of normFiles) {
+    try {
+      const p = JSON.parse(readFileSync(`normalized/${f}`, "utf-8"));
+      totalTracks += Object.keys(p).length;
+    } catch {}
+  }
+
   return {
-    totalTracks: Object.keys(normalizedTracks).length,
+    totalTracks,
     totalPlaylists: playlistContentsMap.size,
   };
 }
@@ -731,7 +782,7 @@ export async function scrapePlaylistTracks(
  * Runs the full scrape:
  * 1. Fetches index of moods and genres, saving to data.json.
  * 2. Fetches and saves category details to ./moods/<slug>.json and ./genres/<slug>.json.
- * 3. Fetches playlist tracks and normalizes into normalized_tracks.json and category contents.
+ * 3. Fetches playlist tracks and normalizes directly into normalized/<hex>.json and category contents.
  */
 export async function scrapeAll(
   options: {
@@ -771,6 +822,7 @@ export async function scrapeAll(
     // 2. Ensure directories exist
     mkdirSync("moods", { recursive: true });
     mkdirSync("genres", { recursive: true });
+    mkdirSync("normalized", { recursive: true });
 
     // 3. Scrape each mood
     console.log("\n--- Scraping Moods ---");
@@ -823,7 +875,9 @@ export async function scrapeAll(
   }
 
   if (!options.categoriesOnly) {
-    console.log("\n--- Scraping Playlist Tracks & Normalizing ---");
+    console.log(
+      "\n--- Scraping Playlist Tracks & Partitioning into normalized/ ---",
+    );
     await scrapePlaylistTracks(apiKey, clientVersion, {
       limitPlaylists: options.limitPlaylists,
     });

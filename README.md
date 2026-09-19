@@ -2,7 +2,7 @@
 
 A comprehensive JSON dataset of moods, genres, sections, playlists, and tracks extracted directly from [YouTube Music Moods & Genres](https://music.youtube.com/moods_and_genres).
 
-Includes a normalized tracks dictionary, category files with playlist content references, an interactive zero-dependency Web Explorer for GitHub Pages ([`index.html`](./index.html)), and a GitHub Actions workflow for scheduled dataset updates.
+Includes partitioned normalized tracks dictionaries, category files with playlist content references, an interactive zero-dependency Web Explorer for GitHub Pages ([`index.html`](./index.html)), and a GitHub Actions workflow for scheduled dataset updates.
 
 Built with [Bun](https://bun.sh) and TypeScript.
 
@@ -10,9 +10,19 @@ Built with [Bun](https://bun.sh) and TypeScript.
 
 ## Dataset Schemas
 
-### 1. Normalized Tracks ([`normalized_tracks.json`](./normalized_tracks.json))
+### 1. Normalized Track Partitions ([`normalized/*.json`](./normalized/))
 
-Contains all unique tracks across all playlists normalized into a single dictionary keyed by track ID: `{ [trackId: string]: TrackItem }`.
+All unique tracks across all playlists are partitioned directly into 64 individual JSON files located in `./normalized/<hex>.json`.
+
+Each filename corresponds to the 2-digit lowercase ASCII hex code of the first character of the track ID (`trackId.charCodeAt(0).toString(16).padStart(2, '0')`), matching the 64 characters used in URL-safe base64 identifiers (`A-Z`, `a-z`, `0-9`, `-`, `_`):
+
+- `41.json` - `5a.json`: Tracks starting with uppercase letters `'A'` (hex `41`) through `'Z'` (hex `5a`)
+- `61.json` - `7a.json`: Tracks starting with lowercase letters `'a'` (hex `61`) through `'z'` (hex `7a`)
+- `30.json` - `39.json`: Tracks starting with digits `'0'` (hex `30`) through `'9'` (hex `39`)
+- `2d.json`: Tracks starting with `'-'` (hex `2d`)
+- `5f.json`: Tracks starting with `'_'` (hex `5f`)
+
+Each partition file contains a dictionary keyed by track ID: `{ [trackId: string]: TrackItem }`.
 
 - **Pure Songs (`isSong: true`)**: Retain `thumbnailId` (square cover art from official label releases).
 - **Videos / Non-Songs (`isSong: false`)**: The `thumbnailId` property is omitted.
@@ -27,16 +37,6 @@ Contains all unique tracks across all playlists normalized into a single diction
     "durationStr": "4:45",
     "author": "Laufey",
     "authorId": "UCJtROTPxo3qnEzww8JyDxuA"
-  },
-  "f9fqe_VvWtU": {
-    "id": "f9fqe_VvWtU",
-    "title": "Sincerely",
-    "isSong": true,
-    "duration": 113,
-    "durationStr": "1:53",
-    "thumbnailId": "_lAR-xYR8HP_AX-OUpd00ZbI3p_GZuK7d7g9bHvOM_dFBVwkYmbDQsRWBT3Os1IH6a9QBh-vuquPcfhVZA",
-    "author": "Haruomi Hosono",
-    "authorId": "UCNWPRMK0ciGFGLAuwyR_dgg"
   }
 }
 ```
@@ -56,7 +56,7 @@ Contains all unique tracks across all playlists normalized into a single diction
 
 ### 2. Category Files ([`moods/*.json`](./moods/) & [`genres/*.json`](./genres/))
 
-Each mood and genre has a dedicated JSON file under `./moods/<slug>.json` and `./genres/<slug>.json`. Each playlist contains a `contents` array of track ID strings referencing entries in [`normalized_tracks.json`](./normalized_tracks.json):
+Each mood and genre has a dedicated JSON file under `./moods/<slug>.json` and `./genres/<slug>.json`. Each playlist contains a `contents` array of track ID strings referencing entries in the [`normalized/*.json`](./normalized/) partitions:
 
 ```json
 {
@@ -115,7 +115,7 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 
 1. **Schedule**: Runs periodically every week (`0 0 * * 0`) or on-demand (`workflow_dispatch`).
 2. **Scrapes Fresh Data**: Runs `bun run scrape` using the latest InnerTube API configuration.
-3. **Auto-Commits**: Detects changes in `data.json`, `moods/`, `genres/`, and `normalized_tracks.json`, and commits them back to `main`.
+3. **Auto-Commits**: Detects changes in `data.json`, `moods/`, `genres/`, and `normalized/`, and commits them back to `main`.
 
 ---
 
@@ -124,7 +124,13 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 ```
 ├── .github/workflows/
 │   └── update-data.yml    # Scheduled dataset update workflow
-├── normalized_tracks.json # Normalized track dictionary (omitting thumbnailId for non-songs)
+├── normalized/            # 64 normalized track partition files (<hex>.json)
+│   ├── 2d.json            # Tracks starting with '-'
+│   ├── 30.json            # Tracks starting with '0'
+│   ├── 41.json            # Tracks starting with 'A'
+│   ├── 5f.json            # Tracks starting with '_'
+│   ├── 61.json            # Tracks starting with 'a'
+│   └── ...
 ├── index.html             # Zero-dependency web explorer for GitHub Pages
 ├── data.json              # Primary index mapping moods & genres to browse IDs
 ├── moods/                 # Category JSON files for each mood (11 files, with contents: id[])
@@ -139,7 +145,7 @@ The workflow in [`.github/workflows/update-data.yml`](./.github/workflows/update
 │   ├── sad.json
 │   ├── sleep.json
 │   └── workout.json
-├── genres/                # Category JSON files for each genre (38 files, with contents: id[])
+├── genres/                # Category JSON files for each genre (38+ files, with contents: id[])
 │   ├── african.json
 │   ├── dance_and_electronic.json
 │   ├── hip_hop.json
@@ -170,12 +176,12 @@ bun install
 ### Scraping Dataset
 
 ```bash
-# Scrape everything (index, category files, playlist tracks, and normalized tracks)
+# Scrape everything (index, category files, and normalized track partitions)
 bun run scrape
 
 # Scrape only category index and individual mood/genre files
 bun run scrape:categories
 
-# Scrape playlist tracks and update normalized_tracks.json
+# Scrape playlist tracks and update normalized/ partition files
 bun run scrape:tracks
 ```
