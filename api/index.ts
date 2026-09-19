@@ -1,5 +1,5 @@
-import { readdirSync } from "node:fs";
-import { join } from "path";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import type { CategoryDetails, PlaylistItem, TrackItem } from "../src/types";
 
 export interface PlaylistRecommendation {
@@ -31,45 +31,68 @@ interface LoadedCategoryEntry {
 
 let cachedCategories: LoadedCategoryEntry[] | null = null;
 
+function resolveDir(dirName: string): string {
+  const candidates = [
+    join(process.cwd(), dirName),
+    join(process.cwd(), "api", dirName),
+    join(__dirname, "..", dirName),
+    join(__dirname, dirName),
+  ];
+  for (const c of candidates) {
+    if (existsSync(c)) return c;
+  }
+  return join(process.cwd(), dirName);
+}
+
 function getTrackPartitionHex(trackId: string): string {
   if (!trackId || trackId.length === 0) return "00";
   return trackId.charCodeAt(0).toString(16).toLowerCase().padStart(2, "0");
 }
 
-function getNormalizedTrackFilePath(trackId: string): string {
-  return `normalized/${getTrackPartitionHex(trackId)}.json`;
+function resolveNormalizedFile(trackId: string): string | null {
+  const hex = getTrackPartitionHex(trackId);
+  const relPath = join("normalized", `${hex}.json`);
+  const candidates = [
+    join(process.cwd(), relPath),
+    join(process.cwd(), "api", relPath),
+    join(__dirname, "..", relPath),
+    join(__dirname, relPath),
+  ];
+  for (const c of candidates) {
+    if (existsSync(c)) return c;
+  }
+  return null;
 }
 
 /**
- * Loads all playlists and their contents from moods/ and genres/ using Bun APIs.
+ * Loads all playlists and their contents from moods/ and genres/.
  */
-async function loadAllPlaylists(): Promise<LoadedCategoryEntry[]> {
+function loadAllPlaylists(): LoadedCategoryEntry[] {
   if (cachedCategories) return cachedCategories;
 
   const results: LoadedCategoryEntry[] = [];
   const categories: Array<{ dir: string; type: "mood" | "genre" }> = [
-    { dir: "moods", type: "mood" },
-    { dir: "genres", type: "genre" },
+    { dir: resolveDir("moods"), type: "mood" },
+    { dir: resolveDir("genres"), type: "genre" },
   ];
 
   for (const { dir, type } of categories) {
-    const categoryDir = join(process.cwd(), dir);
-    let files: string[] = [];
+    if (!existsSync(dir)) continue;
 
+    let files: string[] = [];
     try {
-      files = readdirSync(categoryDir).filter((f) => f.endsWith(".json"));
+      files = readdirSync(dir).filter((f) => f.endsWith(".json"));
     } catch {
       continue;
     }
 
     for (const file of files) {
       const slug = file.replace(/\.json$/, "");
-      const fullPath = join(categoryDir, file);
-      const bunFile = Bun.file(fullPath);
-      if (!(await bunFile.exists())) continue;
+      const fullPath = join(dir, file);
 
       try {
-        const data: CategoryDetails = await bunFile.json();
+        const raw = readFileSync(fullPath, "utf-8");
+        const data: CategoryDetails = JSON.parse(raw);
         for (const [section, items] of Object.entries(data)) {
           for (const item of items) {
             if (
@@ -98,29 +121,25 @@ async function loadAllPlaylists(): Promise<LoadedCategoryEntry[]> {
 }
 
 /**
- * Looks up track details from normalized/<hex>.json using Bun.file.
+ * Looks up track details from normalized/<hex>.json.
  */
-async function lookupTracks(
-  trackIds: string[],
-): Promise<Map<string, TrackItem>> {
+function lookupTracks(trackIds: string[]): Map<string, TrackItem> {
   const map = new Map<string, TrackItem>();
   const partitionMap = new Map<string, string[]>();
 
   for (const id of trackIds) {
     if (!id) continue;
-    const path = getNormalizedTrackFilePath(id);
+    const path = resolveNormalizedFile(id);
+    if (!path) continue;
     const list = partitionMap.get(path) || [];
     list.push(id);
     partitionMap.set(path, list);
   }
 
-  for (const [filePath, ids] of partitionMap.entries()) {
-    const fullPath = join(process.cwd(), filePath);
-    const bunFile = Bun.file(fullPath);
-    if (!(await bunFile.exists())) continue;
-
+  for (const [fullPath, ids] of partitionMap.entries()) {
     try {
-      const partition: Record<string, TrackItem> = await bunFile.json();
+      const raw = readFileSync(fullPath, "utf-8");
+      const partition: Record<string, TrackItem> = JSON.parse(raw);
       for (const id of ids) {
         if (partition[id]) {
           map.set(id, partition[id]);
@@ -137,10 +156,10 @@ async function lookupTracks(
 /**
  * Recommends playlists based on user input track IDs.
  */
-async function recommendPlaylists(
+export function recommendPlaylists(
   inputTrackIds: string[],
   options: { limit?: number; minScore?: number } = {},
-): Promise<RecommendationResult> {
+): RecommendationResult {
   const limit = options.limit ?? 10;
   const minScore = options.minScore ?? 1;
 
@@ -153,10 +172,10 @@ async function recommendPlaylists(
     };
   }
 
-  const trackMetadata = await lookupTracks(uniqueInputIds);
+  const trackMetadata = lookupTracks(uniqueInputIds);
   const recognizedInputTracks = trackMetadata.size;
 
-  const allPlaylists = await loadAllPlaylists();
+  const allPlaylists = loadAllPlaylists();
   const scored: Array<PlaylistRecommendation> = [];
   const seenPlaylistIds = new Set<string>();
 
@@ -211,36 +230,75 @@ async function recommendPlaylists(
 
 /**
  * Single Vercel Serverless Function entrypoint.
- * Handles direct requests at / or /api/index with GET.
+ * Compatible with Bun Request/Response and Node.js (req, res).
  */
-export default async function handler(req: Request): Promise<Response> {
-  if (req.method === "OPTIONS") {
-    return new Response(null, { status: 204 });
+export default async function handler(
+  req: any,
+  res?: any,
+): Promise<Response | void> {
+  const method = (req.method || "GET").toUpperCase();
+
+  const sendJson = (status: number, data: any): Response | void => {
+    if (res && typeof res.status === "function") {
+      res.setHeader("Content-Type", "application/json");
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+      res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+      return res.status(status).json(data);
+    }
+    return Response.json(data, {
+      status,
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
+    });
+  };
+
+  if (method === "OPTIONS") {
+    if (res && typeof res.status === "function") {
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+      res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+      return res.status(204).end();
+    }
+    return new Response(null, {
+      status: 204,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
+    });
   }
 
-  if (req.method !== "GET") {
-    return Response.json(
-      { error: `Method ${req.method} not allowed. Only GET is supported.` },
-      { status: 405, headers: { Allow: "GET, OPTIONS" } },
-    );
+  if (method !== "GET") {
+    return sendJson(405, {
+      error: `Method ${method} not allowed. Only GET is supported.`,
+    });
   }
 
   try {
-    const url = new URL(req.url, "http://localhost");
+    const rawUrl = typeof req.url === "string" ? req.url : "/";
+    const url = new URL(rawUrl, "http://localhost");
     const idsParam = url.searchParams.get("ids") || url.searchParams.get("id");
 
     // If accessed without query parameters, return API status & usage info
     if (!idsParam) {
-      return Response.json(
-        {
-          name: "Moods & Genres Dataset Recommendation API",
-          runtime: `Bun ${process.versions.bun || "latest"}`,
-          status: "online",
-          usage: "GET /?ids=trackId1,trackId2&limit=10",
-          example: "/?ids=yNa8jP4zoJo,f9fqe_VvWtU&limit=5",
-        },
-        { status: 200 },
-      );
+      const runtime =
+        typeof Bun !== "undefined"
+          ? `Bun ${Bun.version}`
+          : `Node.js ${process.version}`;
+
+      return sendJson(200, {
+        name: "Moods & Genres Dataset Recommendation API",
+        runtime,
+        status: "online",
+        usage: "GET /?ids=trackId1,trackId2&limit=10",
+        example: "/?ids=yNa8jP4zoJo,f9fqe_VvWtU&limit=5",
+      });
     }
 
     const inputIds = idsParam
@@ -258,48 +316,34 @@ export default async function handler(req: Request): Promise<Response> {
     }
 
     if (inputIds.length === 0) {
-      return Response.json(
-        {
-          error:
-            "No valid track IDs provided. Use ?ids=id1,id2 query parameter.",
-        },
-        { status: 400 },
-      );
+      return sendJson(400, {
+        error: "No valid track IDs provided. Use ?ids=id1,id2 query parameter.",
+      });
     }
 
-    const result = await recommendPlaylists(inputIds, { limit });
+    const result = recommendPlaylists(inputIds, { limit });
 
     if (result.recommendations.length === 0) {
-      return Response.json(
-        {
-          error:
-            "No relevant playlists found for the provided listening history.",
-          totalInputTracks: result.totalInputTracks,
-          recognizedInputTracks: result.recognizedInputTracks,
-        },
-        { status: 404 },
-      );
-    }
-
-    return Response.json(
-      {
-        success: true,
-        count: result.recommendations.length,
+      return sendJson(404, {
+        error:
+          "No relevant playlists found for the provided listening history.",
         totalInputTracks: result.totalInputTracks,
         recognizedInputTracks: result.recognizedInputTracks,
-        playlists: result.recommendations,
-      },
-      { status: 200 },
-    );
+      });
+    }
+
+    return sendJson(200, {
+      success: true,
+      count: result.recommendations.length,
+      totalInputTracks: result.totalInputTracks,
+      recognizedInputTracks: result.recognizedInputTracks,
+      playlists: result.recommendations,
+    });
   } catch (err: any) {
     console.error("[API Error] recommend function failure:", err);
-    return Response.json(
-      {
-        error:
-          "Internal server error while generating playlist recommendations.",
-        message: err.message,
-      },
-      { status: 500 },
-    );
+    return sendJson(500, {
+      error: "Internal server error while generating playlist recommendations.",
+      message: err.message,
+    });
   }
 }
