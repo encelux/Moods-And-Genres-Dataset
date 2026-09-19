@@ -1,9 +1,12 @@
 {
   "name": "moods-and-genres-dataset",
   "version": "1.0.0",
-  "description": "A JSON Dataset for Moods and Genres from music.youtube.com/moods_and_genres",
   "module": "index.ts",
-  "type": "module",
+  "dependencies": {
+    "@types/bun": "latest",
+    "bun-types": "^1.4.2"
+  },
+  "description": "A JSON Dataset for Moods and Genres from music.youtube.com/moods_and_genres",
   "private": true,
   "scripts": {
     "scrape": "bun run src/scraper.ts",
@@ -11,11 +14,8 @@
     "scrape:tracks": "bun run src/scraper.ts --playlists-only",
     "start": "bun run index.ts"
   },
-  "dependencies": {
-    "@types/bun": "latest",
-    "bun-types": "^1.4.2"
-  },
-  "peerDependencies": {
-    "typescript": "^7"
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^5"
   }
 }
