@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "bunVersion": "latest",
+  "bunVersion": "1.x",
   "functions": {
     "api/index.ts": {
       "includeFiles": "{moods,genres,normalized}/**"
