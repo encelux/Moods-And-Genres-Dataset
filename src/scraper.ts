@@ -34,10 +34,10 @@ export function extractThumbnailId(url: string | undefined): string {
   const googleMatch = url.match(
     /(?:googleusercontent\.com|ggpht\.com)\/([^=?/]+)/,
   );
-  if (googleMatch) return googleMatch[1];
+  if (googleMatch?.[1]) return googleMatch[1];
   const ytMatch = url.match(/i\.ytimg\.com\/vi\/([^/?]+)/);
-  if (ytMatch) return ytMatch[1];
-  return url.split("?")[0];
+  if (ytMatch?.[1]) return ytMatch[1];
+  return url.split("?")[0] || "";
 }
 
 /**
@@ -50,13 +50,18 @@ export function parseDuration(durationStr: string): number {
     .split(":")
     .map((p) => parseInt(p, 10));
   if (parts.some(isNaN)) return 0;
-  if (parts.length === 3) {
+  if (
+    parts.length === 3 &&
+    parts[0] !== undefined &&
+    parts[1] !== undefined &&
+    parts[2] !== undefined
+  ) {
     return parts[0] * 3600 + parts[1] * 60 + parts[2];
   }
-  if (parts.length === 2) {
+  if (parts.length === 2 && parts[0] !== undefined && parts[1] !== undefined) {
     return parts[0] * 60 + parts[1];
   }
-  if (parts.length === 1) {
+  if (parts.length === 1 && parts[0] !== undefined) {
     return parts[0];
   }
   return 0;
@@ -124,6 +129,7 @@ export function extractBrowseData(html: string): any {
 
   while ((match = scriptRegex.exec(html)) !== null) {
     const code = match[1];
+    if (!code) continue;
     if (code.includes("initialData.push") && code.includes("browse")) {
       try {
         const modified =
@@ -145,7 +151,7 @@ export function extractBrowseData(html: string): any {
       const hexMatch = code.match(
         /path:\s*['"]\\\/browse['"][\s\S]*?data:\s*['"]([\s\S]*?)['"]\s*\}\s*\)/,
       );
-      if (hexMatch) {
+      if (hexMatch?.[1]) {
         const decoded = hexMatch[1].replace(/\\x([0-9A-Fa-f]{2})/g, (_, h) =>
           String.fromCharCode(parseInt(h, 16)),
         );
@@ -155,7 +161,7 @@ export function extractBrowseData(html: string): any {
   }
 
   const ytInitialMatch = html.match(/var ytInitialData\s*=\s*(\{.+?\});/s);
-  if (ytInitialMatch) {
+  if (ytInitialMatch?.[1]) {
     return JSON.parse(ytInitialMatch[1]);
   }
 
@@ -485,7 +491,7 @@ export async function fetchPlaylistTracks(
     throw new Error(`HTTP ${response.status} ${response.statusText}`);
   }
 
-  const json = await response.json();
+  const json: any = await response.json();
   const shelf =
     json?.contents?.twoColumnBrowseResultsRenderer?.secondaryContents
       ?.sectionListRenderer?.contents?.[0]?.musicPlaylistShelfRenderer ||
@@ -663,11 +669,12 @@ export async function scrapePlaylistTracks(
     toFetch = toFetch.slice(0, options.limitPlaylists);
   }
 
+  const alreadyCachedPlaylists = allIds.length - toFetch.length;
   console.log(
     `Found ${allIds.length} unique playlists across all moods and genres.`,
   );
   console.log(
-    `Already cached: ${playlistContentsMap.size} | To fetch: ${toFetch.length}`,
+    `Already cached: ${alreadyCachedPlaylists} | To fetch: ${toFetch.length}`,
   );
 
   const saveCurrentProgress = async () => {
@@ -739,8 +746,11 @@ export async function scrapePlaylistTracks(
       await Bun.sleep(delayMs);
     }
 
-    const currentTotal = playlistContentsMap.size;
-    const percent = ((currentTotal / allIds.length) * 100).toFixed(1);
+    const currentTotal = alreadyCachedPlaylists + fetchedCount;
+    const percent =
+      allIds.length > 0
+        ? ((currentTotal / allIds.length) * 100).toFixed(1)
+        : "100.0";
     console.log(
       `[Playlists Progress] ${currentTotal}/${allIds.length} (${percent}%) - Batch ${Math.floor(i / concurrency) + 1}/${Math.ceil(toFetch.length / concurrency)}`,
     );
@@ -826,11 +836,11 @@ export async function scrapeAll(
 
     // 3. Scrape each mood
     console.log("\n--- Scraping Moods ---");
-    for (let i = 0; i < moods.length; i++) {
-      const mood = moods[i];
+    let moodIndex = 1;
+    for (const mood of moods) {
       const outPath = `moods/${mood.slug}.json`;
       console.log(
-        `[${i + 1}/${moods.length}] Scraping mood "${mood.name}" (${mood.slug})...`,
+        `[${moodIndex++}/${moods.length}] Scraping mood "${mood.name}" (${mood.slug})...`,
       );
       try {
         const catData = await fetchCategoryData(apiKey, clientVersion, mood.id);
@@ -847,11 +857,11 @@ export async function scrapeAll(
 
     // 4. Scrape each genre
     console.log("\n--- Scraping Genres ---");
-    for (let i = 0; i < genres.length; i++) {
-      const genre = genres[i];
+    let genreIndex = 1;
+    for (const genre of genres) {
       const outPath = `genres/${genre.slug}.json`;
       console.log(
-        `[${i + 1}/${genres.length}] Scraping genre "${genre.name}" (${genre.slug})...`,
+        `[${genreIndex++}/${genres.length}] Scraping genre "${genre.name}" (${genre.slug})...`,
       );
       try {
         const catData = await fetchCategoryData(
@@ -893,7 +903,7 @@ if (import.meta.main) {
 
   const limitArg = args.find((a) => a.startsWith("--limit="));
   const limitPlaylists = limitArg
-    ? parseInt(limitArg.split("=")[1], 10)
+    ? parseInt(limitArg.split("=")[1] || "", 10)
     : undefined;
 
   try {

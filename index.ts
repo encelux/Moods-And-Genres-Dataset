@@ -9,7 +9,7 @@ if (import.meta.main) {
 
   const limitArg = args.find((a) => a.startsWith("--limit="));
   const limitPlaylists = limitArg
-    ? parseInt(limitArg.split("=")[1], 10)
+    ? parseInt(limitArg.split("=")[1] || "", 10)
     : undefined;
 
   await scrapeAll({ categoriesOnly, playlistsOnly, limitPlaylists });
